@@ -7,7 +7,7 @@ on:
 
 env:
   AZURE_WEBAPP_NAME: natalia-belei
-  AZURE_WEBAPP_PACKAGE_PATH: '.'
+  AZURE_WEBAPP_PACKAGE_PATH: 'reactportfolio'
   NODE_VERSION: '18.x'
 
 permissions:
@@ -21,7 +21,7 @@ jobs:
     
     - name: Install Dependencies
       run: npm install
-      working-directory: jobs-react-portfolio/reactportfolio
+      working-directory: ${{ env.AZURE_WEBAPP_PACKAGE_PATH }}
       
     - name: Set up Node.js
       uses: actions/setup-node@v3

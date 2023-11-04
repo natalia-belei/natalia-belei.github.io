@@ -18,9 +18,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
-
-    - name: Set Working Directory
-      run: cd reactportfolio
       
     - name: Install Dependencies
       run: npm install
@@ -31,7 +28,7 @@ jobs:
       with:
         node-version: ${{ env.NODE_VERSION }}
         cache: 'npm'
-        working-directory: ${{ env.AZURE_WEBAPP_PACKAGE_PATH }}
+        cache-dependency-path: ${{ env.AZURE_WEBAPP_PACKAGE_PATH }}
 
     - name: npm install, build, and test
       run: |

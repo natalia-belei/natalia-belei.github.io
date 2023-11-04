@@ -36,6 +36,12 @@ jobs:
         npm run test --if-present
       working-directory: ${{ env.AZURE_WEBAPP_PACKAGE_PATH }}
 
+    - name: Create artifact archive
+      run: |
+        mkdir -p artifacts
+        zip -r artifacts/node-app.zip .
+      working-directory: ${{ env.AZURE_WEBAPP_PACKAGE_PATH }}
+    
     - name: Upload artifact for deployment job
       uses: actions/upload-artifact@v3
       with:
@@ -56,6 +62,9 @@ jobs:
       uses: actions/download-artifact@v3
       with:
         name: node-app
+
+    - name: Unzip artifact
+      run: unzip -q node-app.zip -d deploy
 
     - name: 'Deploy to Azure WebApp'
       id: deploy-to-webapp

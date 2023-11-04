@@ -24,7 +24,7 @@ const about = () => {
                                 Hello, I'm MY_NAME, UI/UX designer driven by my passion to craft stunning, functional, and user-centric digital experiences. With a rich 3-year journey in this domain, I'm continually exploring fresh and innovative approaches to transform my clients' visions into reality.
                             </p>
                             <p className='my-4 font-medium'>
-                                I firmly believe that design transcends mere aesthetics; it's a tool for problem-solving and creating intuitive, delightful user interactions.
+                                I firmly believe that design transcends mere aesthetics; it&apos;s a tool for problem-solving and creating intuitive, delightful user interactions.
                             </p>
                             <p className='font-medium'>
                                 I bring unwavering dedication to design excellence and user-focused principles to every project I undertake. I eagerly anticipate the opportunity to channel my expertise and enthusiasm into your forthcoming venture.
@@ -55,9 +55,11 @@ const about = () => {
                             </div>
                         </div>
                     </div>
+
+                    <Skills />
                 </Layout>
 
-                <Skills />
+
             </main>
         </>
     )

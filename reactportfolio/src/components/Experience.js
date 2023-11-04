@@ -10,15 +10,15 @@ const Experience = () => {
     });
 
     return (
-        <div className='my-64'>
+        <div className='my-64 w-full'>
             <h2 className='font-bold text-8xl mb-24 w-full text-center'>Experience</h2>
 
             <div ref={ref} className='w-[75%] mx-auto relative'>
                 <motion.div
                     style={{ scaleY: scrollYProgress }}
-                    className='absolute left-9 top-2 w-[4px] h-full bg-dark origin-top' />
+                    className='absolute left-9 top-2 w-[4px] h-[99%] bg-dark origin-top' />
 
-                <ul className='w-full flex-col items-start justify-between ml-4'>
+                <ul className='w-full flex-col items-start justify-between ml-2'>
                     <ExperienceDetails
                         position="UI/UX Designer"
                         company="Creative Studio"

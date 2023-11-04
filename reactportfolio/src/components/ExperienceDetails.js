@@ -6,7 +6,7 @@ export const ExperienceDetails = ({ position, company, companyLink, time, addres
     const ref = useRef(null);
 
     return (
-        <li ref={ref} className='my-8 first:mt-0 last:mb-0 w-[60%] mx-auto flex flex-col items-center justify-between'>
+        <li ref={ref} className='my-8 first:mt-0 last:mb-0 w-[60%] mx-auto flex flex-col items-left justify-between'>
             <LiIcon reference={ref} />
             <motion.div
                 initial={{ y: 50 }}

@@ -5,6 +5,7 @@ import AnimatedText from '@/components/AnimatedText'
 import Image from 'next/image'
 import profilePic from "../../public/images/profile/profile-pic-2.png"
 import AnimatedNumbers from '@/components/AnimatedNumbers'
+import Skills from '@/components/Skills'
 
 const about = () => {
     return (
@@ -55,6 +56,8 @@ const about = () => {
                         </div>
                     </div>
                 </Layout>
+
+                <Skills />
             </main>
         </>
     )

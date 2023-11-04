@@ -21,7 +21,7 @@ const about = () => {
                         <div className='col-span-3 flex flex-col items-start justify-start'>
                             <h2 className='mb-4 text-lg font-bold uppercase text-dark/75'>Summary</h2>
                             <p className='font-medium'>
-                                Hello, I'm MY_NAME, UI/UX designer driven by my passion to craft stunning, functional, and user-centric digital experiences. With a rich 3-year journey in this domain, I'm continually exploring fresh and innovative approaches to transform my clients' visions into reality.
+                                Hello, I&apos;m MY_NAME, UI/UX designer driven by my passion to craft stunning, functional, and user-centric digital experiences. With a rich 3-year journey in this domain, I&apos;m continually exploring fresh and innovative approaches to transform my clients&apos; visions into reality.
                             </p>
                             <p className='my-4 font-medium'>
                                 I firmly believe that design transcends mere aesthetics; it&apos;s a tool for problem-solving and creating intuitive, delightful user interactions.

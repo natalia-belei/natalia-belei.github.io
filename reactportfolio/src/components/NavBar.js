@@ -1,7 +1,7 @@
 import React from 'react';
 import Logo from './Logo';
 import { CustomLink } from './CustomLink';
-import { ExternalLink, LinkedInIcon, PinterestIcon } from './Icons';
+import { LinkArrow, LinkedInIcon, PinterestIcon } from './Icons';
 import { motion } from "framer-motion"
 
 const NavBar = () => {
@@ -30,13 +30,13 @@ const NavBar = () => {
           whileHover={{ y: -3 }}
           whileTap={{ scale: 0.9 }}
           className='w-6 mx-2'>
-          <ExternalLink />
+          <LinkArrow />
         </motion.a>
         <motion.a href="/" target={"_blank"}
           whileHover={{ y: -3 }}
           whileTap={{ scale: 0.9 }}
           className='w-6 ml-2'>
-          <ExternalLink />
+          <LinkArrow />
         </motion.a>
       </nav>
       <div className='absolute left-[50%] top-2 translate-x-[-50%]'>

@@ -20,7 +20,7 @@ const Skills = () => {
                 <Skill name="Skill-5" x="-20vw" y="-20vw" />
                 <Skill name="Skill-6" x="10vw" y="-12vw" />
                 <Skill name="Skill-7" x="35vw" y="-5vw" />
-                <Skill name="Skill-8" x="0vw" y="-30vw" />
+                <Skill name="Skill-8" x="0vw" y="-25vw" />
                 <Skill name="Skill-9" x="-30vw" y="18vw" />
                 <Skill name="Skill-..." x="20vw" y="20vw" />
             </div>

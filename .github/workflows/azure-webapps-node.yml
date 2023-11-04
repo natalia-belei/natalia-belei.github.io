@@ -18,7 +18,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
-    
+
+    - name: Set Working Directory
+      run: cd jobs-react-portfolio/reactportfolio
+      
     - name: Install Dependencies
       run: npm install
       working-directory: ${{ env.AZURE_WEBAPP_PACKAGE_PATH }}

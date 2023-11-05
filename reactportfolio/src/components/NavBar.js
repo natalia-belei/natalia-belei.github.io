@@ -19,7 +19,7 @@ const NavBar = () => {
             href={config.contacts.linkedInProfile} target={"_blank"}
             whileHover={{ y: -3 }}
             whileTap={{ scale: 0.9 }}
-            className='w-6 mx-2'>
+            className='w-7 mx-2'>
             <LinkedInIcon />
           </motion.a>
         )}
@@ -27,7 +27,7 @@ const NavBar = () => {
           <motion.a href={config.contacts.pinterestProfile} target={"_blank"}
             whileHover={{ y: -3 }}
             whileTap={{ scale: 0.9 }}
-            className='w-6 mx-2'>
+            className='w-7 mx-2'>
             <PinterestIcon />
           </motion.a>
         )}
@@ -35,7 +35,7 @@ const NavBar = () => {
           <motion.a href={config.contacts.behanceProfile} target={"_blank"}
             whileHover={{ y: -3 }}
             whileTap={{ scale: 0.9 }}
-            className='w-6 mx-2'>
+            className='w-7 mx-2'>
             <BehanceIcon />
           </motion.a>
         )}
@@ -43,7 +43,7 @@ const NavBar = () => {
           <motion.a href={config.contacts.externalLink} target={"_blank"}
             whileHover={{ y: -3 }}
             whileTap={{ scale: 0.9 }}
-            className='w-6 mx-2'>
+            className='w-7 mx-2'>
             <LinkArrow />
           </motion.a>
         )}

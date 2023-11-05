@@ -1,7 +1,7 @@
 import React from 'react';
 import Logo from './Logo';
 import { CustomLink } from './CustomLink';
-import { LinkArrow, LinkedInIcon, PinterestIcon } from './Icons';
+import { BehanceIcon, LinkArrow, LinkedInIcon, PinterestIcon } from './Icons';
 import { motion } from "framer-motion"
 import config from 'config.js'
 
@@ -26,6 +26,12 @@ const NavBar = () => {
           whileTap={{ scale: 0.9 }}
           className='w-6 mx-2'>
           <PinterestIcon />
+        </motion.a>
+        <motion.a href={config.contacts.behanceProfile} target={"_blank"}
+          whileHover={{ y: -3 }}
+          whileTap={{ scale: 0.9 }}
+          className='w-6 mx-2'>
+          <BehanceIcon />
         </motion.a>
         <motion.a href={config.contacts.externalLink} target={"_blank"}
           whileHover={{ y: -3 }}

@@ -1,8 +1,15 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {
+
+module.exports = {
+  basePath: '/test-react-portfolio',
   reactStrictMode: true,
+  images: {
+    unoptimized: true,
+  },
+  webpack: (config, { isServer }) => {
+    if (!isServer) {
+      // Configure your client-side Webpack here
+    }
+    return config;
+  },
 }
-
-module.exports = nextConfig
-
-

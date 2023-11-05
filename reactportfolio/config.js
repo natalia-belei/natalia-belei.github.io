@@ -28,6 +28,12 @@ const pages = {
             profilePicAlt: contacts.ownerFullName,
         }
     },
+    projects: {
+        meta: {
+            title: `${contacts.ownerFullName} | Projects`,
+            description: "UI/UX Designer Projects.",
+        }
+    },
 };
 
 const config = {

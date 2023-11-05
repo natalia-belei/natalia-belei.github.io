@@ -1,8 +1,8 @@
 const contacts = {
-    ownerFullName: "My Name",
-    ownerInitials: "MN",
-    ownerEmail: "mailto:myemail@gmail.com",
-    linkedInProfile: "https://www.linkedin.com",
+    ownerFullName: "Natalia Belei",
+    ownerInitials: "NB",
+    ownerEmail: "mailto:beley.natalija@gmail.com",
+    linkedInProfile: "https://www.linkedin.com/in/natalia-belei-297077201/",
     pinterestProfile: "https://pinterest.com",
     externalLink: "https://google.com",
     resumePath: "/dummy.pdf",

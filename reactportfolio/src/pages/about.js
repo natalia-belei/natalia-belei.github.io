@@ -7,12 +7,13 @@ import profilePic from "../../public/images/profile/profile-pic-2.png"
 import AnimatedNumbers from '@/components/AnimatedNumbers'
 import Skills from '@/components/Skills'
 import Experience from '@/components/Experience'
+import config from 'config.js'
 
 const about = () => {
     return (
         <>
             <Head>
-                <title>UI/UX Designer | About Page</title>
+                <title>{config.ownerFullName} | About Page</title>
                 <meta name="description" content="Experienced UI/UX Designer specializing in creating user-friendly interfaces." />
             </Head>
             <main className='flex w-full flex-col items-center justify-center'>
@@ -22,7 +23,7 @@ const about = () => {
                         <div className='col-span-3 flex flex-col items-start justify-start'>
                             <h2 className='mb-4 text-lg font-bold uppercase text-dark/75'>Summary</h2>
                             <p className='font-medium'>
-                                Hello, I&apos;m <span className='font-semibold'>MY_NAME</span>, UI/UX designer driven by my passion to craft stunning, functional, and user-centric digital experiences. With a rich 3-year journey in this domain, I&apos;m continually exploring fresh and innovative approaches to transform my clients&apos; visions into reality.
+                                Hello, I&apos;m <span className='font-semibold'>{config.ownerFullName}</span>, UI/UX designer driven by my passion to craft stunning, functional, and user-centric digital experiences. With a rich 3-year journey in this domain, I&apos;m continually exploring fresh and innovative approaches to transform my clients&apos; visions into reality.
                             </p>
                             <p className='my-4 font-medium'>
                                 I firmly believe that design transcends mere aesthetics; it&apos;s a tool for problem-solving and creating intuitive, delightful user interactions.
@@ -60,8 +61,6 @@ const about = () => {
                     <Skills />
                     <Experience />
                 </Layout>
-
-
             </main>
         </>
     )

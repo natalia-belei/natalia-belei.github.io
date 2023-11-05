@@ -6,12 +6,13 @@ import AnimatedText from '@/components/AnimatedText'
 import Link from 'next/link'
 import { LinkArrow } from '@/components/Icons'
 import HireMe from '@/components/HireMe'
+import config from 'config.js'
 
 export default function Home() {
   return (
     <>
       <Head>
-        <title>UI/UX Designer Portfolio</title>
+        <title>{config.ownerFullName} | Portfolio</title>
         <meta name="description" content="UI/UX Designer Portfolio" />
       </Head>
       <main className='flex items-center text-dark w-full min-h-screen'>

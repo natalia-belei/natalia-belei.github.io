@@ -4,7 +4,7 @@ const contacts = {
     ownerEmail: "mailto:beley.natalija@gmail.com",
     linkedInProfile: "https://www.linkedin.com/in/natalia-belei-297077201/",
     pinterestProfile: "https://pinterest.com",
-    behanceProfile: "https://www.behance.net",
+    behanceProfile: "https://www.behance.net/natalibelei",
     externalLink: "https://google.com",
     resumePath: "/dummy.pdf",
 };

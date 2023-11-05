@@ -6,28 +6,29 @@ import AnimatedText from '@/components/AnimatedText'
 import Link from 'next/link'
 import { LinkArrow } from '@/components/Icons'
 import HireMe from '@/components/HireMe'
+import config from 'config.js'
 
 export default function Home() {
   return (
     <>
       <Head>
-        <title>UI/UX Designer Portfolio</title>
-        <meta name="description" content="UI/UX Designer Portfolio" />
+        <title>{config.pages.index.meta.title}</title>
+        <meta name="description" content={config.pages.index.meta.description} />
       </Head>
       <main className='flex items-center text-dark w-full min-h-screen'>
         <Layout className='pt-0'>
           <div className='flex items-center justify-between w-full'>
             <div className='w-1/2'>
-              <Image src={profilePic} alt="UI/UX designer" className='w-full h-auto' />
+              <Image src={profilePic} alt={config.pages.index.meta.profilePicAlt} className='w-full h-auto' />
             </div>
             <div className='w-1/2 flex flex-col items-center self-center'>
               <h1></h1>
-              <AnimatedText text="Transforming Vision Into Reality Through Design" className='!text-left !text-6xl' />
+              <AnimatedText text={config.pages.index.mainTitle} className='!text-left !text-6xl' />
               <p className='my-4 text-base font-medium'>
                 As an accomplished UI/UX designer, I am committed to transforming concepts into captivating web experiences. Dive into my recent projects and articles, highlighting my proficiency in creating engaging user interfaces and user experiences
               </p>
               <div className='flex items-center self-start mt-2'>
-                <Link href="/dummy.pdf" target='blank'
+                <Link href={config.contacts.resumePath} target='blank'
                   className='flex items-center bg-dark text-light p-2.5 px-6 
                   rounded-lg text-lg font-semibold hover:bg-light hover:text-dark
                   border-2 border-solid border-transparent hover:border-dark'
@@ -35,7 +36,7 @@ export default function Home() {
                 >
                   Resume <LinkArrow className={"w-6 ml-1"} />
                 </Link>
-                <Link href="mailto:yourmail@gmail.com" target='blank'
+                <Link href={config.contacts.ownerEmail} target='blank'
                   className='ml-4 text-lg font-medium capitalize text-dark underline'
                 >Contact Me</Link>
               </div>

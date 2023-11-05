@@ -1,6 +1,7 @@
 import React from 'react'
 import { CircularText } from './Icons'
 import Link from 'next/link'
+import config from 'config.js'
 
 const HireMe = () => {
     return (
@@ -8,7 +9,7 @@ const HireMe = () => {
             <div className='w-48 h-auto flex items-center justify-center relative'>
                 <CircularText className="fill-dark animate-spin-slow" />
                 <Link
-                    href="mailto:youremail@grail.com"
+                    href={config.contacts.ownerEmail}
                     className='flex items-center justify-center
                     absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2
                     bg-dark text-light shadow-md border border-solid border-dark

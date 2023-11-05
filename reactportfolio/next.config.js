@@ -1,7 +1,7 @@
 /** @type {import('next').NextConfig} */
 
 module.exports = {
-  basePath: '/jobs-react-portfolio',
+  basePath: '',
   reactStrictMode: true,
   images: {
     unoptimized: true,

@@ -60,8 +60,6 @@ const about = () => {
                     <Skills />
                     <Experience />
                 </Layout>
-
-
             </main>
         </>
     )

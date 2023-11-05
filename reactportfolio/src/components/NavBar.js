@@ -14,31 +14,39 @@ const NavBar = () => {
         <CustomLink href="/projects" title="Projects" className='ml-4' />
       </nav>
       <nav className='flex items-center justify-center flex-wrap text-3xl'>
-        <motion.a
-          href={config.contacts.linkedInProfile} target={"_blank"}
-          whileHover={{ y: -3 }}
-          whileTap={{ scale: 0.9 }}
-          className='w-6 mx-2'>
-          <LinkedInIcon />
-        </motion.a>
-        <motion.a href={config.contacts.pinterestProfile} target={"_blank"}
-          whileHover={{ y: -3 }}
-          whileTap={{ scale: 0.9 }}
-          className='w-6 mx-2'>
-          <PinterestIcon />
-        </motion.a>
-        <motion.a href={config.contacts.behanceProfile} target={"_blank"}
-          whileHover={{ y: -3 }}
-          whileTap={{ scale: 0.9 }}
-          className='w-6 mx-2'>
-          <BehanceIcon />
-        </motion.a>
-        <motion.a href={config.contacts.externalLink} target={"_blank"}
-          whileHover={{ y: -3 }}
-          whileTap={{ scale: 0.9 }}
-          className='w-6 mx-2'>
-          <LinkArrow />
-        </motion.a>
+        {config.contacts.linkedInProfile && (
+          <motion.a
+            href={config.contacts.linkedInProfile} target={"_blank"}
+            whileHover={{ y: -3 }}
+            whileTap={{ scale: 0.9 }}
+            className='w-6 mx-2'>
+            <LinkedInIcon />
+          </motion.a>
+        )}
+        {config.contacts.pinterestProfile && (
+          <motion.a href={config.contacts.pinterestProfile} target={"_blank"}
+            whileHover={{ y: -3 }}
+            whileTap={{ scale: 0.9 }}
+            className='w-6 mx-2'>
+            <PinterestIcon />
+          </motion.a>
+        )}
+        {config.contacts.behanceProfile && (
+          <motion.a href={config.contacts.behanceProfile} target={"_blank"}
+            whileHover={{ y: -3 }}
+            whileTap={{ scale: 0.9 }}
+            className='w-6 mx-2'>
+            <BehanceIcon />
+          </motion.a>
+        )}
+        {config.contacts.externalLink && (
+          <motion.a href={config.contacts.externalLink} target={"_blank"}
+            whileHover={{ y: -3 }}
+            whileTap={{ scale: 0.9 }}
+            className='w-6 mx-2'>
+            <LinkArrow />
+          </motion.a>
+        )}
       </nav>
       <div className={`absolute left-[50%] 
         ${config.isUnderConstruction ? 'top-15' : 'top-2'} translate-x-[-50%]`}>

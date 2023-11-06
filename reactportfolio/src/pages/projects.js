@@ -2,8 +2,6 @@ import Head from 'next/head'
 import React from 'react'
 import AnimatedText from '@/components/AnimatedText'
 import Layout from '@/components/Layout'
-import Link from 'next/link'
-import Image from 'next/image'
 import projectImg1 from '../../public/images/projects/project-1.jpg'
 import projectImg2 from '../../public/images/projects/project-2.jpg'
 import projectImg3 from '../../public/images/projects/project-3.jpg'
@@ -15,39 +13,7 @@ import projectImg8 from '../../public/images/projects/project-8.jpg'
 import projectImg9 from '../../public/images/projects/project-9.jpg'
 import { PROJECT_BLOCK_SIZE } from 'data-config/projects.js'
 import { projects as projectsPageConfig } from '../../data-config/projects.js'
-
-// TODO: import images dynamically
-
-const ProjectWideBlock = ({ type, title, summary, img, link, calculateBlockShadowClass }) => {
-    return (
-        <article className='relative w-full flex items-center justify-between rounded-br-2xl rounded-3xl
-           border border-solid border-dark bg-light shadow-2xl p-12'>
-
-            <div className={calculateBlockShadowClass} />
-
-            <Link href={link} target="_blank" className='w-1/2 cursor-pointer overflow-hidden rounded-lg'>
-                <Image src={img} alt={title} className="w-full h-auto" />
-            </Link>
-
-            <div className='w-1/2 flex flex-col items-start justify-between pl-8'>
-                <span className='text-primary font-medium text-xl'>{type}</span>
-
-                <Link href={link} target="_blank" className='hover:underline underline-offset-2'>
-                    <h2 className='my-2 w-full text-left text-4xl font-bold'>{title}</h2>
-                </Link>
-
-                <p className='my-2 font-medium text-dark'>{summary}</p>
-
-                <div className='mt-2 flex self-end'>
-                    <Link href={link} target="_blank"
-                        className='rounded-lg bg-dark text-light p-2 px-6 text-lg font-semibold'>
-                        About the Project
-                    </Link>
-                </div>
-            </div>
-        </article>
-    )
-}
+import { ProjectBlock } from '../components/ProjectBlock'
 
 const projects = () => {
     return (
@@ -63,7 +29,7 @@ const projects = () => {
                     <div className='grid grids-cols-12 gap-24'>
                         {projectsPageConfig.project1.isShown && (
                             <div className={`${calculateBlockSizeClass(projectsPageConfig.project1.blockSize)}`}>
-                                <ProjectWideBlock
+                                <ProjectBlock
                                     type={projectsPageConfig.project1.type}
                                     title={projectsPageConfig.project1.title}
                                     summary={projectsPageConfig.project1.summary}
@@ -75,7 +41,7 @@ const projects = () => {
                         )}
                         {projectsPageConfig.project2.isShown && (
                             <div className={`${calculateBlockSizeClass(projectsPageConfig.project2.blockSize)}`}>
-                                <ProjectWideBlock
+                                <ProjectBlock
                                     type={projectsPageConfig.project2.type}
                                     title={projectsPageConfig.project2.title}
                                     summary={projectsPageConfig.project2.summary}
@@ -87,7 +53,7 @@ const projects = () => {
                         )}
                         {projectsPageConfig.project3.isShown && (
                             <div className={`${calculateBlockSizeClass(projectsPageConfig.project3.blockSize)}`}>
-                                <ProjectWideBlock
+                                <ProjectBlock
                                     type={projectsPageConfig.project3.type}
                                     title={projectsPageConfig.project3.title}
                                     summary={projectsPageConfig.project3.summary}
@@ -99,7 +65,7 @@ const projects = () => {
                         )}
                         {projectsPageConfig.project4.isShown && (
                             <div className={`${calculateBlockSizeClass(projectsPageConfig.project4.blockSize)}`}>
-                                <ProjectWideBlock
+                                <ProjectBlock
                                     type={projectsPageConfig.project4.type}
                                     title={projectsPageConfig.project4.title}
                                     summary={projectsPageConfig.project4.summary}
@@ -111,7 +77,7 @@ const projects = () => {
                         )}
                         {projectsPageConfig.project5.isShown && (
                             <div className={`${calculateBlockSizeClass(projectsPageConfig.project5.blockSize)}`}>
-                                <ProjectWideBlock
+                                <ProjectBlock
                                     type={projectsPageConfig.project5.type}
                                     title={projectsPageConfig.project5.title}
                                     summary={projectsPageConfig.project5.summary}
@@ -123,7 +89,7 @@ const projects = () => {
                         )}
                         {projectsPageConfig.project6.isShown && (
                             <div className={`${calculateBlockSizeClass(projectsPageConfig.project6.blockSize)}`}>
-                                <ProjectWideBlock
+                                <ProjectBlock
                                     type={projectsPageConfig.project6.type}
                                     title={projectsPageConfig.project6.title}
                                     summary={projectsPageConfig.project6.summary}
@@ -135,7 +101,7 @@ const projects = () => {
                         )}
                         {projectsPageConfig.project7.isShown && (
                             <div className={`${calculateBlockSizeClass(projectsPageConfig.project7.blockSize)}`}>
-                                <ProjectWideBlock
+                                <ProjectBlock
                                     type={projectsPageConfig.project7.type}
                                     title={projectsPageConfig.project7.title}
                                     summary={projectsPageConfig.project7.summary}
@@ -147,7 +113,7 @@ const projects = () => {
                         )}
                         {projectsPageConfig.project8.isShown && (
                             <div className={`${calculateBlockSizeClass(projectsPageConfig.project8.blockSize)}`}>
-                                <ProjectWideBlock
+                                <ProjectBlock
                                     type={projectsPageConfig.project8.type}
                                     title={projectsPageConfig.project8.title}
                                     summary={projectsPageConfig.project8.summary}
@@ -159,7 +125,7 @@ const projects = () => {
                         )}
                         {projectsPageConfig.project9.isShown && (
                             <div className={`${calculateBlockSizeClass(projectsPageConfig.project9.blockSize)}`}>
-                                <ProjectWideBlock
+                                <ProjectBlock
                                     type={projectsPageConfig.project9.type}
                                     title={projectsPageConfig.project9.title}
                                     summary={projectsPageConfig.project9.summary}

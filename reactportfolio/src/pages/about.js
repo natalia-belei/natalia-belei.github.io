@@ -7,23 +7,24 @@ import profilePic from "../../public/images/profile/profile-pic-2.png"
 import AnimatedNumbers from '@/components/AnimatedNumbers'
 import Skills from '@/components/Skills'
 import Experience from '@/components/Experience'
-import config from 'config.js'
+import { contacts as contactsConfig } from '../../data-config/contacts.js'
+import { about as aboutPageConfig } from '../../data-config/about.js'
 
 const about = () => {
     return (
         <>
             <Head>
-                <title>{config.pages.about.meta.title}</title>
-                <meta name="description" content={config.pages.about.meta.description} />
+                <title>{aboutPageConfig.meta.title}</title>
+                <meta name="description" content={aboutPageConfig.meta.description} />
             </Head>
             <main className='flex w-full flex-col items-center justify-center'>
                 <Layout className='pt-16'>
-                    <AnimatedText text={config.pages.about.mainTitle} className='mb-16' />
+                    <AnimatedText text={aboutPageConfig.mainTitle} className='mb-16' />
                     <div className='grid w-full grid-cols-8 gap-16'>
                         <div className='col-span-3 flex flex-col items-start justify-start'>
                             <h2 className='mb-4 text-lg font-bold uppercase text-dark/75'>Summary</h2>
                             <p className='font-medium'>
-                                Hello, I&apos;m <span className='font-semibold'>{config.contacts.ownerFullName}</span>, UI/UX designer driven by my passion to craft stunning, functional, and user-centric digital experiences. With a rich 3-year journey in this domain, I&apos;m continually exploring fresh and innovative approaches to transform my clients&apos; visions into reality.
+                                Hello, I&apos;m <span className='font-semibold'>{contactsConfig.ownerFullName}</span>, UI/UX designer driven by my passion to craft stunning, functional, and user-centric digital experiences. With a rich 3-year journey in this domain, I&apos;m continually exploring fresh and innovative approaches to transform my clients&apos; visions into reality.
                             </p>
                             <p className='my-4 font-medium'>
                                 I firmly believe that design transcends mere aesthetics; it&apos;s a tool for problem-solving and creating intuitive, delightful user interactions.
@@ -34,24 +35,24 @@ const about = () => {
                         </div>
                         <div className='col-span-3 relative h-max rounded-2xl border-2 border-solid border-dark bg-light p-8'>
                             <div className='absolute top-0 -right-3 -z-10 w-[102%] h-[103%] rounded-2xl bg-dark' />
-                            <Image src={profilePic} alt={config.pages.about.meta.profilePicAlt} className='w-full h-auto rounded-2xl' />
+                            <Image src={profilePic} alt={aboutPageConfig.meta.profilePicAlt} className='w-full h-auto rounded-2xl' />
                         </div>
                         <div className='col-span-2 flex flex-col items-end justify-between'>
                             <div className='flex flex-col items-end justify-center text-right'>
                                 <span className='inline-block text-7xl font-bold'>
-                                    <AnimatedNumbers value={config.pages.about.satisfiedClients} />+
+                                    <AnimatedNumbers value={aboutPageConfig.satisfiedClients} />+
                                 </span>
                                 <h2 className='text-xl font-medium capitalize text-dark/75'>satisfied clients</h2>
                             </div>
                             <div className='flex flex-col items-end justify-center text-right'>
                                 <span className='inline-block text-7xl font-bold'>
-                                    <AnimatedNumbers value={config.pages.about.projectsCompleted} />+
+                                    <AnimatedNumbers value={aboutPageConfig.projectsCompleted} />+
                                 </span>
                                 <h2 className='text-xl font-medium capitalize text-dark/75'>projects completed</h2>
                             </div>
                             <div className='flex flex-col items-end justify-center text-right'>
                                 <span className='inline-block text-7xl font-bold'>
-                                    <AnimatedNumbers value={config.pages.about.yearsOfExperience} />+
+                                    <AnimatedNumbers value={aboutPageConfig.yearsOfExperience} />+
                                 </span>
                                 <h2 className='text-xl font-medium capitalize text-dark/75'>years of experience</h2>
                             </div>

@@ -4,6 +4,7 @@ import { CustomLink } from './CustomLink';
 import { BehanceIcon, LinkArrow, LinkedInIcon, PinterestIcon } from './Icons';
 import { motion } from "framer-motion"
 import config from 'config.js'
+import { contacts as contactsConfig } from '../../data-config/contacts.js';
 
 const NavBar = () => {
   return (
@@ -14,33 +15,33 @@ const NavBar = () => {
         <CustomLink href="/projects" title="Projects" className='ml-4' />
       </nav>
       <nav className='flex items-center justify-center flex-wrap text-3xl'>
-        {config.contacts.linkedInProfile && (
+        {contactsConfig.linkedInProfile && (
           <motion.a
-            href={config.contacts.linkedInProfile} target={"_blank"}
+            href={contactsConfig.linkedInProfile} target={"_blank"}
             whileHover={{ y: -3 }}
             whileTap={{ scale: 0.9 }}
             className='w-7 mx-2'>
             <LinkedInIcon />
           </motion.a>
         )}
-        {config.contacts.pinterestProfile && (
-          <motion.a href={config.contacts.pinterestProfile} target={"_blank"}
+        {contactsConfig.pinterestProfile && (
+          <motion.a href={contactsConfig.pinterestProfile} target={"_blank"}
             whileHover={{ y: -3 }}
             whileTap={{ scale: 0.9 }}
             className='w-7 mx-2'>
             <PinterestIcon />
           </motion.a>
         )}
-        {config.contacts.behanceProfile && (
-          <motion.a href={config.contacts.behanceProfile} target={"_blank"}
+        {contactsConfig.behanceProfile && (
+          <motion.a href={contactsConfig.behanceProfile} target={"_blank"}
             whileHover={{ y: -3 }}
             whileTap={{ scale: 0.9 }}
             className='w-7 mx-2'>
             <BehanceIcon />
           </motion.a>
         )}
-        {config.contacts.externalLink && (
-          <motion.a href={config.contacts.externalLink} target={"_blank"}
+        {contactsConfig.externalLink && (
+          <motion.a href={contactsConfig.externalLink} target={"_blank"}
             whileHover={{ y: -3 }}
             whileTap={{ scale: 0.9 }}
             className='w-7 mx-2'>

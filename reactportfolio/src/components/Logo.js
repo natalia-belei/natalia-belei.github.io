@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import React from 'react'
 import { motion } from "framer-motion"
-import config from 'config.js'
+import { contacts as contactsConfig } from '/data-config/contacts.js'
 
 const MotionLink = motion(Link)
 
@@ -21,7 +21,7 @@ const Logo = () => {
         }}
         initial={{ backgroundColor: "rgb(0, 0, 0)" }}
         exit={{ backgroundColor: "rgb(0, 0, 0)" }}
-        href="/">{config.contacts.ownerInitials}
+        href="/">{contactsConfig.ownerInitials}
       </MotionLink>
     </div>
   )

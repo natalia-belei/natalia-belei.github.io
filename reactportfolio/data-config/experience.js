@@ -1,0 +1,47 @@
+export const experienceData = [
+    {
+        id: 5,
+        position: "UI/UX Designer",
+        duration: "Oct 2023 - Present",
+        company: "Company 5",
+        companyLink: "https://google.com",
+        address: "Los Angeles, CA",
+        description: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus."
+    },
+    {
+        id: 4,
+        position: "UI/UX Designer",
+        duration: "Feb 2023 - Oct 2023",
+        company: "Company 4",
+        companyLink: "https://google.com",
+        address: "Los Angeles, CA",
+        description: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.",
+    },
+    {
+        id: 3,
+        position: "UI/UX Designer",
+        duration: "May 2022 - Feb 2023",
+        company: "Company 3",
+        companyLink: "https://google.com",
+        address: "New York, NY",
+        description: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.",
+    },
+    {
+        id: 2,
+        position: "UI/UX Designer",
+        duration: "Apr 2021 - May 2022",
+        company: "Company 2",
+        companyLink: "https://google.com",
+        address: "San Francisco, CA",
+        description: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.",
+    },
+    {
+        id: 1,
+        position: "UI/UX Designer",
+        duration: "Jan 2020 - Apr 2021",
+        company: "Company 1",
+        companyLink: "https://google.com",
+        address: "San Francisco, CA",
+        description: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.",
+    },
+];

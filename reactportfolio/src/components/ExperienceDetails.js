@@ -1,8 +1,9 @@
 import React, { useRef } from 'react';
 import LiIcon from './LiIcon';
-import { motion } from 'framer-motion'
+import { motion } from 'framer-motion';
+import PropTypes from 'prop-types';
 
-export const ExperienceDetails = ({ position, company, companyLink, time, address, description }) => {
+export const ExperienceDetails = ({ position, duration, company, companyLink, address, description }) => {
     const ref = useRef(null);
 
     return (
@@ -19,7 +20,7 @@ export const ExperienceDetails = ({ position, company, companyLink, time, addres
                 >@{company}</a></h3>
 
                 <span className='capitalize font-medium text-dark/75'>
-                    {time} | {address}
+                    {duration} | {address}
                 </span>
                 <p className='font-medium w-full'>
                     {description}
@@ -27,4 +28,13 @@ export const ExperienceDetails = ({ position, company, companyLink, time, addres
             </motion.div>
         </li>
     );
+};
+
+ExperienceDetails.propTypes = {
+    position: PropTypes.string.isRequired,
+    duration: PropTypes.string.isRequired,
+    company: PropTypes.string.isRequired,
+    companyLink: PropTypes.string.isRequired,
+    address: PropTypes.string.isRequired,
+    description: PropTypes.string.isRequired,
 };

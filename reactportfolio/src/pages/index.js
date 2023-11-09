@@ -26,7 +26,7 @@ export default function Home() {
               <h1></h1>
               <AnimatedText text={homePageConfig.mainTitle} className='!text-left !text-6xl' />
               <p className='my-4 text-base font-medium'>
-                As an accomplished UI/UX designer, I am committed to transforming concepts into captivating web experiences. Dive into my recent projects and articles, highlighting my proficiency in creating engaging user interfaces and user experiences
+                {homePageConfig.summary}
               </p>
               <div className='flex items-center self-start mt-2'>
                 <Link href={contactsConfig.resumePath} target='blank'

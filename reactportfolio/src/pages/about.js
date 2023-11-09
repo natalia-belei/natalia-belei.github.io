@@ -19,7 +19,7 @@ const about = () => {
             </Head>
             <main className='flex w-full flex-col items-center justify-center'>
                 <Layout className='pt-16'>
-                    <AnimatedText text={aboutPageConfig.mainTitle} className='mb-16' />
+                    <AnimatedText text={aboutPageConfig.mainTitle} className='mb-10' />
                     <div className='grid w-full grid-cols-8 gap-16'>
                         <div className='col-span-3 flex flex-col items-start justify-start'>
                             <h2 className='mb-4 text-lg font-bold uppercase text-dark/75'>Summary</h2>

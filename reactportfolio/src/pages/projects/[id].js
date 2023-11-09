@@ -5,7 +5,7 @@ import { projectsData } from '../../../data-config/projects.js';
 import { contactsConfig } from '../../../data-config/contacts.js';
 import AnimatedText from '@/components/AnimatedText';
 import Image from 'next/image';
-import ParagraphList from '@/components/ParagraphList';
+import ContentRenderer from '@/components/ContentRenderer';
 import { motion, useTransform, useScroll } from 'framer-motion';
 
 export default function Project() {
@@ -26,19 +26,19 @@ export default function Project() {
             <>
                 <Head>
                     <title>{`${contactsConfig.ownerFullName} | ${project.title}`}</title>
-                    <meta name="description" content={`${(project.shortDescription || project.fullDescription.join(' ')).substring(0, 160)}`} />
+                    <meta name="description" content={`${(project.shortDescription).substring(0, 160)}`} />
                 </Head>
                 <main className='w-full flex items-center justify-center'>
                     <Layout className="pt-16">
                         <article className='w-full flex flex-col items-center justify-center'>
-                            <AnimatedText text={project.title} className='mb-16' />
+                            <AnimatedText text={project.title} className='mb-10' />
 
-                            <motion.div className="relative w-full h-auto pb-[35%]" style={{ scale }}>
+                            <motion.div className="relative w-full h-auto pb-[35%] mb-4" style={{ scale }}>
                                 <Image src={project.image} alt={project.title} fill="responsive"
                                     style={{ objectFit: 'cover', boxShadow: '0px 4px 10px rgba(0, 0, 0, 0.65)' }} />
                             </motion.div>
 
-                            <ParagraphList paragraphs={project.fullDescription} />
+                            <ContentRenderer contentArr={project.detailsPage} />
                         </article>
                     </Layout>
                 </main>

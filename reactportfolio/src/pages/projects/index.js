@@ -14,7 +14,7 @@ const index = () => {
             </Head>
             <main className='w-full mb-16 flex flex-col items-center justify-center'>
                 <Layout className="pt-16">
-                    <AnimatedText text={projectsPageConfig.mainTitle} className='mb-16' />
+                    <AnimatedText text={projectsPageConfig.mainTitle} className='mb-10' />
 
                     <div className='grid grids-cols-12 gap-24'>
                         {projectsData.map((project, index) =>

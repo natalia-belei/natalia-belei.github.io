@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from "framer-motion";
+import PropTypes from 'prop-types';
 
 export const Skill = ({ name, x, y }) => {
     return (
@@ -13,4 +14,10 @@ export const Skill = ({ name, x, y }) => {
             {name}
         </motion.div>
     );
+};
+
+Skill.propTypes = {
+    name: PropTypes.string.isRequired,
+    x: PropTypes.string.isRequired,
+    y: PropTypes.string.isRequired,
 };

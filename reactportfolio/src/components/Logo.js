@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import React from 'react'
 import { motion } from "framer-motion"
-import { contacts as contactsConfig } from '/data-config/contacts.js'
+import { contactsConfig } from '/data-config/contacts.js'
 
 const MotionLink = motion(Link)
 

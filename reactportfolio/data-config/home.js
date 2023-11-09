@@ -1,6 +1,6 @@
-import { contacts as contactsConfig } from "./contacts.js";
+import { contactsConfig } from "./contacts.js";
 
-export const home = {
+export const homePageConfig = {
     mainTitle: "Transforming Vision Into Reality Through Design",
     meta: {
         title: `${contactsConfig.ownerFullName} | Portfolio`,

@@ -1,4 +1,4 @@
-export const contacts = {
+export const contactsConfig = {
     ownerFullName: "Natalia Belei",
     ownerInitials: "NB",
     ownerEmail: "mailto:beley.natalija@gmail.com",

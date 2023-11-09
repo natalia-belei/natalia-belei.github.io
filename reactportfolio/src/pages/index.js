@@ -6,8 +6,8 @@ import AnimatedText from '@/components/AnimatedText'
 import Link from 'next/link'
 import { LinkArrow } from '@/components/Icons'
 import HireMe from '@/components/HireMe'
-import { contacts as contactsConfig } from '../../data-config/contacts.js'
-import { home as homePageConfig } from '../../data-config/home.js'
+import { contactsConfig } from '../../data-config/contacts.js'
+import { homePageConfig } from '../../data-config/home.js'
 
 export default function Home() {
   return (

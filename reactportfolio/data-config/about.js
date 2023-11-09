@@ -1,6 +1,6 @@
-import { contacts as contactsConfig } from "./contacts.js";
+import { contactsConfig } from "./contacts.js";
 
-export const about = {
+export const aboutPageConfig = {
     mainTitle: "Igniting Passion with Purpose!",
     satisfiedClients: 50,
     projectsCompleted: 25,

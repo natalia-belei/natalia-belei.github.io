@@ -1,7 +1,7 @@
 import React from 'react'
 import { CircularText } from './Icons'
 import Link from 'next/link'
-import { contacts as contactsConfig } from '/data-config/contacts.js'
+import { contactsConfig } from '/data-config/contacts.js'
 
 const HireMe = () => {
     return (

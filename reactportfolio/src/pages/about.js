@@ -7,8 +7,8 @@ import profilePic from "../../public/images/profile/profile-pic-2.png"
 import AnimatedNumbers from '@/components/AnimatedNumbers'
 import Skills from '@/components/Skills'
 import Experience from '@/components/Experience'
-import { contacts as contactsConfig } from '../../data-config/contacts.js'
-import { about as aboutPageConfig } from '../../data-config/about.js'
+import { contactsConfig } from '../../data-config/contacts.js'
+import { aboutPageConfig } from '../../data-config/about.js'
 
 const about = () => {
     return (

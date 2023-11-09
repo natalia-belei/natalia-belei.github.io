@@ -4,7 +4,7 @@ import { CustomLink } from './CustomLink';
 import { BehanceIcon, LinkArrow, LinkedInIcon, PinterestIcon } from './Icons';
 import { motion } from "framer-motion"
 import config from 'config.js'
-import { contacts as contactsConfig } from '../../data-config/contacts.js';
+import { contactsConfig } from '../../data-config/contacts.js';
 
 const NavBar = () => {
   return (

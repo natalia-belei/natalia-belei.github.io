@@ -1,14 +1,25 @@
-import React from 'react'
-import Head from 'next/head'
-import Layout from '@/components/Layout'
-import AnimatedText from '@/components/AnimatedText'
-import Image from 'next/image'
-import profilePic from "../../public/images/profile/profile-pic-2.png"
-import AnimatedNumbers from '@/components/AnimatedNumbers'
-import Skills from '@/components/Skills'
-import Experience from '@/components/Experience'
-import { contactsConfig } from '../../data-config/contacts.js'
-import { aboutPageConfig } from '../../data-config/about.js'
+import React from 'react';
+import Head from 'next/head';
+import Layout from '@/components/Layout';
+import AnimatedText from '@/components/AnimatedText';
+import Image from 'next/image';
+import profilePic from "../../public/images/profile/profile-pic-2.png";
+import AnimatedNumbers from '@/components/AnimatedNumbers';
+import Skills from '@/components/Skills';
+import Experience from '@/components/Experience';
+import { aboutPageConfig } from '../../data-config/about.js';
+import ReactMarkdown from 'react-markdown';
+
+const renderSummary = () => {
+    return aboutPageConfig.summary.map((paragraph, index, array) => {
+        const isEdgeParagraph = index === 0 || index === array.length - 1;
+        return (
+            <ReactMarkdown key={index} className={`font-medium ${isEdgeParagraph ? '' : 'my-3'}`}>
+                {paragraph}
+            </ReactMarkdown>
+        );
+    });
+};
 
 const about = () => {
     return (
@@ -20,18 +31,11 @@ const about = () => {
             <main className='flex w-full flex-col items-center justify-center'>
                 <Layout className='pt-16'>
                     <AnimatedText text={aboutPageConfig.mainTitle} className='mb-10' />
+
                     <div className='grid w-full grid-cols-8 gap-16'>
                         <div className='col-span-3 flex flex-col items-start justify-start'>
                             <h2 className='mb-4 text-lg font-bold uppercase text-dark/75'>Summary</h2>
-                            <p className='font-medium'>
-                                Hello, I&apos;m <span className='font-semibold'>{contactsConfig.ownerFullName}</span>, UI/UX designer driven by my passion to craft stunning, functional, and user-centric digital experiences. With a rich 3-year journey in this domain, I&apos;m continually exploring fresh and innovative approaches to transform my clients&apos; visions into reality.
-                            </p>
-                            <p className='my-4 font-medium'>
-                                I firmly believe that design transcends mere aesthetics; it&apos;s a tool for problem-solving and creating intuitive, delightful user interactions.
-                            </p>
-                            <p className='font-medium'>
-                                I bring unwavering dedication to design excellence and user-focused principles to every project I undertake. I eagerly anticipate the opportunity to channel my expertise and enthusiasm into your forthcoming venture.
-                            </p>
+                            {renderSummary()}
                         </div>
                         <div className='col-span-3 relative h-max rounded-2xl border-2 border-solid border-dark bg-light p-8'>
                             <div className='absolute top-0 -right-3 -z-10 w-[102%] h-[103%] rounded-2xl bg-dark' />
@@ -67,4 +71,4 @@ const about = () => {
     )
 }
 
-export default about
+export default about;

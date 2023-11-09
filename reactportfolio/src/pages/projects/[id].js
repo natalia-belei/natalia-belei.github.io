@@ -12,16 +12,16 @@ export default function Project() {
     const router = useRouter();
     const { id } = router.query;
 
+    const { scrollYProgress } = useScroll();
+    const scale = useTransform(scrollYProgress, [0, 1], [1, 0.8]);
+
     if (router.isFallback) {
         return <div>Loading...</div>;
     }
 
-    const project = projectsData.find((p) => p.id === Number(id));
+    const project = projectsData.find((p) => p.isShown && p.id === Number(id));
 
     if (project) {
-        const { scrollYProgress } = useScroll();
-        const scale = useTransform(scrollYProgress, [0, 1], [1, 0.8]);
-
         return (
             <>
                 <Head>

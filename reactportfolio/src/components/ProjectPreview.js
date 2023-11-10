@@ -1,6 +1,9 @@
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import { motion } from 'framer-motion';
+
+const FramerImage = motion(Image);
 
 export const ProjectPreview = ({ type, title, description, img, link, calculateBlockShadowClass }) => {
     return (
@@ -9,7 +12,10 @@ export const ProjectPreview = ({ type, title, description, img, link, calculateB
 
             <Link href={link} className='w-1/2 cursor-pointer overflow-hidden rounded-lg relative'>
                 <div className="w-full h-0 pb-[100%] relative">
-                    <Image src={img} alt={title} fill="responsive" style={{ objectFit: 'cover' }} />
+                    <FramerImage src={img} alt={title} fill="responsive" style={{ objectFit: 'contain' }}
+                        whileHover={{ scale: 1.05 }}
+                        transition={{ duration: 0.2 }}
+                    />
                 </div>
             </Link>
 

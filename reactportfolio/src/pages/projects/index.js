@@ -3,7 +3,7 @@ import React from 'react'
 import AnimatedText from '@/components/AnimatedText'
 import Layout from '@/components/Layout'
 import { projectsPageConfig, projectsData, PREVIEW_BLOCK_SIZE } from '../../../data-config/projects.js'
-import { ProjectBlock } from '../../components/ProjectBlock'
+import { ProjectPreview } from '../../components/ProjectPreview.js'
 
 const index = () => {
     return (
@@ -19,7 +19,7 @@ const index = () => {
                     <div className='grid grids-cols-12 gap-24'>
                         {projectsData.map((project, index) =>
                             <div key={index} className={`${calculateBlockSizeClass(project.previewBlockSize)} relative`}>
-                                <ProjectBlock
+                                <ProjectPreview
                                     title={project.title}
                                     description={project.shortDescription}
                                     img={project.image}

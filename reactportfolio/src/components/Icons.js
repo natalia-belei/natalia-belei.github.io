@@ -38,7 +38,7 @@ export const PinterestIcon = ({ className, ...rest }) => (
     </svg>
 );
 
-export const BehanceIcon = (className, ...rest) => (
+export const BehanceIcon = ({ className, ...rest }) => (
     <svg
         xmlns="http://www.w3.org/2000/svg"
         width="1em"

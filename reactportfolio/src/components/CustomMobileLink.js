@@ -1,7 +1,6 @@
 import React from 'react';
 import { useRouter } from 'next/router';
 import PropTypes from 'prop-types';
-import { CustomMobileLink } from './CustomMobileLink';
 
 export const CustomMobileLink = ({ href, title, className = "", toggle }) => {
     const router = useRouter();

@@ -35,7 +35,10 @@ export default function Project() {
 
                             <motion.div className="relative w-full h-auto pb-[35%] mb-4" style={{ scale }}>
                                 <Image src={project.image} alt={project.title} fill="responsive"
-                                    style={{ objectFit: 'cover', boxShadow: '0px 4px 10px rgba(0, 0, 0, 0.65)' }} />
+                                    style={{ objectFit: 'cover', boxShadow: '0px 4px 10px rgba(0, 0, 0, 0.65)' }}
+                                    priority={true}
+                                    sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 50vw'
+                                />
                             </motion.div>
 
                             <ContentRenderer contentArr={project.detailsPage} />

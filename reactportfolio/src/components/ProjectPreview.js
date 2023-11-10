@@ -15,6 +15,8 @@ export const ProjectPreview = ({ type, title, description, img, link, calculateB
                     <FramerImage src={img} alt={title} fill="responsive" style={{ objectFit: 'contain' }}
                         whileHover={{ scale: 1.05 }}
                         transition={{ duration: 0.2 }}
+                        priority={true}
+                        sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 50vw'
                     />
                 </div>
             </Link>

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Logo from './Logo';
 import { CustomLink } from './CustomLink';
 import { BehanceIcon, LinkArrow, LinkedInIcon, PinterestIcon } from './Icons';
@@ -7,8 +7,27 @@ import config from 'config.js'
 import { contactsConfig } from '../../data-config/contacts.js';
 
 const NavBar = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const handleClick = () => {
+    setIsOpen(!isOpen);
+  };
+
   return (
     <header className='w-full px-32 py-8 font-medium flex items-center justify-between'>
+      <button className='hidden lg:flex flex-col justify-center items-center' onClick={handleClick}>
+        <span className={`bg-dark dark:bg-light block h-0.5 w-6 rounded-sm
+          transition-all duration-300 ease-out
+          -translate-y-0.5 ${isOpen ? 'rotate-45 translate-y-1' : '-translate-y-0.5'}`}>
+        </span>
+        <span className={`bg-dark dark:bg-light block h-0.5 w-6 rounded-sm my-0.5
+          transition-all duration-300 ease-out
+          ${isOpen ? 'opacity-0' : 'opacity-100'}`}></span>
+        <span className={`bg-dark dark:bg-light block h-0.5 w-6 rounded-sm
+          transition-all duration-300 ease-out
+          translate-y-0.5 ${isOpen ? '-rotate-45 -translate-y-1' : 'translate-y-0.5'}`}>
+        </span>
+      </button>
       <nav>
         <CustomLink href="/" title="Home" className='mr-4' />
         <CustomLink href="/about" title="About" className='mx-4' />

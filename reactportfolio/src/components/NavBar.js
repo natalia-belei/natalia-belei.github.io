@@ -86,7 +86,7 @@ const NavBar = () => {
           <CustomMobileLink href="/projects" title="Projects" className='' toggle={handleClick} />
         </nav>
 
-        <nav className='flex items-center justify-center flex-wrap text-3xl mt-2'>
+        <nav className='flex items-center justify-center flex-wrap text-3xl mt-6'>
           {contactsConfig.linkedInProfile && (
             <motion.a
               href={contactsConfig.linkedInProfile} target={"_blank"}

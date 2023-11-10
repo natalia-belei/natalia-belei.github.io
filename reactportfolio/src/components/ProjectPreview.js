@@ -2,7 +2,7 @@ import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 
-export const ProjectBlock = ({ type, title, description, img, link, calculateBlockShadowClass }) => {
+export const ProjectPreview = ({ type, title, description, img, link, calculateBlockShadowClass }) => {
     return (
         <article className={`relative w-full flex items-start justify-between rounded-br-2xl rounded-3xl
            border border-solid border-dark bg-light p-12`} style={{ boxShadow: calculateBlockShadowClass }}>

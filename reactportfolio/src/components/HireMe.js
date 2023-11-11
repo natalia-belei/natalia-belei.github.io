@@ -6,7 +6,7 @@ import config from '../../config';
 
 const HireMe = () => {
     return (
-        <div className={`fixed left-4 bottom-4 flex items-center justify-center overflow-hidden
+        <div className={`fixed left-4 bottom-4 flex items-center justify-center overflow-hidden z-20
             md:absolute md:right-6 md:left-auto ${config.isUnderConstruction ? 'md:top-[52px]' : 'md:top-0'} md:bottom-auto
             sm:right-2 ${config.isUnderConstruction ? 'sm:top-[82px]' : 'sm:top-0'}`}>
             <div className='w-48 h-auto flex items-center justify-center relative

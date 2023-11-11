@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import Logo from './Logo';
 import { CustomLink } from './CustomLink';
 import { BehanceIcon, LinkArrow, LinkedInIcon, PinterestIcon } from './Icons';
-import { motion } from "framer-motion"
-import config from 'config.js'
+import { motion } from "framer-motion";
+import config from 'config.js';
 import { contactsConfig } from '../../data-config/contacts.js';
 import { CustomMobileLink } from './CustomMobileLink';
 
@@ -15,7 +15,8 @@ const NavBar = () => {
   };
 
   return (
-    <header className='w-full px-32 py-8 font-medium flex items-center justify-between relative'>
+    <header className='w-full px-32 py-8 font-medium flex items-center justify-between relative z-10
+      lg:px-16 md:px-12 sm:px-8'>
       {/* TODO: fix button shape */}
       <button className='hidden lg:flex flex-col justify-center items-center' onClick={handleClick}>
         <span className={`bg-dark dark:bg-light block h-0.5 w-6 rounded-sm
@@ -123,8 +124,8 @@ const NavBar = () => {
         </nav>
       </motion.div>}
 
-      <div className={`absolute left-[50%] 
-        ${config.isUnderConstruction ? 'top-15' : 'top-2'} translate-x-[-50%]`}>
+      <div className={`absolute left-[50%] translate-x-[-50%]
+        ${config.isUnderConstruction ? 'top-15' : 'top-2'}`}>
         <Logo />
       </div>
     </header>

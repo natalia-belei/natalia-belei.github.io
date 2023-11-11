@@ -7,6 +7,6 @@ export const homePageConfig = {
         profilePicAlt: contactsConfig.ownerFullName,
     },
 
-    mainTitle: "Transforming Vision Into Reality Through Design",
-    summary: "With a design journey spanning three impactful years, I've navigated the dynamic realms of both agency and freelance work. From collaborating within a creative agency to carving my path as a freelancer, my passion for UI/UX design has been the guiding force. This journey is complemented by a foundation in graphic design, weaving a narrative of creativity and adaptability. Join me on this visual expedition, where every project is a testament to experience, innovation, and a love for crafting meaningful digital interactions.",
+    mainTitle: "Where Vision Meets Interaction: Designing Experiences Beyond Boundaries.",
+    summary: "In a world driven by user-centric design, I specialize in transforming visions into seamless digital realities. Explore a portfolio where every pixel tells a story, and every interaction invites engagement.",
 }

@@ -11,11 +11,11 @@ export const aboutPageConfig = {
     profilePicture: "/images/profile/profile-pic-2.png",
     summary: [
         // Use markdown syntax for formatting, e.g. **bold text**, *italic text*, etc., see https://www.markdownguide.org/basic-syntax/
-        "Hello, I'm **Natalia Belei**, UI/UX designer driven by my passion to craft stunning, functional, and user-centric digital experiences. With a rich 3-year journey in this domain, I&apos;m continually exploring fresh and innovative approaches to transform my clients&apos; visions into reality.",
-        "I firmly believe that design transcends mere aesthetics; it&apos;s a tool for problem-solving and creating intuitive, delightful user interactions.",
-        "I bring unwavering dedication to design excellence and user-focused principles to every project I undertake. I eagerly anticipate the opportunity to channel my expertise and enthusiasm into your forthcoming venture.",
+        "Hello, I'm **Natalia Belei**, UI/UX designerMarketing Designer.",
+        "With a design journey spanning three impactful years, I've navigated the dynamic realms of both agency and freelance work. From collaborating within a creative agency to carving my path as a freelancer, my passion for UI/UX design has been the guiding force.",
+        "This journey is complemented by a foundation in graphic design, weaving a narrative of creativity and adaptability. Join me on this visual expedition, where every project is a testament to experience, innovation, and a love for crafting meaningful digital interactions.",
     ],
-    satisfiedClients: 50,
-    projectsCompleted: 25,
+    satisfiedClients: 30,
+    projectsCompleted: 15,
     yearsOfExperience: 3,
 }

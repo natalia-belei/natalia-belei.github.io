@@ -60,5 +60,4 @@ TimelineItem.propTypes = {
     description: PropTypes.string,
     subtitle1Link: PropTypes.string.isRequired,
     externalLink: PropTypes.string,
-    duration: PropTypes.string.isRequired,
 };

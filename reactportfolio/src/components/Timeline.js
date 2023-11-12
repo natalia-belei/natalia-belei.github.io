@@ -24,7 +24,7 @@ const Timeline = ({ data, title }) => {
                 <ul className='w-full flex-col items-start justify-between ml-4 xs:ml-2'>
                     {data.map((item) =>
                         <TimelineItem
-                            key={item.id}
+                            key={item.key}
                             title={item.title}
                             subtitle1={item.subtitle1}
                             subtitle2={item.subtitle2}

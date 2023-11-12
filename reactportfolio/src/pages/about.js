@@ -105,16 +105,18 @@ const about = () => {
 
     function mapExperienceToTimelineItems(experienceArray) {
         return experienceArray.map(item => ({
+            key: `exp-${item.id}`,
             title: item.position,
             subtitle1: item.company,
             subtitle2: `${item.duration} ${item.address && `| ${item.address}`}`,
-            link: item.companyLink,
+            subtitle1Link: item.companyLink,
             description: item.description,
         }));
     }
 
     function mapCertificationsToTimelineItems(certificationsArray) {
         return certificationsArray.map(item => ({
+            key: `cert-${item.id}`,
             title: item.title,
             subtitle1: item.issuer,
             subtitle2: `${item.issueDate && `Issued: ${item.issueDate}`}`,

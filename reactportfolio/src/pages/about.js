@@ -30,7 +30,7 @@ const about = () => {
                 <meta name="description" content={aboutPageConfig.meta.description} />
             </Head>
             <main className='flex w-full flex-col items-center justify-center'>
-                <Layout className='pt-16'>
+                <Layout className='pt-16 sm:pt-8'>
                     <AnimatedText text={aboutPageConfig.mainTitle} className='mb-16 md:mb-8 sm:mb-6' />
 
                     <div className='grid w-full grid-cols-8 gap-16 sm:gap-8'>

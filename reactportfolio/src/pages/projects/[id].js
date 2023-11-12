@@ -13,7 +13,7 @@ export default function Project() {
     const { id } = router.query;
 
     const { scrollYProgress } = useScroll();
-    const scale = useTransform(scrollYProgress, [0, 1], [1, 0.8]);
+    const scale = useTransform(scrollYProgress, [0, 1], [1, 0.4]);
 
     if (router.isFallback) {
         return <div>Loading...</div>;
@@ -29,19 +29,21 @@ export default function Project() {
                     <meta name="description" content={`${(project.shortDescription).substring(0, 160)}`} />
                 </Head>
                 <main className='w-full flex items-center justify-center'>
-                    <Layout className="pt-16">
-                        <article className='w-full flex flex-col items-center justify-center'>
-                            <AnimatedText text={project.title} className='mb-10' />
+                    <Layout className="pt-16 sm:pt-8">
+                        <article className='w-full flex flex-col items-center justify-center md:items-start'>
+                            <AnimatedText text={project.title} className='mb-16 md:mb-8 sm:mb-6 md:text-lg lg:text-xl' />
 
-                            <motion.div className="relative w-full h-auto pb-[35%] mb-4" style={{ scale }}>
+                            <motion.div className="relative w-full h-auto pb-[35%] mb-8
+                                md:pb-[45%] md:mb-6 sm:mb-4 xs:mb-3" style={{ scale }}>
                                 <Image src={project.image} alt={project.title} fill="responsive"
                                     style={{ objectFit: 'cover', boxShadow: '0px 4px 10px rgba(0, 0, 0, 0.65)' }}
                                     priority={true}
                                     sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 50vw'
                                 />
                             </motion.div>
-
-                            <ContentRenderer contentArr={project.detailsPage} />
+                            {project.detailsPage.map((item, index) => (
+                                <ContentRenderer key={index} data={item} />
+                            ))}
                         </article>
                     </Layout>
                 </main>

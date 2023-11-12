@@ -3,11 +3,11 @@ import LiIcon from './LiIcon';
 import { motion } from 'framer-motion';
 import PropTypes from 'prop-types';
 
-export const ExperienceDetails = ({ position, duration, company, companyLink, address, description }) => {
+export const TimelineItem = ({ title, subtitle, link, duration, address, description }) => {
     const ref = useRef(null);
 
     return (
-        <li ref={ref} className='my-8 first:mt-0 last:mb-0 w-[80%] mx-auto flex flex-col items-center justify-between'>
+        <li ref={ref} className='my-8 first:mt-0 last:mb-0 w-[80%] mx-auto flex flex-col items-start justify-between'>
             <LiIcon reference={ref} />
             <motion.div
                 initial={{ y: 50 }}
@@ -16,29 +16,26 @@ export const ExperienceDetails = ({ position, duration, company, companyLink, ad
             >
                 <h3 className='capitalize font-bold text-2xl
                     sm:text-xl xs:text-lg'>
-                    {position}&nbsp;<a href={companyLink}
+                    {title}&nbsp;<a href={link}
                         target="_blank"
                         className='text-primary capitalize inline-block'
-                    >@{company}</a></h3>
+                    >@{subtitle}</a></h3>
 
                 <span className='capitalize font-medium text-dark/75
                     xs:text-sm'>
-                    {duration} | {address}
+                    {duration} {address && `| ${address}`}
                 </span>
-                <p className='font-medium w-full
-                    md:text-sm'>
-                    {description}
-                </p>
+                {description && <p className='font-medium w-full md:text-sm'>{description}</p>}
             </motion.div>
         </li>
     );
 };
 
-ExperienceDetails.propTypes = {
-    position: PropTypes.string.isRequired,
+TimelineItem.propTypes = {
+    title: PropTypes.string.isRequired,
+    subtitle: PropTypes.string.isRequired,
+    link: PropTypes.string.isRequired,
     duration: PropTypes.string.isRequired,
-    company: PropTypes.string.isRequired,
-    companyLink: PropTypes.string.isRequired,
-    address: PropTypes.string.isRequired,
-    description: PropTypes.string.isRequired,
+    address: PropTypes.string,
+    description: PropTypes.string,
 };

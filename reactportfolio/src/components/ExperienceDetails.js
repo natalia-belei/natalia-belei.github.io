@@ -18,7 +18,7 @@ export const ExperienceDetails = ({ position, duration, company, companyLink, ad
                     sm:text-xl xs:text-lg'>
                     {position}&nbsp;<a href={companyLink}
                         target="_blank"
-                        className='text-primary capitalize'
+                        className='text-primary capitalize inline-block'
                     >@{company}</a></h3>
 
                 <span className='capitalize font-medium text-dark/75

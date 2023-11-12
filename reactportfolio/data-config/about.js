@@ -21,4 +21,5 @@ export const aboutPageConfig = {
     yearsOfExperience: 3,
 
     experienceSectionTitle: "Experience",
+    certificationsSectionTitle: "Licenses & Certifications",
 }

@@ -3,7 +3,7 @@ import LiIcon from './LiIcon';
 import { motion } from 'framer-motion';
 import PropTypes from 'prop-types';
 
-export const TimelineItem = ({ title, subtitle, link, duration, address, description }) => {
+export const TimelineItem = ({ title, subtitle1, subtitle2, subtitle3, subtitle1Link, description, externalLink }) => {
     const ref = useRef(null);
 
     return (
@@ -16,16 +16,37 @@ export const TimelineItem = ({ title, subtitle, link, duration, address, descrip
             >
                 <h3 className='capitalize font-bold text-2xl
                     sm:text-xl xs:text-lg'>
-                    {title}&nbsp;<a href={link}
+                    {title}&nbsp;<a href={subtitle1Link}
                         target="_blank"
                         className='text-primary capitalize inline-block'
-                    >@{subtitle}</a></h3>
+                    >@{subtitle1}</a></h3>
 
-                <span className='capitalize font-medium text-dark/75
+                {(subtitle2 &&
+                    <span className='capitalize font-medium text-dark/75
                     xs:text-sm'>
-                    {duration} {address && `| ${address}`}
-                </span>
-                {description && <p className='font-medium w-full md:text-sm'>{description}</p>}
+                        {subtitle2}
+                    </span>)}
+                {(subtitle3 &&
+                    <>
+                        <br />
+                        <span className='capitalize font-medium text-dark/75
+                    xs:text-sm'>
+                            {subtitle3}
+                        </span>
+                    </>
+                )}
+                {(externalLink &&
+                    <>
+                        <br />
+                        <a href={externalLink} target="_blank" rel="noopener noreferrer"
+                            className='font-medium text-dark/75 xs:text-sm underline'>
+                            {externalLink}
+                        </a>
+                    </>
+                )}
+
+                {description &&
+                    <p className='font-medium w-full md:text-sm'>{description}</p>}
             </motion.div>
         </li>
     );
@@ -33,9 +54,11 @@ export const TimelineItem = ({ title, subtitle, link, duration, address, descrip
 
 TimelineItem.propTypes = {
     title: PropTypes.string.isRequired,
-    subtitle: PropTypes.string.isRequired,
-    link: PropTypes.string.isRequired,
-    duration: PropTypes.string.isRequired,
-    address: PropTypes.string,
+    subtitle1: PropTypes.string.isRequired,
+    subtitle2: PropTypes.string,
+    subtitle3: PropTypes.string,
     description: PropTypes.string,
+    subtitle1Link: PropTypes.string.isRequired,
+    externalLink: PropTypes.string,
+    duration: PropTypes.string.isRequired,
 };

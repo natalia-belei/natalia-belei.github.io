@@ -9,6 +9,7 @@ import Timeline from '@/components/Timeline.js';
 import { aboutPageConfig } from '../../data-config/about.js';
 import ReactMarkdown from 'react-markdown';
 import { experienceData } from '../../data-config/experience.js';
+import { certificationsData } from '../../data-config/certifications.js';
 
 const renderSummary = () => {
     return aboutPageConfig.summary.map((paragraph, index, array) => {
@@ -90,23 +91,37 @@ const about = () => {
 
                     <Skills />
                     <Timeline
-                        data={mapExperienceToTimelineItem(experienceData)}
+                        data={mapExperienceToTimelineItems(experienceData)}
                         title={aboutPageConfig.experienceSectionTitle}
+                    />
+                    <Timeline
+                        data={mapCertificationsToTimelineItems(certificationsData)}
+                        title={aboutPageConfig.certificationsSectionTitle}
                     />
                 </Layout>
             </main>
         </>
     )
 
-    function mapExperienceToTimelineItem(experienceArray) {
-        return experienceArray.map(experience => ({
-            id: experience.id,
-            title: experience.position,
-            duration: experience.duration,
-            subtitle: experience.company,
-            link: experience.companyLink,
-            address: experience.address,
-            description: experience.description,
+    function mapExperienceToTimelineItems(experienceArray) {
+        return experienceArray.map(item => ({
+            title: item.position,
+            subtitle1: item.company,
+            subtitle2: `${item.duration} ${item.address && `| ${item.address}`}`,
+            link: item.companyLink,
+            description: item.description,
+        }));
+    }
+
+    function mapCertificationsToTimelineItems(certificationsArray) {
+        return certificationsArray.map(item => ({
+            title: item.title,
+            subtitle1: item.issuer,
+            subtitle2: `${item.issueDate && `Issued: ${item.issueDate}`}`,
+            subtitle3: `${item.credentialID && `Credential ID: ${item.credentialID}`}`,
+            subtitle1Link: item.credentialURL,
+            description: item.description,
+            externalLink: item.credentialURL,
         }));
     }
 }

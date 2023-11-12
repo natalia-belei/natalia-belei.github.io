@@ -26,10 +26,11 @@ const Timeline = ({ data, title }) => {
                         <TimelineItem
                             key={item.id}
                             title={item.title}
-                            subtitle={item.subtitle}
-                            link={item.link}
-                            duration={item.duration}
-                            address={item.address}
+                            subtitle1={item.subtitle1}
+                            subtitle2={item.subtitle2}
+                            subtitle3={item.subtitle3}
+                            subtitle1Link={item.subtitle1Link}
+                            externalLink={item.externalLink}
                             description={item.description}
                         />
                     )}

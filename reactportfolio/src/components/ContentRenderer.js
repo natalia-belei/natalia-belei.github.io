@@ -48,7 +48,10 @@ const renderImage = (content, index, inView, ref) => (
 
 const ContentRenderer = ({ data }) => {
     const ref = useRef(null);
-    const inView = useInView(ref, { once: true });
+    const inView = useInView(ref, {
+        once: true,
+        margin: "0px 0px 250px 0px",
+    });
 
     switch (data.type) {
         case CONTENT_TYPE.paragraph:

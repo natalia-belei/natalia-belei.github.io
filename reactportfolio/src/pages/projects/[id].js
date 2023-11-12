@@ -30,7 +30,8 @@ export default function Project() {
                 </Head>
                 <main className='w-full flex items-center justify-center'>
                     <Layout className="pt-16 sm:pt-8">
-                        <article className='w-full flex flex-col items-center justify-center md:items-start'>
+                        <article className='w-full flex flex-col items-center justify-center md:items-start mb-24
+                            lg:mb-16 md:mb-8 sm:mb-6'>
                             <AnimatedText text={project.title} className='mb-16 md:mb-8 sm:mb-6 md:text-lg lg:text-xl' />
 
                             <motion.div className="relative w-full h-auto pb-[35%] mb-8
@@ -58,8 +59,10 @@ export default function Project() {
                 <meta name="description" content="Project not found" />
             </Head>
             <main className='w-full flex items-center justify-center'>
-                <Layout className="pt-16">
-                    <h1 className='font-medium text-3xl'>Project not found.</h1>
+                <Layout className="pt-16 sm:pt-8">
+                    <h1 className='font-medium text-3xl
+                        md:text-2xl sm:text-xl xs:text-lg'>
+                        Project not found.</h1>
                     <p>The project you are looking for does not exist.</p>
                 </Layout>
             </main>

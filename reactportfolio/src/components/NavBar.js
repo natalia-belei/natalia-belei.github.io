@@ -20,14 +20,14 @@ const NavBar = () => {
       <button className='hidden lg:flex flex-col justify-center items-center' onClick={handleClick}>
         <span className={`bg-dark dark:bg-light block h-0.5 w-6 rounded-sm
           transition-all duration-300 ease-out
-          -translate-y-0.5 ${isOpen ? 'rotate-45 translate-y-0.5' : '-translate-y-0.5'}`}>
+          ${isOpen ? 'rotate-45 translate-y-0.5' : '-translate-y-0.5'}`}>
         </span>
         <span className={`bg-dark dark:bg-light block h-0.5 w-6 rounded-sm my-0.5
           transition-all duration-300 ease-out
           ${isOpen ? 'opacity-0' : 'opacity-100'}`}></span>
         <span className={`bg-dark dark:bg-light block h-0.5 w-6 rounded-sm
           transition-all duration-300 ease-out
-          translate-y-0.5 ${isOpen ? '-rotate-45 -translate-y-1.5' : 'translate-y-0.5'}`}>
+          ${isOpen ? '-rotate-45 -translate-y-1.5' : 'translate-y-0.5'}`}>
         </span>
       </button>
 

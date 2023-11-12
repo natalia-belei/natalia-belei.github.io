@@ -13,7 +13,7 @@ export default function Project() {
     const { id } = router.query;
 
     const { scrollYProgress } = useScroll();
-    const scale = useTransform(scrollYProgress, [0, 1], [1, 0.4]);
+    const scale = useTransform(scrollYProgress, [0, 1], [1, 0.3]);
 
     if (router.isFallback) {
         return <div>Loading...</div>;

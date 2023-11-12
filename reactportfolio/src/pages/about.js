@@ -29,47 +29,60 @@ const about = () => {
             </Head>
             <main className='flex w-full flex-col items-center justify-center'>
                 <Layout className='pt-16'>
-                    <AnimatedText text={aboutPageConfig.mainTitle} className='mb-10' />
+                    <AnimatedText text={aboutPageConfig.mainTitle} className='mb-16 md:mb-8 sm:mb-6' />
 
-                    <div className='grid w-full grid-cols-8 gap-16'>
-                        <div className='col-span-3 flex flex-col items-start justify-start'>
+                    <div className='grid w-full grid-cols-8 gap-16 sm:gap-8'>
+                        <div className='col-span-3 flex flex-col items-start justify-start
+                            xl:col-span-4 md:col-span-8 md:order-2'>
                             <h2 className='mb-4 text-lg font-bold uppercase text-dark/75'>Summary</h2>
                             {renderSummary()}
                         </div>
 
-                        <div className='col-span-3 flex flex-col items-start justify-start'>
-                            <div className='w-full relative pt-[100%] rounded-2xl border-2 border-solid border-dark bg-light'
+                        <div className='col-span-3 flex flex-col items-start justify-start
+                            xl:col-span-4 md:col-span-8 md:order-1'>
+                            <div className='w-full relative pt-[120%] rounded-2xl border-2 border-solid border-dark bg-light'
                                 style={{ boxShadow: '0px 4px 10px rgba(0, 0, 0, 0.2), 0px 6px 20px rgba(0, 0, 0, 0.15), 0px 8px 30px rgba(0, 0, 0, 0.1)' }}>
                                 <Image
                                     src={aboutPageConfig.profilePicture}
                                     alt={aboutPageConfig.meta.profilePicAlt}
                                     fill="responsive"
-                                    style={{ objectFit: 'contain' }}
-                                    className='rounded-2xl p-6'
+                                    style={{ objectFit: 'cover' }}
+                                    className='rounded-2xl p-8 
+                                        lg:p-6 xs:p-4'
                                     priority={true}
                                     sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
                                 />
                             </div>
                         </div>
 
-                        <div className='col-span-2 flex flex-col items-end justify-between'>
-                            <div className='flex flex-col items-end justify-center text-right'>
-                                <span className='inline-block text-7xl font-bold'>
+                        <div className='col-span-2 flex flex-col items-end justify-between
+                            xl:col-span-8 xl:flex-row xl:items-center md:order-3'>
+                            <div className='flex flex-col items-end justify-center
+                                xl:items-center xl:text-center'>
+                                <span className='inline-block text-7xl font-bold
+                                    md:text-6xl sm:text-5xl xs:text-size-4xl'>
                                     <AnimatedNumbers value={aboutPageConfig.satisfiedClients} />+
                                 </span>
-                                <h2 className='text-xl font-medium capitalize text-dark/75'>satisfied clients</h2>
+                                <h2 className='text-xl font-medium capitalize text-dark/75
+                                    md:text-lg sm:text-base xs:text-sm'>satisfied clients</h2>
                             </div>
-                            <div className='flex flex-col items-end justify-center text-right'>
-                                <span className='inline-block text-7xl font-bold'>
+                            <div className='flex flex-col items-end justify-center
+                                xl:items-center xl:text-center'>
+                                <span className='inline-block text-7xl font-bold
+                                    md:text-6xl sm:text-5xl xs:text-size-4xl'>
                                     <AnimatedNumbers value={aboutPageConfig.projectsCompleted} />+
                                 </span>
-                                <h2 className='text-xl font-medium capitalize text-dark/75'>projects completed</h2>
+                                <h2 className='text-xl font-medium capitalize text-dark/75
+                                    md:text-lg sm:text-base xs:text-sm'>projects completed</h2>
                             </div>
-                            <div className='flex flex-col items-end justify-center text-right'>
-                                <span className='inline-block text-7xl font-bold'>
+                            <div className='flex flex-col items-end justify-center
+                                xl:items-center xl:text-center'>
+                                <span className='inline-block text-7xl font-bold
+                                    md:text-6xl sm:text-5xl xs:text-size-4xl'>
                                     <AnimatedNumbers value={aboutPageConfig.yearsOfExperience} />+
                                 </span>
-                                <h2 className='text-xl font-medium capitalize text-dark/75'>years of experience</h2>
+                                <h2 className='text-xl font-medium capitalize text-dark/75
+                                    md:text-lg sm:text-base xs:text-sm'>years of experience</h2>
                             </div>
                         </div>
                     </div>

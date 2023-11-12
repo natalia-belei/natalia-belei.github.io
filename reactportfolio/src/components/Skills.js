@@ -1,37 +1,62 @@
-import React from 'react'
-import { motion } from "framer-motion"
-import { Skill } from './Skill'
-import { skillsData } from '../../data-config/skills.js'
+import React from 'react';
+import { motion } from "framer-motion";
+import { Skill } from './Skill';
+import { skillsData } from '../../data-config/skills.js';
+import { skillsConfig } from '../../data-config/skills.js';
 
 const Skills = () => {
-    const circleRadius = 20;
-
     return (
         <>
-            <h2 className='font-bold text-8xl mt-64 w-full text-center'>Skills</h2>
-            <div className='w-full h-screen relative flex items-center justify-center rounded-full bg-circularLight'>
-                <motion.div className='flex items-center justify-center rounded-full font-semibold bg-dark text-light
-                p-8 shadow-dark cursor-pointer'
-                    whileHover={{ scale: 1.2 }}
-                >
-                    {skillsData[0]?.name}
-                </motion.div>
+            <div className='w-full mt-48 md:mt-32 sm:mt-24'>
+                <h2 className='font-bold text-8xl mb-8 w-full text-center
+                md:text-6xl sm:text-5xl'>Skills</h2>
 
-                {skillsData.slice(1).map((skill, index, array) => {
-                    const theta = (index / array.length) * 2 * Math.PI; // distribute the skills evenly in a circle
-                    const randomOffset = Math.floor(Math.random() * 11) - 5; // random number between -5 and 5
-                    return (
-                        <Skill
-                            key={skill.id}
-                            name={skill.name}
-                            x={`${Math.round(circleRadius * Math.cos(theta)) + randomOffset}vw`}
-                            y={`${Math.round(circleRadius * Math.sin(theta)) + randomOffset}vw`}
-                        />
-                    );
-                })}
+                <div className='w-full h-screen relative flex items-center justify-center rounded-full bg-circular
+                lg:h-[80vh] md:h-[70vh] sm:h-[60vh] xs:h-[50vh]
+                lg:bg-circularLg md:bg-circularMd sm:bg-circularSm xs:bg-circularXs'>
+                    <motion.div className='flex items-center justify-center rounded-full font-semibold bg-dark/95 text-light
+                    p-8 shadow-dark cursor-default
+                    lg:p-6 md:p-4 xs:p-2 xs:text-xs xs:opacity-[90%]'
+                        whileHover={{ scale: 1.2 }}
+                    >
+                        {skillsData[0]?.name}
+                    </motion.div>
+
+                    {skillsData.slice(1).map((skill, index) => {
+                        const positions = calculateSkillPositions(skillsData.slice(1), skillsConfig.numCircles, skillsConfig.baseRadius, skillsConfig.circleSpacing);
+                        return (
+                            <Skill
+                                key={skill.id}
+                                name={skill.name}
+                                x={positions[index].x}
+                                y={positions[index].y}
+                            />
+                        );
+                    })}
+                </div>
             </div>
+
         </>
     )
+
+    function calculateSkillPositions(skills, numCircles, baseRadius, circleSpacing) {
+        if (numCircles <= 0) {
+            throw new Error('Number of circles must be positive');
+        }
+
+        return skills.map((_, index) => {
+            const circleIndex = Math.floor(index / (skills.length / numCircles));
+            const circleRadius = baseRadius + circleIndex * circleSpacing;
+
+            const skillsPerCircle = Math.ceil(skills.length / numCircles);
+            const theta = ((index % skillsPerCircle) / skillsPerCircle + (Math.random() - 0.5) * skillsConfig.randomnessFactor) * 2 * Math.PI;
+
+            return {
+                x: `${Math.round(circleRadius * Math.cos(theta))}vw`,
+                y: `${Math.round(circleRadius * Math.sin(theta))}vh`,
+            };
+        });
+    }
 }
 
 export default Skills;

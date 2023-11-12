@@ -13,15 +13,22 @@ const Experience = () => {
     });
 
     return (
-        <div className='my-64 w-full'>
-            <h2 className='font-bold text-8xl mb-24 w-full text-center'>Experience</h2>
+        <div className='w-full mt-48 mb-32 
+            md:mt-32 md:mb-16 sm:mt-24 sm:mb-8'>
+            <h2 className='w-full font-bold text-8xl text-center mb-16
+                md:text-6xl sm:text-5xl sm:mb-8'>
+                Experience
+            </h2>
 
-            <div ref={ref} className='w-[75%] mx-auto relative'>
+            <div ref={ref} className='relative w-[75%] mx-auto
+                lg:w-[90%] md:w-full'>
                 <motion.div
                     style={{ scaleY: scrollYProgress }}
-                    className='absolute left-9 top-2 w-[4px] h-[99%] bg-dark origin-top' />
+                    className='absolute left-9 top-2 w-[4px] h-[99%] bg-dark origin-top
+                        md:w-[2px] md:left-[30px] xs:left-[19px]' />
 
-                <ul className='w-full flex-col items-start justify-between ml-2'>
+                <ul className='w-full flex-col items-start justify-between ml-4
+                    xs:ml-2'>
                     {experienceData.map((experience) =>
                         <ExperienceDetails
                             key={experience.id}

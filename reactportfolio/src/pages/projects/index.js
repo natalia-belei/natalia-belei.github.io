@@ -12,7 +12,7 @@ const index = () => {
                 <title>{projectsPageConfig.meta.title}</title>
                 <meta name="description" content={projectsPageConfig.meta.description} />
             </Head>
-            <main className='w-full mb-16 flex flex-col items-center justify-center'>
+            <main className='w-full mb-16 flex flex-col items-start justify-center'>
                 <Layout className="pt-16">
                     <AnimatedText text={projectsPageConfig.mainTitle} className='mb-10' />
 

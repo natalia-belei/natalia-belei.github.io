@@ -28,7 +28,7 @@ export default function Project() {
                     <title>{`${contactsConfig.ownerFullName} | ${project.title}`}</title>
                     <meta name="description" content={`${(project.shortDescription).substring(0, 160)}`} />
                 </Head>
-                <main className='w-full flex items-center justify-center'>
+                <main className='w-full flex items-start justify-center'>
                     <Layout className="pt-16 sm:pt-8">
                         <article className='w-full flex flex-col items-center justify-center md:items-start mb-24
                             lg:mb-16 md:mb-8 sm:mb-6'>

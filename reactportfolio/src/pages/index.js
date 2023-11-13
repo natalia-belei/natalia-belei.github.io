@@ -16,7 +16,7 @@ export default function Home() {
         <title>{homePageConfig.meta.title}</title>
         <meta name="description" content={homePageConfig.meta.description} />
       </Head>
-      <main className='flex items-center text-dark w-full min-h-screen'>
+      <main className='flex items-start text-dark w-full min-h-screen'>
         <Layout className='pt-0 md:pt-16 sm:pt-8'>
           <div className='flex items-center justify-between w-full md:flex-col'>
             <div className='w-1/2 md:w-full'>

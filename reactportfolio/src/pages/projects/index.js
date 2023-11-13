@@ -1,9 +1,9 @@
-import Head from 'next/head'
-import React from 'react'
-import AnimatedText from '@/components/AnimatedText'
-import Layout from '@/components/Layout'
-import { projectsPageConfig, projectsData, PREVIEW_BLOCK_SIZE } from '../../../data-config/projects.js'
-import { ProjectPreview } from '../../components/ProjectPreview.js'
+import Head from 'next/head';
+import React, { useRef } from 'react';
+import AnimatedText from '@/components/AnimatedText';
+import Layout from '@/components/Layout';
+import { projectsPageConfig, projectsData } from '../../../data-config/projects.js';
+import { ProjectPreview } from '../../components/ProjectPreview.js';
 
 const index = () => {
     return (
@@ -14,17 +14,19 @@ const index = () => {
             </Head>
             <main className='w-full mb-16 flex flex-col items-start justify-center'>
                 <Layout className="pt-16">
-                    <AnimatedText text={projectsPageConfig.mainTitle} className='mb-10' />
+                    <AnimatedText text={projectsPageConfig.mainTitle} className='mb-16 md:mb-8 sm:mb-6' />
 
-                    <div className='grid grids-cols-12 gap-24'>
+                    <div className='grid grid-cols-12 gap-24
+                        xl:gap-x-16 lg:gap-x-8 sm:gap-x-0 sm:gap-y-16'>
                         {projectsData.map((project, index) =>
-                            <div key={index} className={`${calculateBlockSizeClass(project.previewBlockSize)} relative`}>
+                            <div key={index} className={`${index % 2 === 0 && index === projectsData.length - 1 ? 'col-span-12' : 'col-span-6'}
+                                2xl:col-span-12`}>
                                 <ProjectPreview
+                                    type={project.type}
                                     title={project.title}
                                     description={project.shortDescription}
                                     img={project.image}
                                     link={`/projects/${project.id}`}
-                                    calculateBlockShadowClass={`${calculateBlockShadowClass(project.previewBlockSize)}`}
                                 />
                             </div>
                         )}
@@ -33,20 +35,6 @@ const index = () => {
             </main>
         </>
     )
-}
-
-function calculateBlockSizeClass(previewBlockSize) {
-    return ({
-        [PREVIEW_BLOCK_SIZE.wide]: "col-span-12",
-        [PREVIEW_BLOCK_SIZE.narrow]: "col-span-6"
-    }[previewBlockSize])
-}
-
-function calculateBlockShadowClass(previewBlockSize) {
-    return ({
-        [PREVIEW_BLOCK_SIZE.wide]: "0px 4px 20px rgba(0, 0, 0, 0.65)",
-        [PREVIEW_BLOCK_SIZE.narrow]: "0px 4px 14px rgba(0, 0, 0, 0.65)"
-    }[previewBlockSize])
 }
 
 export default index

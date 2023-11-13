@@ -1,10 +1,5 @@
 import { contactsConfig } from "./contacts";
 
-export const PREVIEW_BLOCK_SIZE = Object.freeze({
-    narrow: 0,
-    wide: 1,
-});
-
 export const CONTENT_TYPE = Object.freeze({
     paragraph: 0,
     subTitle: 1,
@@ -24,7 +19,6 @@ export const projectsData = [
     {
         id: 1,
         isShown: true,
-        previewBlockSize: PREVIEW_BLOCK_SIZE.wide,
         type: "Type of Project 1",
         title: "Project 1",
         shortDescription: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.",
@@ -63,7 +57,6 @@ export const projectsData = [
     {
         id: 2,
         isShown: true,
-        previewBlockSize: PREVIEW_BLOCK_SIZE.narrow,
         type: "Type of Project 2",
         title: "Project 2",
         shortDescription: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.",
@@ -102,7 +95,6 @@ export const projectsData = [
     {
         id: 3,
         isShown: true,
-        previewBlockSize: PREVIEW_BLOCK_SIZE.narrow,
         type: "Type of Project 3",
         title: "Project 3",
         shortDescription: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.",

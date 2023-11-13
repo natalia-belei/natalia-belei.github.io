@@ -4,10 +4,9 @@ import Image from 'next/image';
 import { useInView, motion } from 'framer-motion';
 import { useRef } from 'react';
 
-const renderParagraph = (content, index, inView, ref) => (
+const renderParagraph = (content, inView, ref) => (
     <motion.p
         ref={ref}
-        key={index}
         initial={{ y: 250, opacity: 0 }}
         animate={{ y: inView ? 0 : 500, opacity: inView ? 1 : 0 }}
         transition={{ duration: 0.8, ease: "circOut" }}
@@ -18,10 +17,9 @@ const renderParagraph = (content, index, inView, ref) => (
     </motion.p>
 );
 
-const renderSubTitle = (content, index, inView, ref) => (
+const renderSubTitle = (content, inView, ref) => (
     <motion.h2
         ref={ref}
-        key={index}
         initial={{ y: 250, opacity: 0 }}
         animate={{ y: inView ? 0 : 500, opacity: inView ? 1 : 0 }}
         transition={{ duration: 0.8, ease: "circOut" }}
@@ -32,10 +30,9 @@ const renderSubTitle = (content, index, inView, ref) => (
     </motion.h2>
 );
 
-const renderImage = (content, index, inView, ref) => (
+const renderImage = (content, inView, ref) => (
     <motion.div
         ref={ref}
-        key={index}
         initial={{ y: 250, opacity: 0 }}
         animate={{ y: inView ? 0 : 500, opacity: inView ? 1 : 0 }}
         transition={{ duration: 0.8, ease: "circOut" }}
@@ -55,11 +52,11 @@ const ContentRenderer = ({ data }) => {
 
     switch (data.type) {
         case CONTENT_TYPE.paragraph:
-            return renderParagraph(data.content, data.id, inView, ref);
+            return renderParagraph(data.content, inView, ref);
         case CONTENT_TYPE.subTitle:
-            return renderSubTitle(data.content, data.id, inView, ref);
+            return renderSubTitle(data.content, inView, ref);
         case CONTENT_TYPE.image:
-            return renderImage(data.content, data.id, inView, ref);
+            return renderImage(data.content, inView, ref);
         default:
             return null;
     }
@@ -67,9 +64,8 @@ const ContentRenderer = ({ data }) => {
 
 ContentRenderer.propTypes = {
     data: PropTypes.shape({
-        type: PropTypes.string.isRequired,
+        type: PropTypes.number.isRequired,
         content: PropTypes.string.isRequired,
-        id: PropTypes.number.isRequired,
     }).isRequired,
 };
 

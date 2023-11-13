@@ -8,6 +8,7 @@ import Image from 'next/image';
 import ContentRenderer from '@/components/ContentRenderer';
 import { motion, useTransform, useScroll } from 'framer-motion';
 
+//TODO: fix reload bug on mobile devices
 export default function Project() {
     const router = useRouter();
     const { id } = router.query;
@@ -32,10 +33,10 @@ export default function Project() {
                     <Layout className="pt-16 sm:pt-8">
                         <article className='w-full flex flex-col items-center justify-center md:items-start mb-24
                             lg:mb-16 md:mb-8 sm:mb-6'>
-                            <AnimatedText text={project.title} className='mb-16 md:mb-8 sm:mb-6 md:text-lg lg:text-xl' />
+                            <AnimatedText text={project.title} className='mb-16 md:mb-8 sm:mb-6' />
 
                             <motion.div className="relative w-full h-auto pb-[35%] mb-8
-                                md:pb-[45%] md:mb-6 sm:mb-4 xs:mb-3" style={{ scale }}>
+                                md:pb-[45%] md:mb-6 sm:mb-5 xs:mb-4" style={{ scale }}>
                                 <Image src={project.image} alt={project.title} fill="responsive"
                                     style={{ objectFit: 'cover', boxShadow: '0px 4px 10px rgba(0, 0, 0, 0.65)' }}
                                     priority={true}

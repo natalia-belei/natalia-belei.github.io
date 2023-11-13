@@ -17,7 +17,7 @@ export const ProjectPreview = ({ type, title, description, img, link }) => {
             lg:flex-col lg:p-8 md:p-6 xs:rounded-2xl xs:rounded-br-3xl xs:p-4`}
             style={{ boxShadow: '0px 4px 20px rgba(0, 0, 0, 0.65)' }}
             ref={ref}
-            initial={{ y: 100, opacity: 0 }}
+            initial={{ y: 300, opacity: 0 }}
             animate={{ y: inView ? 0 : 100, opacity: inView ? 1 : 0 }}
             transition={{ duration: 0.9, ease: "anticipate" }}>
 

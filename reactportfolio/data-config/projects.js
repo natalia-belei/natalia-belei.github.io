@@ -13,6 +13,7 @@ export const projectsPageConfig = {
     },
 
     mainTitle: "Imagination Triumphs over Knowledge!",
+    previewButtonTitle: "View Project",
 }
 
 export const projectsData = [

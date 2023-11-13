@@ -12,11 +12,11 @@ const index = () => {
                 <title>{projectsPageConfig.meta.title}</title>
                 <meta name="description" content={projectsPageConfig.meta.description} />
             </Head>
-            <main className='w-full mb-16 flex flex-col items-start justify-center'>
+            <main className='w-full flex flex-col items-start justify-center'>
                 <Layout className="pt-16">
                     <AnimatedText text={projectsPageConfig.mainTitle} className='mb-16 md:mb-8 sm:mb-6' />
 
-                    <div className='grid grid-cols-12 gap-24
+                    <div className='grid grid-cols-12 gap-24 mb-8
                         xl:gap-x-16 lg:gap-x-8 sm:gap-x-0 sm:gap-y-16'>
                         {projectsData.map((project, index) =>
                             <div key={index} className={`${index % 2 === 0 && index === projectsData.length - 1 ? 'col-span-12' : 'col-span-6'}

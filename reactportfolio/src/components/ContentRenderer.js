@@ -8,8 +8,8 @@ const renderParagraph = (content, color, alignment, inView, ref) => (
     <motion.p
         ref={ref}
         initial={{ y: 250, opacity: 0 }}
-        animate={{ y: inView ? 0 : 500, opacity: inView ? 1 : 0 }}
-        transition={{ duration: 0.8, ease: "circOut" }}
+        animate={{ y: inView ? 0 : 500, opacity: inView ? 1 : 1 }}
+        transition={{ duration: 1.6, ease: "anticipate" }}
         className={`my-4 font-medium text-dark text-base 
             md:my-3 sm:my-2 md:font-normal sm:text-sm xs:text-xs
             ${color ? `text-${color}` : ''} ${alignment ? `text-${alignment}` : ''}`}
@@ -22,8 +22,8 @@ const renderSubTitle = (content, color, alignment, inView, ref) => (
     <motion.h2
         ref={ref}
         initial={{ y: 250, opacity: 0 }}
-        animate={{ y: inView ? 0 : 500, opacity: inView ? 1 : 0 }}
-        transition={{ duration: 0.8, ease: "circOut" }}
+        animate={{ y: inView ? 0 : 500, opacity: inView ? 1 : 1 }}
+        transition={{ duration: 1.6, ease: "anticipate" }}
         className={`w-full font-semibold capitalize text-left text-dark text-4xl mt-6
             lg:text-3xl md:text-2xl md:mt-4 sm:text-xl sm:mt-3
             ${color ? `text-${color}` : ''} ${alignment ? `text-${alignment}` : ''}`}
@@ -44,8 +44,8 @@ const renderImage = (images, inView, ref) => {
             lg:gap-7 md:gap-6 sm:gap-5 xs:gap-4`}
             ref={ref}
             initial={{ y: 250, opacity: 0 }}
-            animate={{ y: inView ? 0 : 500, opacity: inView ? 1 : 0 }}
-            transition={{ duration: 0.8, ease: "circOut" }}
+            animate={{ y: inView ? 0 : 500, opacity: inView ? 1 : 1 }}
+            transition={{ duration: 1.6, ease: "anticipate" }}
         >
             {images.map((src, index) => (
                 <div className='relative col-span-1 pt-[100%]' key={rndNum + index}>

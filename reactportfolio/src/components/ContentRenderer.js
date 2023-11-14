@@ -61,7 +61,7 @@ const ContentRenderer = ({ data }) => {
     const ref = useRef(null);
     const inView = useInView(ref, {
         once: true,
-        margin: "0px 0px 250px 0px",
+        margin: "0px 0px 500px 0px",
     });
 
     switch (data.type) {

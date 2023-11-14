@@ -4,44 +4,58 @@ import Image from 'next/image';
 import { useInView, motion } from 'framer-motion';
 import { useRef } from 'react';
 
-const renderParagraph = (content, inView, ref) => (
+const renderParagraph = (content, color, alignment, inView, ref) => (
     <motion.p
         ref={ref}
         initial={{ y: 250, opacity: 0 }}
         animate={{ y: inView ? 0 : 500, opacity: inView ? 1 : 0 }}
         transition={{ duration: 0.8, ease: "circOut" }}
-        className='my-3 font-medium text-dark text-base 
-            md:my-2 sm:my-1 md:font-normal sm:text-sm xs:text-xs'
+        className={`my-4 font-medium text-dark text-base 
+            md:my-3 sm:my-2 md:font-normal sm:text-sm xs:text-xs
+            ${color ? `text-${color}` : ''} ${alignment ? `text-${alignment}` : ''}`}
     >
         {content}
     </motion.p>
 );
 
-const renderSubTitle = (content, inView, ref) => (
+const renderSubTitle = (content, color, alignment, inView, ref) => (
     <motion.h2
         ref={ref}
         initial={{ y: 250, opacity: 0 }}
         animate={{ y: inView ? 0 : 500, opacity: inView ? 1 : 0 }}
         transition={{ duration: 0.8, ease: "circOut" }}
-        className='w-full font-semibold capitalize text-left text-dark text-4xl mt-4 
-            lg:text-3xl md:text-2xl md:mt-3 sm:text-xl sm:mt-2'
+        className={`w-full font-semibold capitalize text-left text-dark text-4xl mt-6
+            lg:text-3xl md:text-2xl md:mt-4 sm:text-xl sm:mt-3
+            ${color ? `text-${color}` : ''} ${alignment ? `text-${alignment}` : ''}`}
     >
         {content}
     </motion.h2>
 );
 
-const renderImage = (content, inView, ref) => (
-    <motion.div
-        ref={ref}
-        initial={{ y: 250, opacity: 0 }}
-        animate={{ y: inView ? 0 : 500, opacity: inView ? 1 : 0 }}
-        transition={{ duration: 0.8, ease: "circOut" }}
-        className='relative w-full pt-[100%] my-3 
-            md:my-2'
-    >
-        <Image src={content} alt="" fill="responsive" style={{ objectFit: 'cover' }} />
-    </motion.div>
-);
+const renderImage = (images, inView, ref) => {
+    if (images.length > 4 || images.length < 1)
+        throw new Error('Columns count must be between 1 and 4.');
+
+    return (
+        <div className={`w-full grid grid-cols-${images.length} gap-8 mb-1
+            sm:grid-cols-none ${images.length == 4 ? 'lg:grid-cols-2' : ''}
+            lg:gap-7 md:gap-6 sm:gap-5 xs:gap-4`}>
+
+            {images.map((src, index) => (
+                <motion.div
+                    key={index}
+                    ref={ref}
+                    initial={{ y: 250, opacity: 0 }}
+                    animate={{ y: inView ? 0 : 500, opacity: inView ? 1 : 0 }}
+                    transition={{ duration: 0.8, ease: "circOut" }}
+                    className='relative col-span-1 pt-[100%]'
+                >
+                    <Image src={src} alt="" fill="responsive" style={{ objectFit: 'cover' }} />
+                </motion.div>
+            ))}
+        </div>
+    )
+}
 
 const ContentRenderer = ({ data }) => {
     const ref = useRef(null);
@@ -52,11 +66,11 @@ const ContentRenderer = ({ data }) => {
 
     switch (data.type) {
         case CONTENT_TYPE.paragraph:
-            return renderParagraph(data.content, inView, ref);
+            return renderParagraph(data.content, data.color, data.alignment, inView, ref);
         case CONTENT_TYPE.subTitle:
-            return renderSubTitle(data.content, inView, ref);
+            return renderSubTitle(data.content, data.color, data.alignment, inView, ref);
         case CONTENT_TYPE.image:
-            return renderImage(data.content, inView, ref);
+            return renderImage(data.images, inView, ref);
         default:
             return null;
     }
@@ -65,7 +79,10 @@ const ContentRenderer = ({ data }) => {
 ContentRenderer.propTypes = {
     data: PropTypes.shape({
         type: PropTypes.number.isRequired,
-        content: PropTypes.string.isRequired,
+        content: PropTypes.string,
+        color: PropTypes.string,
+        alignment: PropTypes.string,
+        images: PropTypes.arrayOf(PropTypes.string),
     }).isRequired,
 };
 

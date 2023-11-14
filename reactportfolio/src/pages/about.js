@@ -57,7 +57,6 @@ const about = () => {
                             </div>
                         </div>
 
-
                         <div className='col-span-2 flex flex-col items-end justify-between
                             xl:col-span-8 xl:flex-row xl:items-center md:order-3'>
                             <div className='flex flex-col items-end justify-center

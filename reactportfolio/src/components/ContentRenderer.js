@@ -37,23 +37,20 @@ const renderImage = (images, inView, ref) => {
         throw new Error('Columns count must be between 1 and 4.');
 
     return (
-        <div className={`w-full grid grid-cols-${images.length} gap-8 mb-1
+        <motion.div className={`w-full grid grid-cols-${images.length} gap-8 mb-1
             sm:grid-cols-none ${images.length == 4 ? 'lg:grid-cols-2' : ''}
-            lg:gap-7 md:gap-6 sm:gap-5 xs:gap-4`}>
-
+            lg:gap-7 md:gap-6 sm:gap-5 xs:gap-4`}
+            ref={ref}
+            initial={{ y: 250, opacity: 0 }}
+            animate={{ y: inView ? 0 : 500, opacity: inView ? 1 : 0 }}
+            transition={{ duration: 0.8, ease: "circOut" }}
+        >
             {images.map((src, index) => (
-                <motion.div
-                    key={index}
-                    ref={ref}
-                    initial={{ y: 250, opacity: 0 }}
-                    animate={{ y: inView ? 0 : 500, opacity: inView ? 1 : 0 }}
-                    transition={{ duration: 0.8, ease: "circOut" }}
-                    className='relative col-span-1 pt-[100%]'
-                >
+                <div className='relative col-span-1 pt-[100%]'>
                     <Image src={src} alt="" fill="responsive" style={{ objectFit: 'cover' }} />
-                </motion.div>
+                </div>
             ))}
-        </div>
+        </motion.div>
     )
 }
 
@@ -61,7 +58,7 @@ const ContentRenderer = ({ data }) => {
     const ref = useRef(null);
     const inView = useInView(ref, {
         once: true,
-        margin: "0px 0px 500px 0px",
+        margin: "0px 0px 250px 0px",
     });
 
     switch (data.type) {

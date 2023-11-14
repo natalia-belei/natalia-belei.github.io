@@ -36,6 +36,8 @@ const renderImage = (images, inView, ref) => {
     if (images.length > 4 || images.length < 1)
         throw new Error('Columns count must be between 1 and 4.');
 
+    const rndNum = Math.random();
+
     return (
         <motion.div className={`w-full grid grid-cols-${images.length} gap-8 mb-1
             sm:grid-cols-none ${images.length == 4 ? 'lg:grid-cols-2' : ''}
@@ -46,7 +48,7 @@ const renderImage = (images, inView, ref) => {
             transition={{ duration: 0.8, ease: "circOut" }}
         >
             {images.map((src, index) => (
-                <div className='relative col-span-1 pt-[100%]'>
+                <div className='relative col-span-1 pt-[100%]' key={rndNum + index}>
                     <Image src={src} alt="" fill="responsive" style={{ objectFit: 'cover' }} />
                 </div>
             ))}

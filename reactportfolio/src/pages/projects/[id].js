@@ -12,7 +12,11 @@ import TransitionEffect from '@/components/TransitionEffect';
 //TODO: fix reload bug on mobile devices
 export default function Project() {
     const router = useRouter();
+    console.log(`router =>>>>> ${router}`);
+    console.log(`query =>>>>> ${router.query}`);
+
     const { id } = router.query;
+    console.log(`id =>>>>> ${id}`);
 
     const { scrollYProgress } = useScroll();
     const scale = useTransform(scrollYProgress, [0, 1], [1, 0.3]);

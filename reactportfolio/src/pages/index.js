@@ -8,6 +8,7 @@ import { LinkArrow } from '@/components/Icons';
 import HireMe from '@/components/HireMe';
 import { contactsConfig } from '../../data-config/contacts.js';
 import { homePageConfig } from '../../data-config/home.js';
+import TransitionEffect from '@/components/TransitionEffect';
 
 export default function Home() {
   return (
@@ -16,6 +17,7 @@ export default function Home() {
         <title>{homePageConfig.meta.title}</title>
         <meta name="description" content={homePageConfig.meta.description} />
       </Head>
+      <TransitionEffect />
       <main className='flex items-start text-dark w-full min-h-screen'>
         <Layout className='pt-0 md:pt-16 sm:pt-8'>
           <div className='flex items-center justify-between w-full md:flex-col'>

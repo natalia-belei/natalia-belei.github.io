@@ -4,6 +4,7 @@ import AnimatedText from '@/components/AnimatedText';
 import Layout from '@/components/Layout';
 import { projectsPageConfig, projectsData } from '../../../data-config/projects.js';
 import { ProjectPreview } from '../../components/ProjectPreview.js';
+import TransitionEffect from '@/components/TransitionEffect.js';
 
 const index = () => {
     return (
@@ -12,6 +13,7 @@ const index = () => {
                 <title>{projectsPageConfig.meta.title}</title>
                 <meta name="description" content={projectsPageConfig.meta.description} />
             </Head>
+            <TransitionEffect />
             <main className='w-full flex flex-col items-start justify-center'>
                 <Layout className="pt-16">
                     <AnimatedText text={projectsPageConfig.mainTitle} className='mb-16 md:mb-8 sm:mb-6' />

@@ -7,6 +7,7 @@ import AnimatedText from '@/components/AnimatedText';
 import Image from 'next/image';
 import ContentRenderer from '@/components/ContentRenderer';
 import { motion, useTransform, useScroll } from 'framer-motion';
+import TransitionEffect from '@/components/TransitionEffect';
 
 //TODO: fix reload bug on mobile devices
 export default function Project() {
@@ -29,6 +30,7 @@ export default function Project() {
                     <title>{`${contactsConfig.ownerFullName} | ${project.title}`}</title>
                     <meta name="description" content={`${(project.shortDescription).substring(0, 160)}`} />
                 </Head>
+                <TransitionEffect />
                 <main className='w-full flex items-start justify-center'>
                     <Layout className="pt-16 sm:pt-8">
                         <article className='w-full flex flex-col items-center justify-center md:items-start mb-24

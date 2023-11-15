@@ -10,6 +10,7 @@ import { aboutPageConfig } from '../../data-config/about.js';
 import ReactMarkdown from 'react-markdown';
 import { experienceData } from '../../data-config/experience.js';
 import { certificationsData } from '../../data-config/certifications.js';
+import TransitionEffect from '@/components/TransitionEffect.js';
 
 const renderSummary = () => {
     return aboutPageConfig.summary.map((paragraph, index, array) => {
@@ -29,6 +30,7 @@ const about = () => {
                 <title>{aboutPageConfig.meta.title}</title>
                 <meta name="description" content={aboutPageConfig.meta.description} />
             </Head>
+            <TransitionEffect />
             <main className='flex w-full flex-col items-start justify-center'>
                 <Layout className='pt-16 sm:pt-8'>
                     <AnimatedText text={aboutPageConfig.mainTitle} className='mb-16 md:mb-8 sm:mb-6' />

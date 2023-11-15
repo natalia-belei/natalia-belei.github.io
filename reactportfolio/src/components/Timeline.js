@@ -2,6 +2,7 @@ import { useScroll } from "framer-motion";
 import { useRef } from "react";
 import { motion } from "framer-motion";
 import { TimelineItem } from "./TimelineItem";
+import PropTypes from 'prop-types';
 
 const Timeline = ({ data, title }) => {
     const ref = useRef(null);
@@ -39,5 +40,24 @@ const Timeline = ({ data, title }) => {
         </div>
     )
 }
+
+Timeline.propTypes = {
+    data: PropTypes.arrayOf(
+        PropTypes.shape({
+            key: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
+            title: PropTypes.string.isRequired,
+            subtitle1: PropTypes.string.isRequired,
+            subtitle2: PropTypes.string,
+            subtitle3: PropTypes.string,
+            subtitle1Link: PropTypes.string.isRequired,
+            externalLink: PropTypes.shape({
+                url: PropTypes.string.isRequired,
+                title: PropTypes.string.isRequired,
+            }),
+            description: PropTypes.string,
+        })
+    ).isRequired,
+    title: PropTypes.string.isRequired,
+};
 
 export default Timeline;

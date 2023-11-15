@@ -123,7 +123,7 @@ const about = () => {
             subtitle3: `${item.credentialID && `Credential ID: ${item.credentialID}`}`,
             subtitle1Link: item.credentialURL,
             description: item.description,
-            externalLink: item.credentialURL,
+            externalLink: { url: item.credentialURL, title: "Show credential" }
         }));
     }
 }

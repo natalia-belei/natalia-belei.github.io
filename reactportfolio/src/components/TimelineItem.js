@@ -2,6 +2,7 @@ import React, { useRef } from 'react';
 import LiIcon from './LiIcon';
 import { motion } from 'framer-motion';
 import PropTypes from 'prop-types';
+import { LinkArrow } from './Icons';
 
 export const TimelineItem = ({ title, subtitle1, subtitle2, subtitle3, subtitle1Link, description, externalLink }) => {
     const ref = useRef(null);
@@ -38,9 +39,11 @@ export const TimelineItem = ({ title, subtitle1, subtitle2, subtitle3, subtitle1
                 {(externalLink &&
                     <>
                         <br />
-                        <a href={externalLink} target="_blank" rel="noopener noreferrer"
-                            className='font-medium text-dark/75 xs:text-sm underline'>
-                            {externalLink}
+                        <a href={externalLink.url} target="_blank" rel="noopener noreferrer" className='font-medium text-dark/75 xs:text-sm underline flex items-center'>
+                            <span>{externalLink.title}</span>
+                            <span className="ml-1">
+                                <LinkArrow className="w-5 xs:w-4" />
+                            </span>
                         </a>
                     </>
                 )}
@@ -57,7 +60,10 @@ TimelineItem.propTypes = {
     subtitle1: PropTypes.string.isRequired,
     subtitle2: PropTypes.string,
     subtitle3: PropTypes.string,
-    description: PropTypes.string,
     subtitle1Link: PropTypes.string.isRequired,
-    externalLink: PropTypes.string,
+    description: PropTypes.string,
+    externalLink: PropTypes.shape({
+        url: PropTypes.string.isRequired,
+        title: PropTypes.string.isRequired,
+    }),
 };

@@ -1,8 +1,8 @@
 import { useRouter } from 'next/router';
-import Layout from '../../components/Layout';
+import Layout from '../../../components/Layout';
 import Head from 'next/head';
-import { projectsData } from '../../../data-config/projects.js';
-import { contactsConfig } from '../../../data-config/contacts.js';
+import { projectsData } from '../../../../data-config/projects.js';
+import { contactsConfig } from '../../../../data-config/contacts.js';
 import AnimatedText from '@/components/AnimatedText';
 import Image from 'next/image';
 import ContentRenderer from '@/components/ContentRenderer';

@@ -1,5 +1,5 @@
 import Head from 'next/head';
-import React, { useRef } from 'react';
+import React from 'react';
 import AnimatedText from '@/components/AnimatedText';
 import Layout from '@/components/Layout';
 import { projectsPageConfig, projectsData } from '../../../data-config/projects.js';
@@ -28,7 +28,10 @@ const index = () => {
                                     title={project.title}
                                     description={project.shortDescription}
                                     img={project.image}
-                                    link={`/projects/${project.id}`}
+                                    link={{
+                                        pathname: '/projects/[id]',
+                                        query: { id: project.id },
+                                    }}
                                 />
                             </div>
                         )}

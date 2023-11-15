@@ -83,11 +83,11 @@ export const certificationsData = [
     },
     {
         id: 10,
-        title: "Certification 10",
-        issuer: "Issuer 10",
-        issueDate: "Sep 2022",
-        credentialID: "1234567890",
-        credentialURL: "https://google.com",
+        title: "Web design in Figma. Basics of Ui Ux design in practice",
+        issuer: "Udemy",
+        issueDate: "Dec 2020",
+        credentialID: "UC-908fff85-96f5-40ba-8b27-b8b86799b6a1",
+        credentialURL: "https://www.udemy.com/certificate/UC-908fff85-96f5-40ba-8b27-b8b86799b6a1/",
         description: null,
     }
 ];

@@ -1,4 +1,3 @@
-import { useRouter } from 'next/router';
 import Layout from '../../../components/Layout';
 import Head from 'next/head';
 import { projectsData } from '../../../../data-config/projects.js';
@@ -9,23 +8,9 @@ import ContentRenderer from '@/components/ContentRenderer';
 import { motion, useTransform, useScroll } from 'framer-motion';
 import TransitionEffect from '@/components/TransitionEffect';
 
-//TODO: fix reload bug on mobile devices
-export default function Project() {
-    const router = useRouter();
-    console.log(`router =>>>>> ${router}`);
-    console.log(`query =>>>>> ${router.query}`);
-
-    const { id } = router.query;
-    console.log(`id =>>>>> ${id}`);
-
+const index = ({ project }) => {
     const { scrollYProgress } = useScroll();
     const scale = useTransform(scrollYProgress, [0, 1], [1, 0.3]);
-
-    if (router.isFallback) {
-        return <div>Loading...</div>;
-    }
-
-    const project = projectsData.find((p) => p.isShown && p.id === Number(id));
 
     if (project) {
         return (
@@ -75,4 +60,29 @@ export default function Project() {
             </main>
         </>
     );
+}
+
+export default index;
+
+export async function getStaticPaths() {
+    const paths = projectsData.map((project) => ({
+        params: { id: project.id.toString() },
+    }));
+
+    return {
+        paths,
+        fallback: false,
+    };
+}
+
+export async function getStaticProps({ params }) {
+    const { id } = params;
+
+    const project = projectsData.find((p) => p.isShown && p.id === Number(id));
+
+    return {
+        props: {
+            project,
+        },
+    };
 }

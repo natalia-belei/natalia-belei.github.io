@@ -5,8 +5,9 @@ import { contactsConfig } from '../../../../data-config/contacts.js';
 import AnimatedText from '@/components/AnimatedText';
 import Image from 'next/image';
 import ContentRenderer from '@/components/ContentRenderer';
-import { motion, useTransform, useScroll } from 'framer-motion';
+import { useTransform, useScroll } from 'framer-motion';
 import TransitionEffect from '@/components/TransitionEffect';
+import Parallax from '@/components/Parallax';
 
 const Index = ({ project }) => {
     const { scrollYProgress } = useScroll();
@@ -24,16 +25,20 @@ const Index = ({ project }) => {
                     <Layout className="pt-16 sm:pt-8">
                         <article className='w-full flex flex-col items-center justify-center md:items-start mb-24
                             lg:mb-16 md:mb-8 sm:mb-6'>
-                            <AnimatedText text={project.title} className='mb-16 md:mb-8 sm:mb-6' />
+                            <AnimatedText text={project.title} className='mb-8 md:mb-4 sm:mb-3' />
 
-                            <motion.div className="relative w-full h-auto pb-[35%] mb-8
-                                md:pb-[45%] md:mb-6 sm:mb-5 xs:mb-4" style={{ scale }}>
-                                <Image src={project.image} alt={project.title} fill="responsive"
-                                    style={{ objectFit: 'cover', boxShadow: '0px 4px 10px rgba(0, 0, 0, 0.65)' }}
-                                    priority={true}
-                                    sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 50vw'
-                                />
-                            </motion.div>
+                            <div className="w-full overflow-hidden h-[600px]
+                                 xl:h-[500px] lg:h-[400px] md:h-[300px] sm:h-[265px] xs:h-[230px]">
+                                <Parallax offset={150}>
+                                    <div className="w-full pt-[100%]">
+                                        <Image src={project.image} alt={project.title} fill="responsive" style={{ objectFit: 'cover' }}
+                                            priority={true}
+                                            sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 50vw'
+                                            className='mt-[-150px] xl:mt-[-60px] sm:mt-[0px]'
+                                        />
+                                    </div>
+                                </Parallax>
+                            </div>
                             {project.detailsPage.map((item, index) => (
                                 <ContentRenderer key={index} data={item} />
                             ))}

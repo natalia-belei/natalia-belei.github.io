@@ -29,7 +29,7 @@ const Index = ({ project }) => {
 
                             <div className="w-full overflow-hidden h-[600px]
                                  xl:h-[500px] lg:h-[400px] md:h-[300px] sm:h-[265px] xs:h-[230px]">
-                                <Parallax offset={150}>
+                                <Parallax offset={100}>
                                     <div className="w-full pt-[100%]">
                                         <Image src={project.image} alt={project.title} fill="responsive" style={{ objectFit: 'cover' }}
                                             priority={true}

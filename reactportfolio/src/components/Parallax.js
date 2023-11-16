@@ -1,4 +1,4 @@
-import { useState, useRef, useLayoutEffect } from "react";
+import { useState, useRef, useEffect } from "react";
 import {
     motion,
     useScroll,
@@ -21,7 +21,7 @@ const Parallax = ({ children, offset = 50 }) => {
     const yRange = useTransform(scrollY, [initial, final], [offset, -offset]);
     const y = useSpring(yRange, { stiffness: 400, damping: 90 });
 
-    useLayoutEffect(() => {
+    useEffect(() => {
         const element = ref.current;
         const onResize = () => {
             setElementTop(

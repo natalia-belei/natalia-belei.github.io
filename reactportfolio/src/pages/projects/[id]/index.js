@@ -27,14 +27,14 @@ const Index = ({ project }) => {
                             lg:mb-16 md:mb-8 sm:mb-6'>
                             <AnimatedText text={project.title} className='mb-8 md:mb-4 sm:mb-3' />
 
-                            <div className="w-full overflow-hidden h-[600px]
-                                 xl:h-[500px] lg:h-[400px] md:h-[300px] sm:h-[265px] xs:h-[230px]">
+                            <div className='w-full overflow-hidden h-[600px]
+                                 xl:h-[500px] lg:h-[400px] md:h-[330px] sm:h-[270px] xs:h-[225px]'>
                                 <Parallax offset={100}>
                                     <div className="w-full pt-[100%]">
                                         <Image src={project.image} alt={project.title} fill="responsive" style={{ objectFit: 'cover' }}
                                             priority={true}
                                             sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 50vw'
-                                            className='mt-[-150px] xl:mt-[-60px] sm:mt-[0px]'
+                                            className='mt-[-200px] xl:mt-[-160px] lg:mt-[-140px] md:mt-[-115px] sm:mt-[-50px] xs:mt-[-30px]'
                                         />
                                     </div>
                                 </Parallax>

@@ -7,7 +7,7 @@ import Image from 'next/image';
 import ContentRenderer from '@/components/ContentRenderer';
 import { useTransform, useScroll } from 'framer-motion';
 import TransitionEffect from '@/components/TransitionEffect';
-import Parallax from '@/components/Parallax';
+import ParallaxEffect from '@/components/ParallaxEffect';
 
 const Index = ({ project }) => {
     const { scrollYProgress } = useScroll();
@@ -29,7 +29,7 @@ const Index = ({ project }) => {
 
                             <div className='w-full overflow-hidden h-[600px]
                                  xl:h-[500px] lg:h-[400px] md:h-[330px] sm:h-[270px] xs:h-[225px]'>
-                                <Parallax offset={100}>
+                                <ParallaxEffect offset={100}>
                                     <div className="w-full pt-[100%]">
                                         <Image src={project.image} alt={project.title} fill="responsive" style={{ objectFit: 'cover' }}
                                             priority={true}
@@ -37,7 +37,7 @@ const Index = ({ project }) => {
                                             className='mt-[-200px] xl:mt-[-160px] lg:mt-[-140px] md:mt-[-115px] sm:mt-[-50px] xs:mt-[-30px]'
                                         />
                                     </div>
-                                </Parallax>
+                                </ParallaxEffect>
                             </div>
                             {project.detailsPage.map((item, index) => (
                                 <ContentRenderer key={index} data={item} />

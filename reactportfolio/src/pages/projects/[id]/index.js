@@ -8,7 +8,7 @@ import ContentRenderer from '@/components/ContentRenderer';
 import { motion, useTransform, useScroll } from 'framer-motion';
 import TransitionEffect from '@/components/TransitionEffect';
 
-const index = ({ project }) => {
+const Index = ({ project }) => {
     const { scrollYProgress } = useScroll();
     const scale = useTransform(scrollYProgress, [0, 1], [1, 0.3]);
 
@@ -62,7 +62,7 @@ const index = ({ project }) => {
     );
 }
 
-export default index;
+export default Index;
 
 export async function getStaticPaths() {
     const paths = projectsData.map((project) => ({

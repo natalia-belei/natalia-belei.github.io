@@ -6,7 +6,7 @@ export const experienceData = [
         company: "IMPRO Email agency",
         companyLink: "https://impro.email/",
         address: "Lviv, UA",
-        description: "I create banners, gifs and other graphic elements from scratch, attracting attention with the help of design. Thinking of solutions to solve business problems with the help of design.",
+        description: "Accomplishing  Banners, gifs and other graphic elements from scratch, attracting attention with the help of design. Thinking of solutions to solve business problems with the help of design.",
     },
     {
         id: 1,

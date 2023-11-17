@@ -5,7 +5,7 @@ export const certificationsData = [
         issuer: "Coursera",
         issueDate: "Oct 2023",
         credentialID: "7G6CDT99X76F",
-        credentialURL: "https://www.credly.com/badges/1c0199ab-c4db-4e7b-8f0d-ee3b4019889c/linked_in_profile",
+        credentialURL: "https://www.coursera.org/account/accomplishments/certificate/7G6CDT99X76F",
         description: null,
     },
     {

@@ -100,7 +100,7 @@ export const projectsData = [
         isShown: true,
         type: "MOBILE APP",
         title: "PET FOOD DELIVERY SERVICE",
-        shortDescription: "The pet food delivery service app is designed to provide a convenient and hassle-free solution for pet owners to meet their pets nutritional needs. ",
+        shortDescription: "The pet food delivery service app is designed to provide a convenient and hassle-free solution for pet owners.",
         image: "/images/projects/project-2.jpg",
 
         detailsPage: [

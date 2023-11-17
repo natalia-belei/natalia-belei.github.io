@@ -2,7 +2,7 @@ export const certificationsData = [
     {
         id: 1,
         title: "Google UX Design Certificate",
-        issuer: "Coursera",
+        issuer: "Google",
         issueDate: "Oct 2023",
         credentialID: "7G6CDT99X76F",
         credentialURL: "https://www.coursera.org/account/accomplishments/certificate/7G6CDT99X76F",

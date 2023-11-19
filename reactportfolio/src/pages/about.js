@@ -44,7 +44,7 @@ const about = () => {
 
                         <div className='col-span-3 flex flex-col items-start justify-start
                             xl:col-span-4 md:col-span-8 md:order-1'>
-                            <div className='w-full relative pt-[100%] rounded-2xl border-2 border-solid border-dark bg-light'
+                            <div className='w-full relative pt-[115%] rounded-2xl border-2 border-solid border-dark bg-light'
                                 style={{ boxShadow: '0px 4px 10px rgba(0, 0, 0, 0.2), 0px 6px 20px rgba(0, 0, 0, 0.15), 0px 8px 30px rgba(0, 0, 0, 0.1)' }}>
                                 <Image
                                     src={aboutPageConfig.profilePicture}

@@ -6,13 +6,12 @@ import { homePageConfig } from '../../data-config/home';
 
 const HireMe = () => {
     return (
-        <div className='flex items-center justify-center overflow-hidden z-20 fixed left-4 bottom-4
-            md:absolute md:right-5 md:left-auto md:top-[2px] md:bottom-auto
-            sm:right-0'>
-            <div className='w-48 h-auto flex items-center justify-center relative
-                md:w-24'>
-                <CircularText className="fill-dark animate-spin-slow w-[130px] h-auto
-                md:w-[85px]" />
+        <div className='flex items-center justify-center overflow-hidden z-5 fixed left-4 bottom-4
+            md:absolute md:right-4 md:left-auto md:top-[2px] md:bottom-auto
+            sm:right-2'>
+            <div className='h-auto flex items-center justify-center relative w-[130px]
+                md:w-[85px] sm:w-[80px]'>
+                <CircularText className="fill-dark animate-spin-slow" />
                 <Link
                     href={contactsConfig.ownerEmail}
                     className={`flex items-center justify-center text-center text-xs

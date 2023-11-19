@@ -2,13 +2,12 @@ import React from 'react';
 import { CircularText } from './Icons';
 import Link from 'next/link';
 import { contactsConfig } from '/data-config/contacts.js';
-import config from '../../config';
 
 const HireMe = () => {
     return (
-        <div className={`fixed left-4 bottom-4 flex items-center justify-center overflow-hidden z-20
-            md:absolute md:right-6 md:left-auto ${config.isUnderConstruction ? 'md:top-[52px]' : 'md:top-0'} md:bottom-auto
-            sm:right-2 ${config.isUnderConstruction ? 'sm:top-[82px]' : 'sm:top-0'}`}>
+        <div className='flex items-center justify-center overflow-hidden z-20 fixed left-4 bottom-4
+            md:absolute md:right-5 md:left-auto md:top-[-5px] md:bottom-auto
+            sm:right-0'>
             <div className='w-48 h-auto flex items-center justify-center relative
                 md:w-24'>
                 <CircularText className="fill-dark animate-spin-slow" />

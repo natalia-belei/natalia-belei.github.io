@@ -98,9 +98,9 @@ export const projectsData = [
     {
         id: 2,
         isShown: true,
-        type: "Type of Project 2",
-        title: "Project 2",
-        shortDescription: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.",
+        type: "MOBILE APP",
+        title: "Pet food delivery service",
+        shortDescription: "The app is designed to provide a convenient and hassle-free solution for pet owners.",
         image: "/images/projects/project-2.jpg",
 
         detailsPage: [

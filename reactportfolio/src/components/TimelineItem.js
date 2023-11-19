@@ -40,7 +40,7 @@ export const TimelineItem = ({ title, subtitle1, subtitle2, subtitle3, subtitle1
                     <>
                         <br />
                         <a href={externalLink.url} target="_blank" rel="noopener noreferrer"
-                            className='font-medium text-dark/75 xs:text-sm underline flex items-center touch-none'>
+                            className='font-medium text-dark/75 xs:text-sm underline flex items-center'>
                             <span>{externalLink.title}</span>
                             <span className="ml-1">
                                 <LinkArrow className="w-5 xs:w-4" />

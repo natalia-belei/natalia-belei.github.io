@@ -11,8 +11,8 @@ const HireMe = () => {
             sm:right-0'>
             <div className='w-48 h-auto flex items-center justify-center relative
                 md:w-24'>
-                <CircularText className="fill-dark animate-spin-slow w-[130px]
-                md:w-[80px]" />
+                <CircularText className="fill-dark animate-spin-slow w-[130px] h-auto
+                md:w-[85px]" />
                 <Link
                     href={contactsConfig.ownerEmail}
                     className={`flex items-center justify-center text-center text-xs

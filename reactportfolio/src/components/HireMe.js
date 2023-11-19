@@ -6,7 +6,7 @@ import { homePageConfig } from '../../data-config/home';
 
 const HireMe = () => {
     return (
-        <div className='flex items-center justify-center overflow-hidden z-5 fixed left-4 bottom-4
+        <div className='flex items-center justify-center overflow-hidden z-20 fixed left-4 bottom-4
             md:absolute md:right-4 md:left-auto md:top-[2px] md:bottom-auto
             sm:right-2'>
             <div className='h-auto flex items-center justify-center relative w-[130px]

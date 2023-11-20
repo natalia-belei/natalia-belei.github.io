@@ -9,6 +9,7 @@ import { CustomMobileLink } from './CustomMobileLink';
 const NavBar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const navBarRef = useRef(null);
+  const toggleRef = useRef(null);
 
   const handleClick = () => {
     setIsOpen(!isOpen);
@@ -16,7 +17,9 @@ const NavBar = () => {
 
   useEffect(() => {
     const handleOutsideClose = (event) => {
-      if (navBarRef.current && !navBarRef.current.contains(event.target)) {
+      if (navBarRef.current
+        && !toggleRef.current.contains(event.target)
+        && !navBarRef.current.contains(event.target)) {
         setIsOpen(false);
       }
     };
@@ -35,7 +38,8 @@ const NavBar = () => {
   return (
     <header className='w-full px-32 py-8 font-medium flex items-center justify-between relative z-10
       lg:px-16 md:px-12 sm:px-8'>
-      <button className='hidden lg:flex flex-col justify-center items-center' onClick={handleClick}>
+      <button className='hidden lg:flex flex-col justify-center items-center'
+        ref={toggleRef} onClick={handleClick}>
         <span className={`bg-dark dark:bg-light block h-0.5 w-6 rounded-sm
           transition-all duration-300 ease-out
           ${isOpen ? 'rotate-45 translate-y-0.5' : '-translate-y-0.5'}`}>

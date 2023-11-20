@@ -8,11 +8,11 @@ const Timeline = ({ data, title }) => {
     const ref = useRef(null);
     const { scrollYProgress } = useScroll({
         target: ref,
-        offset: ["start center", "center center"]
+        offset: ["start end", "center start"]
     });
 
     return (
-        <div className='w-full mt-48 mb-32 md:mt-32 md:mb-16 sm:mt-24 sm:mb-8'>
+        <div className='w-full mt-48 mb-32 md:my-32 sm:my-24'>
             <h2 className='w-full font-bold text-8xl text-center mb-16 md:text-6xl sm:text-5xl sm:mb-8'>
                 {title}
             </h2>

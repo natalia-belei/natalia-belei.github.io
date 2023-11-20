@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import Logo from './Logo';
 import { CustomLink } from './CustomLink';
 import { BehanceIcon, LinkArrow, LinkedInIcon, PinterestIcon } from './Icons';
@@ -9,10 +9,29 @@ import { CustomMobileLink } from './CustomMobileLink';
 
 const NavBar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const navBarRef = useRef(null);
 
   const handleClick = () => {
     setIsOpen(!isOpen);
   };
+
+  useEffect(() => {
+    const handleOutsideClose = (event) => {
+      if (navBarRef.current && !navBarRef.current.contains(event.target)) {
+        setIsOpen(false);
+      }
+    };
+
+    if (isOpen) {
+      document.addEventListener('mousedown', handleOutsideClose);
+      document.addEventListener('touchstart', handleOutsideClose);
+    }
+
+    return () => {
+      document.removeEventListener('mousedown', handleOutsideClose);
+      document.removeEventListener('touchstart', handleOutsideClose);
+    };
+  }, [isOpen]);
 
   return (
     <header className='w-full px-32 py-8 font-medium flex items-center justify-between relative z-10
@@ -76,6 +95,7 @@ const NavBar = () => {
       </div>
 
       {isOpen && <motion.div
+        ref={navBarRef}
         initial={{ scale: 0, opacity: 0, x: "-50%", y: "-50%" }}
         animate={{ scale: 1, opacity: 1 }}
         className='min-w-[70vw] flex flex-col justify-between items-center z-30

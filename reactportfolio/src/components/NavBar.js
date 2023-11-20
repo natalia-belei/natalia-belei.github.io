@@ -3,7 +3,6 @@ import Logo from './Logo';
 import { CustomLink } from './CustomLink';
 import { BehanceIcon, LinkArrow, LinkedInIcon, PinterestIcon } from './Icons';
 import { motion } from "framer-motion";
-import config from 'config.js';
 import { contactsConfig } from '../../data-config/contacts.js';
 import { CustomMobileLink } from './CustomMobileLink';
 
@@ -144,8 +143,7 @@ const NavBar = () => {
         </nav>
       </motion.div>}
 
-      <div className={`absolute left-[50%] translate-x-[-50%]
-        ${config.isUnderConstruction ? 'top-15' : 'top-2'}`}>
+      <div className='absolute left-[50%] translate-x-[-50%]'>
         <Logo />
       </div>
     </header>

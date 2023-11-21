@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import { CONTENT_TYPE } from "../../data-config/projects";
 import Image from 'next/image';
 import { useInView, motion } from 'framer-motion';
-import { useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 const renderParagraph = (content, color, alignment, inView, ref) => (
     <motion.p
@@ -32,29 +32,55 @@ const renderSubTitle = (content, color, alignment, inView, ref) => (
     </motion.h2>
 );
 
-const renderImage = (images, inView, ref) => {
-    if (images.length > 4 || images.length < 1)
+const renderImages = (images) => {
+    if (images.length > 4 || images.length < 1) {
         throw new Error('Columns count must be between 1 and 4.');
+    }
 
-    const rndNum = Math.random();
+    const animationDelayFactor = 5;
 
     return (
-        <motion.div className={`w-full grid grid-cols-${images.length} gap-8 mb-1
-            sm:grid-cols-none ${images.length == 4 ? 'lg:grid-cols-2' : ''}
-            lg:gap-7 md:gap-6 sm:gap-5 xs:gap-4`}
-            ref={ref}
-            initial={{ y: 250, opacity: 0 }}
-            animate={{ y: inView ? 0 : 500, opacity: inView ? 1 : 1 }}
-            transition={{ duration: 1.6, ease: "anticipate" }}
+        <div className={`w-full grid grid-cols-${images.length} gap-8 mb-1
+          sm:grid-cols-none ${images.length === 4 ? 'lg:grid-cols-2' : ''}
+          lg:gap-7 md:gap-6 sm:gap-5 xs:gap-4`}
         >
             {images.map((src, index) => (
-                <div className='relative col-span-1 pt-[100%]' key={rndNum + index}>
-                    <Image src={src} alt="" fill="responsive" style={{ objectFit: 'cover' }} />
-                </div>
+                <AnimatedImage
+                    key={index}
+                    src={src}
+                    delay={index / animationDelayFactor}
+                />
             ))}
+        </div>
+    );
+};
+
+const AnimatedImage = ({ src, delay }) => {
+    const [isVisible, setIsVisible] = useState(false);
+    const ref = useRef(null);
+    const inView = useInView(ref, {
+        once: true,
+        margin: "0px 0px 250px 0px",
+    });
+
+    useEffect(() => {
+        if (inView) {
+            setIsVisible(true);
+        }
+    }, [inView]);
+
+    return (
+        <motion.div
+            ref={ref}
+            className='relative col-span-1 pt-[100%]'
+            initial={{ y: 250, opacity: 0 }}
+            animate={{ y: isVisible ? 0 : 500, opacity: isVisible ? 1 : 0 }}
+            transition={{ duration: 1.6, ease: 'anticipate', delay: delay }}
+        >
+            <Image src={src} alt="" fill="responsive" style={{ objectFit: 'cover' }} />
         </motion.div>
-    )
-}
+    );
+};
 
 const ContentRenderer = ({ data }) => {
     const ref = useRef(null);
@@ -69,7 +95,7 @@ const ContentRenderer = ({ data }) => {
         case CONTENT_TYPE.subTitle:
             return renderSubTitle(data.content, data.color, data.alignment, inView, ref);
         case CONTENT_TYPE.image:
-            return renderImage(data.images, inView, ref);
+            return renderImages(data.images);
         default:
             return null;
     }

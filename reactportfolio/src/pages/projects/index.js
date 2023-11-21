@@ -19,7 +19,7 @@ const index = () => {
                     <AnimatedText text={projectsPageConfig.mainTitle} className='mb-16 md:mb-8 sm:mb-6' />
 
                     <div className='grid grid-cols-12 gap-24 mb-8
-                        xl:gap-x-16 lg:gap-x-8 sm:gap-x-0 sm:gap-y-16'>
+                        3xl:gap-16 xl:gap-x-16 lg:gap-x-8 sm:gap-x-0 sm:gap-y-16'>
                         {projectsData.map((project, index) =>
                             <div key={index} className={`${index % 2 === 0 && index === projectsData.length - 1 ? 'col-span-12' : 'col-span-6'}
                                 2xl:col-span-12`}>

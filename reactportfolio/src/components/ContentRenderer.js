@@ -40,7 +40,7 @@ const renderImages = (images) => {
     const animationDelayFactor = 5;
 
     return (
-        <div className={`w-full grid grid-cols-${images.length} gap-8 mb-1
+        <div className={`w-full grid grid-cols-${images.length} gap-8 my-1
           sm:grid-cols-none ${images.length === 4 ? 'lg:grid-cols-2' : ''}
           lg:gap-7 md:gap-6 sm:gap-5 xs:gap-4`}
         >

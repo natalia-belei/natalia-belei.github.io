@@ -13,9 +13,9 @@ const Logo = () => {
         whileHover={{
           scale: [1, 1.2, 1],
           backgroundColor: [
-            "rgb(192, 0, 0)",
-            "rgb(255, 140, 0)",
-            "rgb(192, 0, 0)"
+            "#C00000",
+            "#DAA520",
+            "#C00000"
           ],
           transition: { duration: 1, ease: "easeInOut", repeat: Infinity }
         }}

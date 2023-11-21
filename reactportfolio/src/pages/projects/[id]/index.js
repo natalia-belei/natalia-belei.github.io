@@ -23,8 +23,8 @@ const Index = ({ project }) => {
                             lg:mb-16 md:mb-8 sm:mb-6 md:items-start'>
                             <AnimatedText text={project.title} className='mb-8 md:mb-4 sm:mb-3' />
 
-                            <div className='flex flex-col justify-center overflow-hidden mb-4 w-full h-[65dvh]
-                                xl:h-[60dvh] lg:h-[55dvh] md:h-[50dvh] sm:h-[40dvh] xs:h-[30dvh]
+                            <div className='flex flex-col justify-center overflow-hidden mb-4 w-full h-[65vh]
+                                xl:h-[60vh] lg:h-[55vh] md:h-[50vh] sm:h-[40vh] xs:h-[30vh]
                                 xl:mb-3 md:mb-2 xs:mb-1'>
                                 <ParallaxEffect offset={100}>
                                     <div className='w-full h-full'>
@@ -36,7 +36,7 @@ const Index = ({ project }) => {
                                                 fill="responsive"
                                                 style={{ objectFit: 'cover' }}
                                                 priority={true}
-                                                sizes='(max-width: 768px) 100dvw, (max-width: 1200px) 50dvw, 50dvw'
+                                                sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 50vw'
                                             />
                                         </div>
                                     </div>

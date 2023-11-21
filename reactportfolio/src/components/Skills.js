@@ -5,6 +5,8 @@ import { skillsData } from '../../data-config/skills.js';
 import { skillsConfig } from '../../data-config/skills.js';
 
 const Skills = () => {
+    const primaryColor = require("tailwind.config.js").theme.extend.colors.primary;
+
     return (
         <>
             <div className='w-full mt-48 md:mt-32 sm:mt-24'>
@@ -17,7 +19,7 @@ const Skills = () => {
                     <motion.div className='flex items-center justify-center rounded-full font-semibold bg-dark/95 text-light
                     p-8 shadow-dark cursor-default
                     lg:p-6 md:p-4 xs:p-2 xs:text-xs xs:opacity-[90%]'
-                        whileHover={{ scale: 1.2 }}
+                        whileHover={{ scale: 1.2, backgroundColor: primaryColor }}
                     >
                         {skillsData[0]?.name}
                     </motion.div>
@@ -28,6 +30,7 @@ const Skills = () => {
                             <Skill
                                 key={skill.id}
                                 name={skill.name}
+                                onHoverBgColor={primaryColor}
                                 x={positions[index].x}
                                 y={positions[index].y}
                             />
@@ -35,7 +38,6 @@ const Skills = () => {
                     })}
                 </div>
             </div>
-
         </>
     )
 

@@ -5,6 +5,7 @@ import { BehanceIcon, LinkArrow, LinkedInIcon, PinterestIcon } from './Icons';
 import { motion } from "framer-motion";
 import { contactsConfig } from '../../data-config/contacts.js';
 import { CustomMobileLink } from './CustomMobileLink';
+import SocialMediaLinks from './SocialMediaLinks';
 
 const NavBar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -14,6 +15,25 @@ const NavBar = () => {
   const handleClick = () => {
     setIsOpen(!isOpen);
   };
+
+  const profiles = [
+    contactsConfig.linkedInProfile && {
+      icon: LinkedInIcon,
+      url: contactsConfig.linkedInProfile
+    },
+    contactsConfig.pinterestProfile && {
+      icon: (props) => <PinterestIcon className="rounded-full lg:bg-light" {...props} />,
+      url: contactsConfig.pinterestProfile
+    },
+    contactsConfig.behanceProfile && {
+      icon: BehanceIcon,
+      url: contactsConfig.behanceProfile
+    },
+    contactsConfig.externalLink && {
+      icon: (props) => <LinkArrow className="rounded-md lg:bg-light" {...props} />,
+      url: contactsConfig.externalLink
+    },
+  ];
 
   useEffect(() => {
     const handleOutsideClose = (event) => {
@@ -60,41 +80,11 @@ const NavBar = () => {
           <CustomLink href="/projects" title="Projects" className='ml-4' />
         </nav>
 
-        <nav className='flex items-center justify-center flex-wrap text-3xl'>
-          {contactsConfig.linkedInProfile && (
-            <motion.a
-              href={contactsConfig.linkedInProfile} target={"_blank"}
-              whileHover={{ y: -3 }}
-              whileTap={{ scale: 0.9 }}
-              className='w-7 mx-2'>
-              <LinkedInIcon />
-            </motion.a>
-          )}
-          {contactsConfig.pinterestProfile && (
-            <motion.a href={contactsConfig.pinterestProfile} target={"_blank"}
-              whileHover={{ y: -3 }}
-              whileTap={{ scale: 0.9 }}
-              className='w-7 mx-2'>
-              <PinterestIcon />
-            </motion.a>
-          )}
-          {contactsConfig.behanceProfile && (
-            <motion.a href={contactsConfig.behanceProfile} target={"_blank"}
-              whileHover={{ y: -3 }}
-              whileTap={{ scale: 0.9 }}
-              className='w-7 mx-2'>
-              <BehanceIcon />
-            </motion.a>
-          )}
-          {contactsConfig.externalLink && (
-            <motion.a href={contactsConfig.externalLink} target={"_blank"}
-              whileHover={{ y: -3 }}
-              whileTap={{ scale: 0.9 }}
-              className='w-7 mx-2'>
-              <LinkArrow />
-            </motion.a>
-          )}
-        </nav>
+        <SocialMediaLinks
+          profiles={profiles.filter(Boolean)}
+          navClasses="flex items-center justify-center flex-wrap text-3xl"
+          iconClasses="w-7 mx-2"
+        />
       </div>
 
       {isOpen && <motion.div
@@ -110,41 +100,11 @@ const NavBar = () => {
           <CustomMobileLink href="/projects" title="Projects" className='' toggle={handleClick} />
         </nav>
 
-        <nav className='flex items-center justify-center flex-wrap text-3xl mt-6'>
-          {contactsConfig.linkedInProfile && (
-            <motion.a
-              href={contactsConfig.linkedInProfile} target={"_blank"}
-              whileHover={{ y: -3 }}
-              whileTap={{ scale: 0.9 }}
-              className='w-7 mx-2 sm:mx-1'>
-              <LinkedInIcon />
-            </motion.a>
-          )}
-          {contactsConfig.pinterestProfile && (
-            <motion.a href={contactsConfig.pinterestProfile} target={"_blank"}
-              whileHover={{ y: -3 }}
-              whileTap={{ scale: 0.9 }}
-              className='w-7 mx-2 bg-light rounded-full sm:mx-1'>
-              <PinterestIcon />
-            </motion.a>
-          )}
-          {contactsConfig.behanceProfile && (
-            <motion.a href={contactsConfig.behanceProfile} target={"_blank"}
-              whileHover={{ y: -3 }}
-              whileTap={{ scale: 0.9 }}
-              className='w-7 mx-2 sm:mx-1'>
-              <BehanceIcon />
-            </motion.a>
-          )}
-          {contactsConfig.externalLink && (
-            <motion.a href={contactsConfig.externalLink} target={"_blank"}
-              whileHover={{ y: -3 }}
-              whileTap={{ scale: 0.9 }}
-              className='w-7 mx-2 bg-light rounded-md sm:mx-1'>
-              <LinkArrow />
-            </motion.a>
-          )}
-        </nav>
+        <SocialMediaLinks
+          profiles={profiles.filter(Boolean)}
+          navClasses="flex items-center justify-center flex-wrap text-3xl mt-6"
+          iconClasses="w-7 mx-2 sm:mx-1"
+        />
       </motion.div>}
 
       <div className='absolute left-[50%] translate-x-[-50%]'>

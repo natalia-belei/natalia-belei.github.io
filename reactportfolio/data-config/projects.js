@@ -105,12 +105,8 @@ export const projectsData = [
 
         detailsPage: [
             {
-                type: CONTENT_TYPE.paragraph,
-                content: "Project Overview",
-            },
-            {
                 type: CONTENT_TYPE.subTitle,
-                content: "Colorful Subtitle",
+                content: "Project Overview",
                 color: "primary", // set to null or refer to the comment above for details
                 alignment: null // ("left", "center", "right") or null for default
             },

@@ -113,7 +113,6 @@ export const projectsData = [
             {
                 type: CONTENT_TYPE.paragraph,
                 content: "The pet food delivery service app is designed to provide a convenient and hassle-free solution for pet owners to meet their pets nutritional needs. The target users of the app are tech-savvy pet owners, primarily residing in urban areas, who prioritize their pets' health, seek cost-effective options, and embrace the convenience of mobile apps for their pet-related needs.",
-",
                 color: "primary", // set to null or refer to the comment above for details
                 alignment: null // ("left", "center", "right", "justify") or null for default
             },

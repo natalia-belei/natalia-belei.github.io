@@ -107,7 +107,7 @@ export const projectsData = [
             {
                 type: CONTENT_TYPE.subTitle,
                 content: "Project Overview",
-                color: "primary", // set to null or refer to the comment above for details
+                color: null, // set to null or refer to the comment above for details
                 alignment: null // ("left", "center", "right") or null for default
             },
             {

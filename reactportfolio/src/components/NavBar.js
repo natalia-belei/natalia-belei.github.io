@@ -17,22 +17,9 @@ const NavBar = () => {
   };
 
   const profiles = [
-    contactsConfig.linkedInProfile && {
-      icon: LinkedInIcon,
-      url: contactsConfig.linkedInProfile
-    },
-    contactsConfig.pinterestProfile && {
-      icon: (props) => <PinterestIcon className="rounded-full lg:bg-light" {...props} />,
-      url: contactsConfig.pinterestProfile
-    },
-    contactsConfig.behanceProfile && {
-      icon: BehanceIcon,
-      url: contactsConfig.behanceProfile
-    },
-    contactsConfig.externalLink && {
-      icon: (props) => <LinkArrow className="rounded-md lg:bg-light" {...props} />,
-      url: contactsConfig.externalLink
-    },
+    contactsConfig.linkedInProfile && { icon: LinkedInIcon, url: contactsConfig.linkedInProfile.url },
+    contactsConfig.behanceProfile && { icon: BehanceIcon, url: contactsConfig.behanceProfile.url },
+    contactsConfig.externalLink && { icon: LinkArrow, url: contactsConfig.externalLink.url },
   ];
 
   useEffect(() => {
@@ -58,7 +45,7 @@ const NavBar = () => {
   return (
     <header className='w-full px-32 py-8 font-medium flex items-center justify-between relative z-10
       lg:px-16 md:px-12 sm:px-8'>
-      <button className='hidden lg:flex flex-col justify-center items-center z-100'
+      <button className='hidden lg:flex flex-col justify-center items-center'
         ref={toggleRef} onClick={handleClick}>
         <span className={`bg-dark block h-0.5 w-6 rounded-sm
           transition-all duration-300 ease-out
@@ -83,7 +70,7 @@ const NavBar = () => {
         <SocialMediaLinks
           profiles={profiles.filter(Boolean)}
           navClasses="flex items-center justify-center flex-wrap text-3xl"
-          iconClasses="w-7 mx-2"
+          iconClasses="w-9 mx-2"
         />
       </div>
 

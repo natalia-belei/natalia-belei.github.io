@@ -56,7 +56,7 @@ const NavBar = () => {
   }, [isOpen]);
 
   return (
-    <header className='w-full px-32 py-8 font-medium flex items-center justify-between relative z-10
+    <header className='w-full px-32 py-8 font-medium flex items-center justify-between relative z-100
       lg:px-16 md:px-12 sm:px-8'>
       <button className='hidden lg:flex flex-col justify-center items-center'
         ref={toggleRef} onClick={handleClick}>

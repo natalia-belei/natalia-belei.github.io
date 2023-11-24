@@ -42,7 +42,7 @@ export default function Home() {
                   md:text-base md:p-2 md:px-4'
                   download={true}
                 >
-                  Resume <LinkArrow className={"w-6 ml-1"} />
+                  Resume <LinkArrow className={"!w-6 ml-1"} />
                 </Link>
                 <Link href={contactsConfig.ownerEmail} target='blank'
                   className='ml-4 text-lg font-medium capitalize text-dark underline

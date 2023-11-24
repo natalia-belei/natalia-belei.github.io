@@ -60,14 +60,14 @@ const NavBar = () => {
       lg:px-16 md:px-12 sm:px-8'>
       <button className='hidden lg:flex flex-col justify-center items-center z-100'
         ref={toggleRef} onClick={handleClick}>
-        <span className={`bg-dark dark:bg-light block h-0.5 w-6 rounded-sm
+        <span className={`bg-dark block h-0.5 w-6 rounded-sm
           transition-all duration-300 ease-out
           ${isOpen ? 'rotate-45 translate-y-0.5' : '-translate-y-0.5'}`}>
         </span>
-        <span className={`bg-dark dark:bg-light block h-0.5 w-6 rounded-sm my-0.5
+        <span className={`bg-dark block h-0.5 w-6 rounded-sm my-0.5
           transition-all duration-300 ease-out
           ${isOpen ? 'opacity-0' : 'opacity-100'}`}></span>
-        <span className={`bg-dark dark:bg-light block h-0.5 w-6 rounded-sm
+        <span className={`bg-dark block h-0.5 w-6 rounded-sm
           transition-all duration-300 ease-out
           ${isOpen ? '-rotate-45 -translate-y-1.5' : 'translate-y-0.5'}`}>
         </span>

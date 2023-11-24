@@ -51,7 +51,8 @@ export const ProjectPreview = ({ type, title, description, img, link }) => {
                     sm:my-0 xs:text-sm'>
                     {description}
                 </p>
-                <div className='h-full flex flex-col justify-end self-end mt-4'>
+                <div className='h-full flex flex-col justify-end mt-4 self-end
+                    lg:self-auto'>
                     <Link href={link}
                         className='rounded-lg bg-dark text-light p-2 px-6 text-lg font-semibold
                             md:px-4 sm:px-3 sm:text-base xs:text-sm'>

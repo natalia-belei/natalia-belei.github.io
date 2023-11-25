@@ -1,6 +1,6 @@
 import { contactsConfig } from "../../data-config/contacts";
 
-const defaultColor = "#000000";
+const defaultColor = "currentColor";
 
 export const LinkedInIcon = ({ className, ...rest }) => {
     const iconColor = contactsConfig.linkedInProfile?.iconColor

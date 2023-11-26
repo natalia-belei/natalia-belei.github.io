@@ -11,7 +11,7 @@ const renderParagraph = (content, color, alignment, inView, ref) => (
         animate={{ y: inView ? 0 : 500, opacity: inView ? 1 : 1 }}
         transition={{ duration: 1.6, ease: "anticipate" }}
         className={`my-4 font-medium text-dark text-base 
-            md:my-3 sm:my-2 md:font-normal sm:text-sm xs:text-xs
+            md:my-3 sm:my-2 md:font-normal sm:text-sm
             ${color ? `text-${color}` : ''} ${alignment ? `text-${alignment}` : ''}`}
     >
         {content}

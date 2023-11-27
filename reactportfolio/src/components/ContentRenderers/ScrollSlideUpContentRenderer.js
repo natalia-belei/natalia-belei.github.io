@@ -5,44 +5,52 @@ import { useInView, motion } from 'framer-motion';
 import Image from 'next/image';
 
 const ScrollSlideUpContentRenderer = ({ data }) => {
-    const renderAnimatedParagraph = (content, className) => {
-        const ref = useRef(null);
-        const inView = useInView(ref, {
-            once: true,
-            margin: "0px 0px 250px 0px",
-        });
 
-        return (
-            <motion.p
-                ref={ref}
-                className={`font-medium 2xl:font-normal ${className}`}
-                initial={{ y: 250, opacity: 0 }}
-                animate={{ y: inView ? 0 : 500, opacity: inView ? 1 : 1 }}
-                transition={{ duration: 1.6, ease: "anticipate" }}
-            >
-                {content}
-            </motion.p>
-        );
+    const renderAnimatedParagraph = (content, className) => {
+        const AnimatedParagraph = ({ content, className }) => {
+            const ref = useRef(null);
+            const inView = useInView(ref, {
+                once: true,
+                margin: "0px 0px 250px 0px",
+            });
+
+            return (
+                <motion.p
+                    ref={ref}
+                    className={`font-medium 2xl:font-normal ${className}`}
+                    initial={{ y: 250, opacity: 0 }}
+                    animate={{ y: inView ? 0 : 500, opacity: inView ? 1 : 1 }}
+                    transition={{ duration: 1.6, ease: "anticipate" }}
+                >
+                    {content}
+                </motion.p>
+            );
+        };
+        return <AnimatedParagraph content={content} className={className} />;
     };
 
     const renderAnimatedSubTitle = (content, className) => {
-        const ref = useRef(null);
-        const inView = useInView(ref, {
-            once: true,
-            margin: "0px 0px 250px 0px",
-        });
+        const AnimatedSubTitle = ({ content, className }) => {
+            const ref = useRef(null);
+            const inView = useInView(ref, {
+                once: true,
+                margin: "0px 0px 250px 0px",
+            });
 
-        return (
-            <motion.h2
-                ref={ref}
-                className={`font-semibold ${className}`}
-                initial={{ y: 250, opacity: 0 }}
-                animate={{ y: inView ? 0 : 500, opacity: inView ? 1 : 1 }}
-                transition={{ duration: 1.6, ease: "anticipate" }}
-            >
-                {content}
-            </motion.h2>
-        );
+            return (
+                <motion.h2
+                    ref={ref}
+                    className={`font-semibold ${className}`}
+                    initial={{ y: 250, opacity: 0 }}
+                    animate={{ y: inView ? 0 : 500, opacity: inView ? 1 : 1 }}
+                    transition={{ duration: 1.6, ease: "anticipate" }}
+                >
+                    {content}
+                </motion.h2>
+            );
+        };
+
+        return <AnimatedSubTitle content={content} className={className} />;
     };
 
     const renderAnimatedImages = (content, className) => {

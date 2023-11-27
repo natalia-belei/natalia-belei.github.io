@@ -6,9 +6,14 @@ import AnimatedText from '@/components/AnimatedText';
 import Image from 'next/image';
 import TransitionEffect from '@/components/TransitionEffect';
 import ParallaxEffect from '@/components/ParallaxEffect';
-import ScrollSlideUpContentRenderer from '@/components/ContentRenderers/ScrollSlideUpContentRenderer';
+import ContentRendererFactory from '@/components/ContentRenderers/ContentRendererFactory';
+import config from '../../../../config';
+
 
 const Index = ({ project }) => {
+    const factory = new ContentRendererFactory();
+    const ContentRenderer = factory.createRenderer(config.contentAnimationStyle);
+
     if (project) {
         return (
             <>
@@ -45,8 +50,8 @@ const Index = ({ project }) => {
                                     </ParallaxEffect>
                                 </div>
 
-                                {project.detailsPage.map((item, index) => (
-                                    <ScrollSlideUpContentRenderer key={index} data={item} />
+                                {ContentRenderer && project.detailsPage.map((item, index) => (
+                                    <ContentRenderer key={index} data={item} />
                                 ))}
                             </article>
                         </div>

@@ -4,9 +4,9 @@ import { projectsData } from '../../../../data-config/projects.js';
 import { contactsConfig } from '../../../../data-config/contacts.js';
 import AnimatedText from '@/components/AnimatedText';
 import Image from 'next/image';
-import ContentRenderer from '@/components/ContentRenderer';
 import TransitionEffect from '@/components/TransitionEffect';
 import ParallaxEffect from '@/components/ParallaxEffect';
+import ScrollSlideUpContentRenderer from '@/components/ContentRenderers/ScrollSlideUpContentRenderer';
 
 const Index = ({ project }) => {
     if (project) {
@@ -46,7 +46,7 @@ const Index = ({ project }) => {
                                 </div>
 
                                 {project.detailsPage.map((item, index) => (
-                                    <ContentRenderer key={index} data={item} />
+                                    <ScrollSlideUpContentRenderer key={index} data={item} />
                                 ))}
                             </article>
                         </div>

@@ -11,6 +11,7 @@ import ReactMarkdown from 'react-markdown';
 import { experienceData } from '../../data-config/experience.js';
 import { certificationsData } from '../../data-config/certifications.js';
 import TransitionEffect from '@/components/TransitionEffect.js';
+import WithScrollToTopOnNavigation from '@/components/WithScrollToTopOnNavigation.js';
 
 const renderSummary = () => {
     return aboutPageConfig.summary.map((paragraph, index, array) => {
@@ -23,7 +24,7 @@ const renderSummary = () => {
     });
 };
 
-const about = () => {
+function AboutPage() {
     return (
         <>
             <Head>
@@ -130,4 +131,4 @@ const about = () => {
     }
 }
 
-export default about;
+export default WithScrollToTopOnNavigation(AboutPage);

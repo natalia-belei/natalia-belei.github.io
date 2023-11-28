@@ -22,7 +22,7 @@ export const ProjectPreview = ({ type, title, description, img, link }) => {
             animate={{ y: inView ? 0 : 100, opacity: 1 }}
             transition={{ duration: 0.9, ease: "anticipate" }}>
 
-            <Link href={link} className='w-1/2 cursor-pointer overflow-hidden rounded-lg
+            <Link href={link} scroll={false} className='w-1/2 cursor-pointer overflow-hidden rounded-lg
                 lg:w-full'>
                 <div className="h-full  pb-[100%] relative">
                     <FramerImage src={img} alt={title} fill="responsive" style={{ objectFit: 'cover' }}
@@ -41,7 +41,7 @@ export const ProjectPreview = ({ type, title, description, img, link }) => {
                         md:text-lg sm:text-base'>
                     {type}
                 </span>
-                <Link href={link} className='hover:underline underline-offset-2'>
+                <Link href={link} scroll={false} className='hover:underline underline-offset-2'>
                     <h2 className='my-2 w-full text-left text-2xl font-bold
                         sm:my-1 sm:text-xl xs:text-lg'>
                         {title}
@@ -53,7 +53,7 @@ export const ProjectPreview = ({ type, title, description, img, link }) => {
                 </p>
                 <div className='h-full flex flex-col justify-end mt-4 self-end
                     lg:self-auto'>
-                    <Link href={link}
+                    <Link href={link} scroll={false}
                         className='rounded-lg bg-dark text-light p-2 px-6 text-lg font-semibold
                             md:px-4 sm:px-3 sm:text-base xs:text-sm'>
                         {projectsPageConfig.previewButtonTitle}

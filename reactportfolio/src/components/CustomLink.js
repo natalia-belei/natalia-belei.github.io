@@ -7,7 +7,7 @@ export const CustomLink = ({ href, title, className = "" }) => {
     const router = useRouter();
 
     return (
-        <Link href={href} className={`${className} relative group`}>
+        <Link href={href} scroll={false} className={`${className} relative group`}>
             {title}
             <span className={`
                 h-[1px] inline-block bg-dark absolute left-0 -bottom-0.5

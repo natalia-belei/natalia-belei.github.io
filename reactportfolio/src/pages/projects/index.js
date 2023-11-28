@@ -5,8 +5,9 @@ import Layout from '@/components/Layout';
 import { projectsPageConfig, projectsData } from '../../../data-config/projects.js';
 import { ProjectPreview } from '../../components/ProjectPreview.js';
 import TransitionEffect from '@/components/TransitionEffect.js';
+import WithScrollToTopOnNavigation from '@/components/WithScrollToTopOnNavigation.js';
 
-const index = () => {
+function ProjectsPage() {
     return (
         <>
             <Head>
@@ -42,4 +43,4 @@ const index = () => {
     )
 }
 
-export default index
+export default (WithScrollToTopOnNavigation(ProjectsPage));

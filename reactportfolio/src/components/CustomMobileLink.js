@@ -7,7 +7,7 @@ export const CustomMobileLink = ({ href, title, className = "", toggle }) => {
 
     const handleClick = () => {
         toggle();
-        router.push(href);
+        router.push(href, undefined, { scroll: false });
     }
 
     return (

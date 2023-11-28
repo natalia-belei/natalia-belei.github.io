@@ -9,8 +9,9 @@ import HireMe from '@/components/HireMe';
 import { contactsConfig } from '../../data-config/contacts.js';
 import { homePageConfig } from '../../data-config/home.js';
 import TransitionEffect from '@/components/TransitionEffect';
+import WithScrollToTopOnNavigation from '@/components/WithScrollToTopOnNavigation';
 
-export default function Home() {
+function HomePage() {
   return (
     <>
       <Head>
@@ -35,7 +36,7 @@ export default function Home() {
                 {homePageConfig.summary}
               </p>
               <div className='flex items-center self-start mt-2 md:self-center'>
-                <Link href={contactsConfig.resumePath} target='blank'
+                <Link href={contactsConfig.resumePath} target='blank' scroll={false}
                   className='flex items-center bg-dark text-light p-2.5 px-6 
                   rounded-lg text-lg font-semibold hover:bg-light hover:text-dark
                   border-2 border-solid border-transparent hover:border-dark
@@ -44,7 +45,7 @@ export default function Home() {
                 >
                   Resume <LinkArrow className={"!w-6 ml-1"} />
                 </Link>
-                <Link href={contactsConfig.ownerEmail} target='blank'
+                <Link href={contactsConfig.ownerEmail} target='blank' scroll={false}
                   className='ml-4 text-lg font-medium capitalize text-dark underline
                     md:text-base'
                 >Contact Me</Link>
@@ -57,3 +58,5 @@ export default function Home() {
     </>
   )
 }
+
+export default WithScrollToTopOnNavigation(HomePage);

@@ -8,9 +8,9 @@ import TransitionEffect from '@/components/TransitionEffect';
 import ParallaxEffect from '@/components/ParallaxEffect';
 import ContentRendererFactory from '@/components/ContentRenderers/ContentRendererFactory';
 import config from '../../../../config';
+import WithScrollToTopOnNavigation from '@/components/WithScrollToTopOnNavigation';
 
-
-const Index = ({ project }) => {
+function ProjectPage({ project }) {
     const factory = new ContentRendererFactory();
     const ContentRenderer = factory.createRenderer(config.contentAnimationStyle);
 
@@ -79,7 +79,7 @@ const Index = ({ project }) => {
     );
 }
 
-export default Index;
+export default WithScrollToTopOnNavigation(ProjectPage);
 
 export async function getStaticPaths() {
     const paths = projectsData.map((project) => ({

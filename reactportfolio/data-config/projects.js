@@ -237,8 +237,6 @@ export const projectsData = [
                     // max 4 images per column
                     "/images/projects/image-placeholder.jpg",
                     "/images/projects/image-placeholder.jpg",
-                    "/images/projects/image-placeholder.jpg",
-                    "/images/projects/image-placeholder.jpg"
                 ],
             },
         ],

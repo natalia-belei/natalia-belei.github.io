@@ -4,7 +4,7 @@ import { useRef } from 'react';
 import { useInView, motion } from 'framer-motion';
 import PropTypes from 'prop-types';
 
-const ScrollSideUpParagraph = ({ content, className }) => {
+const ScrollSlideUpSubTitle = ({ content, className }) => {
     const ref = useRef(null);
     const inView = useInView(ref, {
         once: true,
@@ -12,21 +12,21 @@ const ScrollSideUpParagraph = ({ content, className }) => {
     });
 
     return (
-        <motion.p
+        <motion.h2
             ref={ref}
-            className={`font-medium 2xl:font-normal ${className}`}
+            className={`font-semibold ${className}`}
             initial={{ y: 500, opacity: 0 }}
             animate={{ y: inView ? 0 : 500, opacity: inView ? 1 : 1 }}
             transition={{ duration: 1.6, ease: "anticipate" }}
         >
             {content}
-        </motion.p>
+        </motion.h2>
     );
 };
 
-ScrollSideUpParagraph.propTypes = {
+ScrollSlideUpSubTitle.propTypes = {
     content: PropTypes.string.isRequired,
     className: PropTypes.string,
 };
 
-export default ScrollSideUpParagraph;
+export default ScrollSlideUpSubTitle;

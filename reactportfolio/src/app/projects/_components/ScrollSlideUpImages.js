@@ -5,7 +5,7 @@ import { useInView, motion } from 'framer-motion';
 import Image from 'next/image';
 import PropTypes from 'prop-types';
 
-const ScrollSideUpImages = ({ className, images, animationDelayFactor }) => {
+const ScrollSlideUpImages = ({ className, images, animationDelayFactor }) => {
     const AnimatedImage = ({ src, delay }) => {
         const [isVisible, setIsVisible] = useState(false);
         const ref = useRef(null);
@@ -48,10 +48,10 @@ const ScrollSideUpImages = ({ className, images, animationDelayFactor }) => {
     );
 }
 
-ScrollSideUpImages.propTypes = {
+ScrollSlideUpImages.propTypes = {
     className: PropTypes.string,
     images: PropTypes.arrayOf(PropTypes.string).isRequired,
     animationDelayFactor: PropTypes.number,
 };
 
-export default ScrollSideUpImages;
+export default ScrollSlideUpImages;

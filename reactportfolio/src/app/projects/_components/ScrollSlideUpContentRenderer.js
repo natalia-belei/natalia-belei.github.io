@@ -1,17 +1,17 @@
 import PropTypes from 'prop-types';
 import BaseContentRenderer from './BaseContentRenderer';
-import ScrollSideUpParagraph from './ScrollSideUpParagraph';
-import ScrollSideUpSubTitle from './ScrollSideUpSubTitle';
-import ScrollSideUpImages from './ScrollSideUpImages';
+import ScrollSlideUpParagraph from './ScrollSlideUpParagraph';
+import ScrollSlideUpSubTitle from './ScrollSlideUpSubTitle';
+import ScrollSlideUpImages from './ScrollSlideUpImages';
 
 const ScrollSlideUpContentRenderer = ({ data }) => {
 
     const renderAnimatedParagraph = (content, className) => {
-        return <ScrollSideUpParagraph content={content} className={className} />;
+        return <ScrollSlideUpParagraph content={content} className={className} />;
     };
 
     const renderAnimatedSubTitle = (content, className) => {
-        return <ScrollSideUpSubTitle content={content} className={className} />;
+        return <ScrollSlideUpSubTitle content={content} className={className} />;
     };
 
     const renderAnimatedImages = (content, className) => {
@@ -19,7 +19,7 @@ const ScrollSlideUpContentRenderer = ({ data }) => {
             throw new Error('Columns count must be between 1 and 4.');
         }
 
-        return <ScrollSideUpImages images={content} className={className} animationDelayFactor={5} />;
+        return <ScrollSlideUpImages images={content} className={className} animationDelayFactor={5} />;
     };
 
     const renderContent = (renderFunction, content, className) => {

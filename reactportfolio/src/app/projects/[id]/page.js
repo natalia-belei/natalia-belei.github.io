@@ -2,8 +2,6 @@ import Layout from '@/app/_shared-components/Layout';
 import { projectsData } from '../../../../data-config/projects';
 import { contactsConfig } from '../../../../data-config/contacts';
 import AnimatedText from '@/app/_shared-components/AnimatedText';
-import Image from 'next/image';
-import ParallaxEffect from '../_components/ParallaxEffect';
 import ContentRendererFactory from '../_components/ContentRendererFactory';
 import config from '../../../../config';
 import TransitionEffect from '@/app/_shared-components/TransitionEffect';
@@ -34,26 +32,6 @@ export default function ProjectPage({ params }) {
                             <article className='w-full flex flex-col items-center justify-center mb-24 
                             lg:mb-16 md:mb-8 sm:mb-6 md:items-start'>
                                 <AnimatedText text={project.title} className='mb-8 md:mb-4 sm:mb-3' />
-
-                                <div className='flex flex-col justify-center overflow-hidden mb-4 w-full h-[65vh]
-                                xl:h-[60vh] lg:h-[55vh] md:h-[50vh] sm:h-[40vh] xs:h-[30vh]
-                                xl:mb-3 md:mb-2 xs:mb-1'>
-                                    <ParallaxEffect offset={100}>
-                                        <div className='w-full h-full'>
-                                            <div className='relative w-full pt-[100%] 
-                                            lg:pt-[110%] md:pt-[120%] sm:pt-[130%] xs:pt-[135%]'>
-                                                <Image
-                                                    src={project.image}
-                                                    alt={project.title}
-                                                    fill="responsive"
-                                                    style={{ objectFit: 'cover' }}
-                                                    priority={true}
-                                                    sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 50vw'
-                                                />
-                                            </div>
-                                        </div>
-                                    </ParallaxEffect>
-                                </div>
 
                                 {ContentRenderer && project.detailsPage.map((item, index) => (
                                     <ContentRenderer key={index} data={item} />

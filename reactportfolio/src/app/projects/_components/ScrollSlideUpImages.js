@@ -23,7 +23,7 @@ const ScrollSlideUpImages = ({ className, images, animationDelayFactor }) => {
         return (
             <motion.div
                 ref={ref}
-                className={`relative col-span-1 pt-[100%] ${className}`}
+                className='relative col-span-1 pt-[100%]'
                 initial={{ y: 500, opacity: 0 }}
                 animate={{ y: isVisible ? 0 : 500, opacity: isVisible ? 1 : 0 }}
                 transition={{ duration: 1.6, ease: 'anticipate', delay: delay }}

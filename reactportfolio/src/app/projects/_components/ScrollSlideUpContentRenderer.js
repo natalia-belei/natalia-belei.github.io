@@ -3,6 +3,7 @@ import BaseContentRenderer from './BaseContentRenderer';
 import ScrollSlideUpParagraph from './ScrollSlideUpParagraph';
 import ScrollSlideUpSubTitle from './ScrollSlideUpSubTitle';
 import ScrollSlideUpImages from './ScrollSlideUpImages';
+import FramedParallaxBanner from './FramedParallaxBanner';
 
 const ScrollSlideUpContentRenderer = ({ data }) => {
 
@@ -22,6 +23,10 @@ const ScrollSlideUpContentRenderer = ({ data }) => {
         return <ScrollSlideUpImages images={content} className={className} animationDelayFactor={5} />;
     };
 
+    const renderParallaxBanner = (content, className) => {
+        return <FramedParallaxBanner image={content} className={className} altText={data.altText ?? content} />
+    }
+
     const renderContent = (renderFunction, content, className) => {
         return renderFunction(content, className);
     };
@@ -34,6 +39,7 @@ const ScrollSlideUpContentRenderer = ({ data }) => {
         renderParagraph={renderAnimatedParagraph}
         renderSubTitle={renderAnimatedSubTitle}
         renderImages={renderAnimatedImages}
+        renderBanner={renderParallaxBanner}
     />
 };
 
@@ -44,6 +50,7 @@ ScrollSlideUpContentRenderer.propTypes = {
             PropTypes.string,
             PropTypes.arrayOf(PropTypes.string),
         ]).isRequired,
+        altText: PropTypes.string,
         styles: PropTypes.shape({
             color: PropTypes.string,
             alignment: PropTypes.string,

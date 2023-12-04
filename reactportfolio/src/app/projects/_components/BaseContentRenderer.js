@@ -1,7 +1,9 @@
 import PropTypes from 'prop-types';
 import { CONTENT_TYPE } from '../../../../data-config/projects';
 
-const BaseContentRenderer = ({ type, content, styles, renderContent, renderParagraph, renderSubTitle, renderImages }) => {
+const BaseContentRenderer = ({ type, content, styles, renderContent,
+  renderParagraph, renderSubTitle, renderImages, renderBanner }) => {
+
   const render = () => {
     switch (type) {
       case CONTENT_TYPE.paragraph:
@@ -19,6 +21,9 @@ const BaseContentRenderer = ({ type, content, styles, renderContent, renderParag
 
       case CONTENT_TYPE.image:
         return renderContent(renderImages, content);
+
+      case CONTENT_TYPE.banner:
+        return renderContent(renderBanner, content);
 
       default:
         return null;

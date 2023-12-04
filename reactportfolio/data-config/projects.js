@@ -4,6 +4,7 @@ export const CONTENT_TYPE = Object.freeze({
     paragraph: 0,
     subTitle: 1,
     image: 2,
+    banner: 3,
 });
 
 export const projectsPageConfig = {
@@ -43,6 +44,11 @@ export const projectsData = [
         image: "/images/projects/project-1.jpg",
 
         detailsPage: [
+            {
+                type: CONTENT_TYPE.banner,
+                content: "/images/projects/project-1.jpg",
+                altText: "Project 1 banner"
+            },
             {
                 type: CONTENT_TYPE.paragraph,
                 content: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem.",
@@ -114,6 +120,11 @@ export const projectsData = [
 
         detailsPage: [
             {
+                type: CONTENT_TYPE.banner,
+                content: "/images/projects/project-2.jpg",
+                altText: "Pet food delivery service mobile app"
+            },
+            {
                 type: CONTENT_TYPE.subTitle,
                 content: "Project Overview",
                 styles: {
@@ -182,6 +193,11 @@ export const projectsData = [
         image: "/images/projects/project-3.jpg",
 
         detailsPage: [
+            {
+                type: CONTENT_TYPE.banner,
+                content: "/images/projects/project-3.jpg",
+                altText: "Project 3 banner"
+            },
             {
                 type: CONTENT_TYPE.paragraph,
                 content: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem.",

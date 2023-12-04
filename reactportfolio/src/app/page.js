@@ -18,7 +18,6 @@ export const metadata = {
 export default function HomePage() {
   return (
     <>
-      <ScrollToTopOnMount />
       <TransitionEffect />
       <main className='flex items-start text-dark w-full min-h-screen'>
         <Layout className='pt-0 md:pt-16 sm:pt-8'>

@@ -11,7 +11,7 @@ const ScrollSideUpImages = ({ className, images, animationDelayFactor }) => {
         const ref = useRef(null);
         const inView = useInView(ref, {
             once: true,
-            margin: "0px 0px 250px 0px",
+            margin: "0% 0% 30% 0%",
         });
 
         useEffect(() => {
@@ -24,7 +24,7 @@ const ScrollSideUpImages = ({ className, images, animationDelayFactor }) => {
             <motion.div
                 ref={ref}
                 className={`relative col-span-1 pt-[100%] ${className}`}
-                initial={{ y: 250, opacity: 0 }}
+                initial={{ y: 500, opacity: 0 }}
                 animate={{ y: isVisible ? 0 : 500, opacity: isVisible ? 1 : 0 }}
                 transition={{ duration: 1.6, ease: 'anticipate', delay: delay }}
             >

@@ -7,7 +7,7 @@ export const aboutPageConfig = {
         profilePicAlt: contactsConfig.ownerFullName,
     },
 
-    mainTitle: "Igniting Passion with Purpose!",
+    mainTitle: "Exploring My Stories",
     profilePicture: "/images/profile/profile-pic-2.png",
     summary: [
         // Use markdown syntax for formatting, e.g. **bold text**, *italic text*, etc., see https://www.markdownguide.org/basic-syntax/

@@ -5,6 +5,7 @@ import NavBar from './_components/NavBar';
 import Footer from './_components/Footer';
 import UnderConstruction from './_components/UnderConstruction';
 import AnimatedPresenceContainer from './_components/AnimatePresenseContainer';
+import Script from 'next/script';
 
 export const metadata = {
   favicon: '/favicon.ico',
@@ -29,6 +30,8 @@ export default function RootLayout({ children }) {
           </AnimatedPresenceContainer>
         </main>
         <Footer />
+        {/* Prevent scrolling to top on browser history navigation (back/forward) */}
+        <Script id="manual-scroll-restoration">{`window.history.scrollRestoration = "manual"`}</Script>
       </body>
     </html>
   )

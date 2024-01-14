@@ -20,7 +20,7 @@ export default function ProjectPage({ params }) {
 
     if (project) {
         const factory = new ContentRendererFactory();
-        const ContentRenderer = factory.createRenderer(config.contentAnimationStyle);
+        const ContentRenderer = factory.createRenderer(config.contentRenderingStyle);
 
         return (
             <>

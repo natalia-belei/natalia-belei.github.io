@@ -1,10 +1,10 @@
-export const CONTENT_ANIMATION_STYLE = Object.freeze({
-    scrollSlideUp: 0,
+export const CONTENT_RENDERING_STYLE = Object.freeze({
+  scrollSlideUpAnimation: 0,
 });
 
 const config = {
-    isUnderConstruction: true,
-    contentAnimationStyle: CONTENT_ANIMATION_STYLE.scrollSlideUp,
+  isUnderConstruction: true,
+  contentRenderingStyle: CONTENT_RENDERING_STYLE.scrollSlideUpAnimation,
 };
 
 export default config;

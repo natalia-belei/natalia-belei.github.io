@@ -1,6 +1,6 @@
 import '../styles/globals.css';
 import { Montserrat } from "next/font/google";
-import config from 'config.js';
+import config from '../../config';
 import NavBar from './_components/NavBar';
 import Footer from './_components/Footer';
 import UnderConstruction from './_components/UnderConstruction';
@@ -23,7 +23,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body>
         {config.isUnderConstruction && <UnderConstruction />}
-        <main className={`${montserrat.variable} font-mont bg-light w-full min-h-screen relative`}>
+        <main className={`${montserrat.variable} font-mont bg-white w-full min-h-screen relative`}>
           <NavBar />
           <AnimatedPresenceContainer mode='wait'>
             {children}

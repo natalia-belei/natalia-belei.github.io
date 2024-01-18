@@ -7,7 +7,7 @@ import { skillsData } from '../../../../data-config/skills';
 import { skillsConfig } from '../../../../data-config/skills';
 
 const Skills = () => {
-    const primaryColor = require("tailwind.config.js").theme.extend.colors.primary;
+    const primaryColor = require("../../../../tailwind.config").theme.extend.colors.primary;
 
     return (
         <>

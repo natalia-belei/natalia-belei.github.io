@@ -2,13 +2,12 @@ import Layout from '@/app/_shared-components/Layout';
 import profilePic from "../../public/images/profile/profile-pic-1.png";
 import Image from 'next/image';
 import AnimatedText from '@/app/_shared-components/AnimatedText';
-import Link from 'next/link';
-import { LinkArrow } from '@/app/_shared-components/Icons';
+import { AtIcon, LinkArrow } from '@/app/_shared-components/Icons';
 import HireMe from '@/app/_components/HireMe';
 import { contactsConfig } from '../../data-config/contacts';
 import { homePageConfig } from '../../data-config/home';
 import TransitionEffect from './_shared-components/TransitionEffect';
-import ScrollToTopOnMount from './_shared-components/ScrollToTopOnMount';
+import NavButton from './_shared-components/NavButton';
 
 export const metadata = {
   title: homePageConfig.meta.title,
@@ -36,19 +35,12 @@ export default function HomePage() {
                 {homePageConfig.summary}
               </p>
               <div className='flex items-center self-start mt-2 md:self-center'>
-                <Link href={contactsConfig.resumePath} target='blank' scroll={false}
-                  className='flex items-center bg-dark text-light p-2.5 px-6 
-                  rounded-lg text-lg font-semibold hover:bg-light hover:text-dark
-                  border-2 border-solid border-transparent hover:border-dark
-                  md:text-base md:p-2 md:px-4'
-                  download={true}
-                >
-                  Resume <LinkArrow className={"!w-6 ml-1"} />
-                </Link>
-                <Link href={contactsConfig.ownerEmail} target='blank' scroll={false}
-                  className='ml-4 text-lg font-medium capitalize text-dark underline
-                    md:text-base'
-                >Contact Me</Link>
+                <NavButton href={contactsConfig.resumePath} fullLabel='Resume' download={true} target='_blank'>
+                  <LinkArrow className={"!w-5 ml-1"} />
+                </NavButton>
+                <NavButton href={contactsConfig.ownerEmail} fullLabel='Contact Me' target='_blank' className='ml-4 xs:ml-3'>
+                  <AtIcon className={"!w-5 ml-1"} />
+                </NavButton>
               </div>
             </div>
           </div>

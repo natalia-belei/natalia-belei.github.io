@@ -9,5 +9,5 @@ export const contactsConfig = {
     behanceProfile: { url: "https://www.behance.net/natalibelei", iconColor: "#053EFF" },
     externalLink: null,
 
-    resumePath: "/dummy.pdf",
+    resumePath: "files/dummy.pdf",
 };

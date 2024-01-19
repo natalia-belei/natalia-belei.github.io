@@ -1,10 +1,11 @@
 "use client";
 
-import React, { useRef } from 'react';
+import { useRef } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { motion, useInView } from 'framer-motion';
 import { projectsPageConfig } from '../../../../data-config/projects';
+import NavButton from '@/app/_shared-components/NavButton';
 
 const FramerImage = motion(Image);
 
@@ -55,11 +56,7 @@ export const ProjectPreview = ({ type, title, description, img, link }) => {
                 </p>
                 <div className='h-full flex flex-col justify-end  mt-4 self-end
                     lg:self-auto'>
-                    <Link scroll={false} href={link}
-                        className='rounded-lg bg-dark text-light p-2 px-6 text-lg font-semibold
-                            md:px-4 sm:px-3 sm:text-base xs:text-sm'>
-                        {projectsPageConfig.previewButtonTitle}
-                    </Link>
+                    <NavButton href={link} fullLabel={projectsPageConfig.previewButtonTitle} />
                 </div>
             </div>
         </motion.article>

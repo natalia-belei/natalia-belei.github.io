@@ -11,6 +11,12 @@ module.exports = {
     if (!isServer) {
       // Configure your client-side Webpack here
     }
+
+    config.module.rules.push({
+      test: /\.pdf$/,
+      use: 'raw-loader',
+    });
+
     return config;
   },
 }

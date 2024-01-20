@@ -23,7 +23,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body>
         {config.isUnderConstruction && <UnderConstruction />}
-        <main className={`${montserrat.variable} font-mont bg-light w-full min-h-screen relative`}>
+        <main className={`${montserrat.variable} font-mont bg-white w-full min-h-screen relative`}>
           <NavBar />
           <AnimatedPresenceContainer mode='wait'>
             {children}

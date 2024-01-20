@@ -15,7 +15,7 @@ export const ProjectPreview = ({ type, title, description, img, link }) => {
 
     return (
         <motion.article className={`relative w-full h-full flex
-            rounded-br-2xl rounded-3xl border border-solid border-dark bg-light 
+            rounded-br-2xl rounded-3xl border border-solid border-dark bg-white 
             p-10 3xl:p-8 lg:p-8 md:p-6 xs:p-4
             lg:flex-col lg:h-auto
             xs:rounded-2xl xs:rounded-br-3xl`}
@@ -37,8 +37,9 @@ export const ProjectPreview = ({ type, title, description, img, link }) => {
                 </div>
             </Link>
 
-            <div className='w-1/2 flex flex-col items-start justify-start pl-8 h-full
-                3xl:pl-6 lg:w-full lg:pl-0 lg:pt-8 md:pt-6 sm:pt-4'>
+            <div className='w-1/2 flex flex-col items-start justify-start h-full lg:w-full
+                pl-8 3xl:pl-6 lg:pl-0 
+                lg:pt-8 md:pt-6 sm:pt-4'>
 
                 <span className='text-primary font-medium text-xl
                         md:text-lg sm:text-base'>

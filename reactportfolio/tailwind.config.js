@@ -35,6 +35,7 @@ module.exports = {
         light: "#f5f5f5",
         primary: "#daa520",
         indigo: "#4B0082",
+        while: "#ffffff",
       },
     },
     screens: {
@@ -51,10 +52,10 @@ module.exports = {
       'pulse': 'pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
     },
     backgroundImage: {
-      circular: "repeating-radial-gradient(rgba(0,0,0,0.4) 2px,#f5f5f5 5px,#f5f5f5 100px)",
-      circularLg: "repeating-radial-gradient(rgba(0,0,0,0.4) 2px,#f5f5f5 5px,#f5f5f5 80px)",
-      circularMd: "repeating-radial-gradient(rgba(0,0,0,0.4) 2px,#f5f5f5 5px,#f5f5f5 60px)",
-      circularSm: "repeating-radial-gradient(rgba(0,0,0,0.4) 2px,#f5f5f5 5px,#f5f5f5 40px)",
+      circular: "repeating-radial-gradient(rgba(0,0,0,0.4) 2px,#ffffff 5px,#ffffff 100px)",
+      circularLg: "repeating-radial-gradient(rgba(0,0,0,0.4) 2px,#ffffff 5px,#ffffff 80px)",
+      circularMd: "repeating-radial-gradient(rgba(0,0,0,0.4) 2px,#ffffff 5px,#ffffff 60px)",
+      circularSm: "repeating-radial-gradient(rgba(0,0,0,0.4) 2px,#ffffff 5px,#ffffff 40px)",
     }
   },
 

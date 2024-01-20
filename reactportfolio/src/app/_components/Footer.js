@@ -1,5 +1,6 @@
 import Layout from '../_shared-components/Layout';
 
+// TODO: fix footer size on lg-md screens
 const Footer = () => {
     return (
         <footer className='w-full border-t-2 border-solid border-dark font-medium text-lg

@@ -34,7 +34,7 @@ export default function HomePage() {
               <p className='my-4 text-base font-medium md:text-md sm:text-sm'>
                 {homePageConfig.summary}
               </p>
-              <div className='flex items-center self-start mt-2 md:self-center'>
+              <div className='flex items-center mt-6 md:mt-4 self-start md:self-center'>
                 <NavButton href={contactsConfig.resumePath} fullLabel='Resume' download={true} target='_blank'>
                   <LinkArrow className={"!w-5 ml-1"} />
                 </NavButton>

@@ -4,58 +4,70 @@ import ScrollSlideUpParagraph from './ScrollSlideUpParagraph';
 import ScrollSlideUpSubTitle from './ScrollSlideUpSubTitle';
 import ScrollSlideUpImages from './ScrollSlideUpImages';
 import FramedParallaxBanner from './FramedParallaxBanner';
+import ScrollSlideUpHighlights from './ScrollSlideUpHighlights';
 
 const ScrollSlideUpContentRenderer = ({ data }) => {
 
-    const renderAnimatedParagraph = (content, className) => {
-        return <ScrollSlideUpParagraph content={content} className={className} />;
+    const renderAnimatedParagraph = (content, classNames) => {
+        return <ScrollSlideUpParagraph content={content} classNames={classNames} />;
     };
 
-    const renderAnimatedSubTitle = (content, className) => {
-        return <ScrollSlideUpSubTitle content={content} className={className} />;
+    const renderAnimatedSubTitle = (content, classNames) => {
+        return <ScrollSlideUpSubTitle content={content} classNames={classNames} />;
     };
 
-    const renderAnimatedImages = (content, className) => {
-        if (content.length > 4 || content.length < 1) {
-            throw new Error('Columns count must be between 1 and 4.');
+    const renderAnimatedImages = (content, classNames) => {
+        if (content.length > 6 || content.length < 1) {
+            throw new Error('Columns count must be between 1 and 6.');
         }
 
-        return <ScrollSlideUpImages images={content} className={className} animationDelayFactor={5} />;
+        return <ScrollSlideUpImages images={content} classNames={classNames} animationDelayFactor={5} />;
     };
 
-    const renderParallaxBanner = (content, className) => {
-        return <FramedParallaxBanner image={content} className={className} altText={data.altText ?? content} />
+    const renderParallaxBanner = (content, classNames) => {
+        return <FramedParallaxBanner image={content} classNames={classNames} />
     }
 
-    const renderContent = (renderFunction, content, className) => {
-        return renderFunction(content, className);
+    const renderAnimatedHighlights = (content, classNames) => {
+        return <ScrollSlideUpHighlights content={content} classNames={classNames} />
+    };
+
+    const renderContent = (renderFunction, content, classNames) => {
+        return renderFunction(content, classNames);
     };
 
     return <BaseContentRenderer
-        type={data.type}
-        content={data.content}
-        styles={data.styles}
+        data={data}
         renderContent={renderContent}
         renderParagraph={renderAnimatedParagraph}
         renderSubTitle={renderAnimatedSubTitle}
         renderImages={renderAnimatedImages}
         renderBanner={renderParallaxBanner}
+        renderHighlights={renderAnimatedHighlights}
     />
 };
 
 ScrollSlideUpContentRenderer.propTypes = {
-    data: PropTypes.shape({
-        type: PropTypes.number.isRequired,
-        content: PropTypes.oneOfType([
-            PropTypes.string,
-            PropTypes.arrayOf(PropTypes.string),
-        ]).isRequired,
-        altText: PropTypes.string,
-        styles: PropTypes.shape({
-            color: PropTypes.string,
-            alignment: PropTypes.string,
-        }),
-    }).isRequired,
+    data: PropTypes.arrayOf(
+        PropTypes.shape({
+            type: PropTypes.number.isRequired,
+            content: PropTypes.oneOfType([
+                PropTypes.string,
+                PropTypes.arrayOf(PropTypes.string),
+            ]).isRequired,
+            altText: PropTypes.string,
+            styles: PropTypes.shape({
+                color: PropTypes.string,
+                alignment: PropTypes.string,
+                fontWeight: PropTypes.string,
+                container: PropTypes.shape({
+                    maxWidth: PropTypes.string,
+                    position: PropTypes.string,
+                    fullScreen: PropTypes.bool,
+                }),
+            }),
+        })
+    ).isRequired,
 };
 
 export default ScrollSlideUpContentRenderer;

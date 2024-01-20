@@ -4,7 +4,7 @@ import { useRef } from 'react';
 import { useInView, motion } from 'framer-motion';
 import PropTypes from 'prop-types';
 
-const ScrollSlideUpParagraph = ({ content, className }) => {
+const ScrollSlideUpParagraph = ({ content, classNames }) => {
     const ref = useRef(null);
     const inView = useInView(ref, {
         once: true,
@@ -12,9 +12,8 @@ const ScrollSlideUpParagraph = ({ content, className }) => {
     });
 
     return (
-        <motion.p
+        <motion.p className={classNames}
             ref={ref}
-            className={`font-medium 2xl:font-normal ${className}`}
             initial={{ y: 500, opacity: 0 }}
             animate={{ y: inView ? 0 : 500, opacity: inView ? 1 : 1 }}
             transition={{ duration: 1.6, ease: "anticipate" }}
@@ -26,7 +25,7 @@ const ScrollSlideUpParagraph = ({ content, className }) => {
 
 ScrollSlideUpParagraph.propTypes = {
     content: PropTypes.string.isRequired,
-    className: PropTypes.string,
+    classNames: PropTypes.string,
 };
 
 export default ScrollSlideUpParagraph;

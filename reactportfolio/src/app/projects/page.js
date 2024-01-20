@@ -1,6 +1,6 @@
 import AnimatedText from '../_shared-components/AnimatedText';
 import Layout from '../_shared-components/Layout';
-import { projectsPageConfig, projectsData } from '../../../data-config/projects';
+import { getProjects, projectsPageConfig } from '../../../data-config/projects';
 import { ProjectPreview } from './_components/ProjectPreview';
 import TransitionEffect from '../_shared-components/TransitionEffect';
 
@@ -10,6 +10,8 @@ export const metadata = {
 }
 
 export default function ProjectsPage() {
+    const projects = getProjects();
+
     return (
         <>
             <TransitionEffect />
@@ -19,8 +21,8 @@ export default function ProjectsPage() {
 
                     <div className='grid grid-cols-12 gap-24 mb-8
                         3xl:gap-16 xl:gap-x-16 lg:gap-x-8 sm:gap-x-0 sm:gap-y-16'>
-                        {projectsData.map((project, index) =>
-                            <div key={index} className={`${index % 2 === 0 && index === projectsData.length - 1 ? 'col-span-12' : 'col-span-6'}
+                        {projects.map((project, index) =>
+                            <div key={index} className={`${index % 2 === 0 && index === projects.length - 1 ? 'col-span-12' : 'col-span-6'}
                                 2xl:col-span-12`}>
                                 <ProjectPreview
                                     type={project.type}

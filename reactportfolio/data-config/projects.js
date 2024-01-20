@@ -1,10 +1,11 @@
 import { contactsConfig } from "./contacts";
 
 export const CONTENT_TYPE = Object.freeze({
-    paragraph: 0,
-    subTitle: 1,
-    image: 2,
-    banner: 3,
+    PARAGRAPH: 0,
+    SUBTITLE: 1,
+    IMAGE: 2,
+    BANNER: 3,
+    HIGHLIGHTS: 4,
 });
 
 export const projectsPageConfig = {
@@ -20,7 +21,9 @@ export const projectsPageConfig = {
 /* to use custom color it must be defined within tailwind.config.js. For instance, refer to the example for the 'indigo' color:
  safelist: [
     ...
-    'text-indigo',
+    {
+        pattern: /(!)?text-(...|indigo|...)/,
+    },
   ],
   ...
   theme: {
@@ -34,227 +37,500 @@ export const projectsPageConfig = {
     },
 */
 
-export const projectsData = [
+const projectsData = [
     {
-        id: 1,
+        id: 2,
         isShown: true,
-        type: "Type of Project 1",
-        title: "Project 1",
+        type: "Empty Template",
+        title: "Project Sample 2",
         shortDescription: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.",
-        image: "/images/projects/project-1.jpg",
+        image: "/images/projects/project-sample-2/hero-image.jpg",
 
         detailsPage: [
-            {
-                type: CONTENT_TYPE.banner,
-                content: "/images/projects/project-1.jpg",
-                altText: "Project 1 banner"
-            },
-            {
-                type: CONTENT_TYPE.paragraph,
-                content: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem.",
-            },
-            {
-                type: CONTENT_TYPE.subTitle,
-                content: "Colorful Subtitle",
-                styles: {
-                    color: "primary", // set to null or refer to the comment above for details
-                    alignment: null, // ("left", "center", "right") or null for default
-                }
-            },
-            {
-                type: CONTENT_TYPE.paragraph,
-                content: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim.",
-                styles: {
-                    color: "indigo", // set to null or refer to the comment above for details
-                    alignment: null, // ("left", "center", "right", "justify") or null for default
-                }
-            },
-            {
-                type: CONTENT_TYPE.image,
-                content: [
-                    // max 4 images per column
-                    "/images/projects/image-placeholder.jpg",
-                    "/images/projects/image-placeholder.jpg",
-                ],
-            },
-            {
-                type: CONTENT_TYPE.paragraph,
-                content: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus.",
-                styles: null
-            },
-            {
-                type: CONTENT_TYPE.subTitle,
-                content: "Centered Subtitle with justified text",
-                styles: {
-                    color: null, // set to "null" or refer to the comment above for details
-                    alignment: "center", // (left, center, right) or null for default
-                }
-            },
-            {
-                type: CONTENT_TYPE.paragraph,
-                content: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus.",
-                styles: {
-                    color: null, // set to "null" or refer to the comment above for details
-                    alignment: "justify", // (left, center, right, justify) or null for default
-                }
-            },
-            {
-                type: CONTENT_TYPE.image,
-                content: [
-                    // max 4 images per column
-                    "/images/projects/image-placeholder.jpg",
-                    "/images/projects/image-placeholder.jpg",
-                    "/images/projects/image-placeholder.jpg",
-                    "/images/projects/image-placeholder.jpg"
-                ],
-            },
+            // start with adding a new section
         ],
     },
     {
-        id: 2,
+        id: 1,
         isShown: true,
         type: "MOBILE APP",
         title: "Pet food delivery service",
         shortDescription: "The app is designed to provide a convenient and hassle-free solution for pet owners.",
-        image: "/images/projects/project-2.jpg",
+        image: "/images/projects/pet-food-delivery-service/hero-image.png",
 
         detailsPage: [
             {
-                type: CONTENT_TYPE.banner,
-                content: "/images/projects/project-2.jpg",
-                altText: "Pet food delivery service mobile app"
-            },
-            {
-                type: CONTENT_TYPE.subTitle,
-                content: "Project Overview",
+                type: CONTENT_TYPE.BANNER,
+                content: "/images/projects/pet-food-delivery-service/hero-image.png",
+                altText: "Pet food delivery service mobile app",
                 styles: {
-                    color: null, // set to "null" or refer to the comment above for details
-                    alignment: null, // (left, center, right) or null for default
+                    container: {
+                        maxWidth: null, // percentage with step of 10% | pixel value 100-1000px with step of 100px | null for default (e.g. "700px" or "60%" or null for default). Warning: cannot be use together with 'container:fullScreen'.
+                        position: null, // "start" | "center" | "end" | null (e.g. "center" or null for default). Warning: cannot be use together with 'container:fullScreen'.
+                        fullScreen: false, // true | false - if true, the content will be rendered across the full width of the screen. Warning: cannot be use together with 'container:maxWidth' or 'container:position'.
+                    },
                 }
             },
             {
-                type: CONTENT_TYPE.paragraph,
-                content: "We've developed a straightforward and user-friendly pet food delivery app that streamlines the process of ordering and receiving pet food, making it easier for users to ensure their pets are well-fed while saving valuable time.",
-                styles: {
-                    color: null, // set to "null" or refer to the comment above for details
-                    alignment: null, // (left, center, right, justify) or null for default
-                }
-            },
-            {
-                type: CONTENT_TYPE.image,
+                type: CONTENT_TYPE.HIGHLIGHTS,
                 content: [
-                    // max 4 images per column
-                    "/images/projects/image-placeholder.jpg",
-                    "/images/projects/image-placeholder.jpg",
+                    "Role: Product Designer",
+                    "Tools: Figma, Photoshop, Illustrator",
+                    "Duration: 05/2023",
                 ],
-            },
-            {
-                type: CONTENT_TYPE.paragraph,
-                content: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus.",
                 styles: {
-                    color: null, // set to "null" or refer to the comment above for details
-                    alignment: null, // (left, center, right, justify) or null for default
+                    container: {
+                        maxWidth: null, // percentage with step of 10% | pixel value 100-1000px with step of 100px | null for default (e.g. "700px" or "60%" or null for default). Warning: cannot be use together with 'container:fullScreen'.
+                        position: null, // "start" | "center" | "end" | null (e.g. "center" or null for default). Warning: cannot be use together with 'container:fullScreen'.
+                        fullScreen: false, // true | false - if true, the content will be rendered across the full width of the screen. Warning: cannot be use together with 'container:maxWidth' or 'container:position'.
+                    },
                 }
             },
             {
-                type: CONTENT_TYPE.subTitle,
-                content: "Centered Subtitle with justified text",
+                type: CONTENT_TYPE.SUBTITLE,
+                content: "- Hassle-free solution for pet owners -",
                 styles: {
-                    color: null, // set to "null" or refer to the comment above for details
-                    alignment: "center" // (left, center, right) or null for default
+                    color: null, // set to null for default or refer to the comment above for details
+                    alignment: "center", // "left" | "center" | "right" | "justify" | null (e.g. "center" or null for default)
+                    fontWeight: "extrabold", // "normal" | "medium" | "semibold" | "bold" | "extrabold" | null (e.g. "bold" or null for default)
+                    container: {
+                        maxWidth: null, // percentage with step of 10% | pixel value 100-1000px with step of 100px | null for default (e.g. "700px" or "60%" or null for default). Warning: cannot be use together with 'container:fullScreen'.
+                        position: null, // "start" | "center" | "end" | null (e.g. "center" or null for default). Warning: cannot be use together with 'container:fullScreen'.
+                        fullScreen: false, // true | false - if true, the content will be rendered across the full width of the screen. Warning: cannot be use together with 'container:maxWidth' or 'container:position'.
+                    },
                 }
             },
             {
-                type: CONTENT_TYPE.paragraph,
-                content: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus.",
+                type: CONTENT_TYPE.PARAGRAPH,
+                content: "The pet food delivery service app is designed to provide a convenient and hassle-free solution for pet owners to meet their pets nutritional needs. The target users of the app are tech-savvy pet owners, primarily residing in urban areas, who prioritize their pets' health, seek cost-effective options, and embrace the convenience of mobile apps for their pet-related needs.",
                 styles: {
-                    color: null, // set to "null" or refer to the comment above for details
-                    alignment: "justify", // (left, center, right, justify) or null for default
+                    color: null, // set to null for default or refer to the comment above for details
+                    alignment: "center", // "left" | "center" | "right" | "justify" | null (e.g. "center" or null for default)
+                    fontWeight: null, // "normal" | "medium" | "semibold" | "bold" | "extrabold" | null (e.g. "bold" or null for default)
+                    container: {
+                        maxWidth: "800px", // percentage with step of 10% | pixel value 100-1000px with step of 100px | null for default (e.g. "700px" or "60%" or null for default). Warning: cannot be use together with 'container:fullScreen'.
+                        position: "center", // "start" | "center" | "end" | null (e.g. "center" or null for default). Warning: cannot be use together with 'container:fullScreen'.
+                        fullScreen: false, // true | false - if true, the content will be rendered across the full width of the screen. Warning: cannot be use together with 'container:maxWidth' or 'container:position'.
+                    },
                 }
             },
             {
-                type: CONTENT_TYPE.image,
+                type: CONTENT_TYPE.SUBTITLE,
+                content: "- The main advantages of the app -",
+                styles: {
+                    color: null, // set to null for default or refer to the comment above for details
+                    alignment: "center", // "left" | "center" | "right" | "justify" | null (e.g. "center" or null for default)
+                    fontWeight: "extrabold", // "normal" | "medium" | "semibold" | "bold" | "extrabold" | null (e.g. "bold" or null for default)
+                    container: {
+                        maxWidth: null, // percentage with step of 10% | pixel value 100-1000px with step of 100px | null for default (e.g. "700px" or "60%" or null for default). Warning: cannot be use together with 'container:fullScreen'.
+                        position: null, // "start" | "center" | "end" | null (e.g. "center" or null for default). Warning: cannot be use together with 'container:fullScreen'.
+                        fullScreen: false, // true | false - if true, the content will be rendered across the full width of the screen. Warning: cannot be use together with 'container:maxWidth' or 'container:position'.
+                    }
+                },
+            },
+            {
+                type: CONTENT_TYPE.IMAGE,
                 content: [
-                    // max 4 images per column
-                    "/images/projects/image-placeholder.jpg",
-                    "/images/projects/image-placeholder.jpg",
-                    "/images/projects/image-placeholder.jpg",
-                    "/images/projects/image-placeholder.jpg"
+                    // max 6 images per row
+                    "/images/projects/pet-food-delivery-service/phone-screen-with-number.png",
+                    "/images/projects/pet-food-delivery-service/phone-screen-with-number.png",
+                    "/images/projects/pet-food-delivery-service/phone-screen-with-number.png",
+                    "/images/projects/pet-food-delivery-service/phone-screen-with-number.png",
                 ],
+                styles: {
+                    container: {
+                        maxWidth: null, // percentage with step of 10% | pixel value 100-1000px with step of 100px | null for default (e.g. "700px" or "60%" or null for default). Warning: cannot be use together with 'container:fullScreen'.
+                        position: null, // "start" | "center" | "end" | null (e.g. "center" or null for default). Warning: cannot be use together with 'container:fullScreen'.
+                        fullScreen: false, // true | false - if true, the content will be rendered across the full width of the screen. Warning: cannot be use together with 'container:maxWidth' or 'container:position'.
+                    }
+                }
             },
+            {
+                type: CONTENT_TYPE.SUBTITLE,
+                content: "- Problem",
+                styles: {
+                    color: null, // set to null for default or refer to the comment above for details
+                    alignment: "left", // "left" | "center" | "right" | "justify" | null (e.g. "center" or null for default)
+                    fontWeight: "extrabold", // "normal" | "medium" | "semibold" | "bold" | "extrabold" | null (e.g. "bold" or null for default)
+                    container: {
+                        maxWidth: "50%", // percentage with step of 10% | pixel value 100-1000px with step of 100px | null for default (e.g. "700px" or "60%" or null for default). Warning: cannot be use together with 'container:fullScreen'.
+                        position: "start", // "start" | "center" | "end" | null (e.g. "center" or null for default). Warning: cannot be use together with 'container:fullScreen'.
+                        fullScreen: false, // true | false - if true, the content will be rendered across the full width of the screen. Warning: cannot be use together with 'container:maxWidth' or 'container:position'.
+                    }
+                },
+            },
+            {
+                type: CONTENT_TYPE.PARAGRAPH,
+                content: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.",
+                styles: {
+                    color: null, // set to null for default or refer to the comment above for details
+                    alignment: "left", // "left" | "center" | "right" | "justify" | null (e.g. "center" or null for default)
+                    fontWeight: null, // "normal" | "medium" | "semibold" | "bold" | "extrabold" | null (e.g. "bold" or null for default)
+                    container: {
+                        maxWidth: "50%", // percentage with step of 10% | pixel value 100-1000px with step of 100px | null for default (e.g. "700px" or "60%" or null for default). Warning: cannot be use together with 'container:fullScreen'.
+                        position: "start", // "start" | "center" | "end" | null (e.g. "center" or null for default). Warning: cannot be use together with 'container:fullScreen'.
+                        fullScreen: false, // true | false - if true, the content will be rendered across the full width of the screen. Warning: cannot be use together with 'container:maxWidth' or 'container:position'.
+                    },
+                }
+            },
+            {
+                type: CONTENT_TYPE.SUBTITLE,
+                content: "- Goal",
+                styles: {
+                    color: null, // set to null for default or refer to the comment above for details
+                    alignment: "left", // "left" | "center" | "right" | "justify" | null (e.g. "center" or null for default)
+                    fontWeight: "extrabold", // "normal" | "medium" | "semibold" | "bold" | "extrabold" | null (e.g. "bold" or null for default)
+                    container: {
+                        maxWidth: "50%", // percentage with step of 10% | pixel value 100-1000px with step of 100px | null for default (e.g. "700px" or "60%" or null for default). Warning: cannot be use together with 'container:fullScreen'.
+                        position: "start", // "start" | "center" | "end" | null (e.g. "center" or null for default). Warning: cannot be use together with 'container:fullScreen'.
+                        fullScreen: false, // true | false - if true, the content will be rendered across the full width of the screen. Warning: cannot be use together with 'container:maxWidth' or 'container:position'.
+                    }
+                },
+            },
+            {
+                type: CONTENT_TYPE.PARAGRAPH,
+                content: "123 Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.",
+                styles: {
+                    color: null, // set to null for default or refer to the comment above for details
+                    alignment: "left", // "left" | "center" | "right" | "justify" | null (e.g. "center" or null for default)
+                    fontWeight: null, // "normal" | "medium" | "semibold" | "bold" | "extrabold" | null (e.g. "bold" or null for default)
+                    container: {
+                        maxWidth: "50%", // percentage with step of 10% | pixel value 100-1000px with step of 100px | null for default (e.g. "700px" or "60%" or null for default). Warning: cannot be use together with 'container:fullScreen'.
+                        position: "start", // "start" | "center" | "end" | null (e.g. "center" or null for default). Warning: cannot be use together with 'container:fullScreen'.
+                        fullScreen: false, // true | false - if true, the content will be rendered across the full width of the screen. Warning: cannot be use together with 'container:maxWidth' or 'container:position'.
+                    },
+                }
+            },
+            {
+                type: CONTENT_TYPE.SUBTITLE,
+                content: "- Understanding the challenge -",
+                styles: {
+                    color: null, // set to null for default or refer to the comment above for details
+                    alignment: "center", // "left" | "center" | "right" | "justify" | null (e.g. "center" or null for default)
+                    fontWeight: "extrabold", // "normal" | "medium" | "semibold" | "bold" | "extrabold" | null (e.g. "bold" or null for default)
+                    container: {
+                        maxWidth: null, // percentage with step of 10% | pixel value 100-1000px with step of 100px | null for default (e.g. "700px" or "60%" or null for default). Warning: cannot be use together with 'container:fullScreen'.
+                        position: null, // "start" | "center" | "end" | null (e.g. "center" or null for default). Warning: cannot be use together with 'container:fullScreen'.
+                        fullScreen: false, // true | false - if true, the content will be rendered across the full width of the screen. Warning: cannot be use together with 'container:maxWidth' or 'container:position'.
+                    }
+                },
+            },
+            {
+                type: CONTENT_TYPE.IMAGE,
+                content: [
+                    // max 6 images per row
+                    "/images/projects/pet-food-delivery-service/challenge-bar.png"
+                ],
+                styles: {
+                    container: {
+                        maxWidth: null, // percentage with step of 10% | pixel value 100-1000px with step of 100px | null for default (e.g. "700px" or "60%" or null for default). Warning: cannot be use together with 'container:fullScreen'.
+                        position: null, // "start" | "center" | "end" | null (e.g. "center" or null for default). Warning: cannot be use together with 'container:fullScreen'.
+                        fullScreen: false, // true | false - if true, the content will be rendered across the full width of the screen. Warning: cannot be use together with 'container:maxWidth' or 'container:position'.
+                    }
+                }
+            },
+            {
+                type: CONTENT_TYPE.SUBTITLE,
+                content: "- User Research -",
+                styles: {
+                    color: null, // set to null for default or refer to the comment above for details
+                    alignment: "center", // "left" | "center" | "right" | "justify" | null (e.g. "center" or null for default)
+                    fontWeight: "extrabold", // "normal" | "medium" | "semibold" | "bold" | "extrabold" | null (e.g. "bold" or null for default)
+                    container: {
+                        maxWidth: null, // percentage with step of 10% | pixel value 100-1000px with step of 100px | null for default (e.g. "700px" or "60%" or null for default). Warning: cannot be use together with 'container:fullScreen'.
+                        position: null, // "start" | "center" | "end" | null (e.g. "center" or null for default). Warning: cannot be use together with 'container:fullScreen'.
+                        fullScreen: false, // true | false - if true, the content will be rendered across the full width of the screen. Warning: cannot be use together with 'container:maxWidth' or 'container:position'.
+                    }
+                },
+            },
+            {
+                type: CONTENT_TYPE.PARAGRAPH,
+                content: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.",
+                styles: {
+                    color: null, // set to null for default or refer to the comment above for details
+                    alignment: "center", // "left" | "center" | "right" | "justify" | null (e.g. "center" or null for default)
+                    fontWeight: null, // "normal" | "medium" | "semibold" | "bold" | "extrabold" | null (e.g. "bold" or null for default)
+                    container: {
+                        maxWidth: "800px", // percentage with step of 10% | pixel value 100-1000px with step of 100px | null for default (e.g. "700px" or "60%" or null for default). Warning: cannot be use together with 'container:fullScreen'.
+                        position: "center", // "start" | "center" | "end" | null (e.g. "center" or null for default). Warning: cannot be use together with 'container:fullScreen'.
+                        fullScreen: false, // true | false - if true, the content will be rendered across the full width of the screen. Warning: cannot be use together with 'container:maxWidth' or 'container:position'.
+                    },
+                }
+            },
+            {
+                type: CONTENT_TYPE.IMAGE,
+                content: [
+                    // max 6 images per row
+                    "/images/projects/pet-food-delivery-service/notes-bord.png",
+                ],
+                styles: {
+                    container: {
+                        maxWidth: null, // percentage with step of 10% | pixel value 100-1000px with step of 100px | null for default (e.g. "700px" or "60%" or null for default). Warning: cannot be use together with 'container:fullScreen'.
+                        position: null, // "start" | "center" | "end" | null (e.g. "center" or null for default). Warning: cannot be use together with 'container:fullScreen'.
+                        fullScreen: true, // true | false - if true, the content will be rendered across the full width of the screen. Warning: cannot be use together with 'container:maxWidth' or 'container:position'.
+                    }
+                }
+            },
+            {
+                type: CONTENT_TYPE.SUBTITLE,
+                content: "- User Personas -",
+                styles: {
+                    color: null, // set to null for default or refer to the comment above for details
+                    alignment: "center", // "left" | "center" | "right" | "justify" | null (e.g. "center" or null for default)
+                    fontWeight: "extrabold", // "normal" | "medium" | "semibold" | "bold" | "extrabold" | null (e.g. "bold" or null for default)
+                    container: {
+                        maxWidth: null, // percentage with step of 10% | pixel value 100-1000px with step of 100px | null for default (e.g. "700px" or "60%" or null for default). Warning: cannot be use together with 'container:fullScreen'.
+                        position: null, // "start" | "center" | "end" | null (e.g. "center" or null for default). Warning: cannot be use together with 'container:fullScreen'.
+                        fullScreen: false, // true | false - if true, the content will be rendered across the full width of the screen. Warning: cannot be use together with 'container:maxWidth' or 'container:position'.
+                    }
+                },
+            },
+            {
+                type: CONTENT_TYPE.PARAGRAPH,
+                content: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.",
+                styles: {
+                    color: null, // set to null for default or refer to the comment above for details
+                    alignment: "center", // "left" | "center" | "right" | "justify" | null (e.g. "center" or null for default)
+                    fontWeight: null, // "normal" | "medium" | "semibold" | "bold" | "extrabold" | null (e.g. "bold" or null for default)
+                    container: {
+                        maxWidth: "800px", // percentage with step of 10% | pixel value 100-1000px with step of 100px | null for default (e.g. "700px" or "60%" or null for default). Warning: cannot be use together with 'container:fullScreen'.
+                        position: "center", // "start" | "center" | "end" | null (e.g. "center" or null for default). Warning: cannot be use together with 'container:fullScreen'.
+                        fullScreen: false, // true | false - if true, the content will be rendered across the full width of the screen. Warning: cannot be use together with 'container:maxWidth' or 'container:position'.
+                    },
+                }
+            },
+            {
+                type: CONTENT_TYPE.IMAGE,
+                content: [
+                    // max 6 images per row
+                    "/images/projects/pet-food-delivery-service/user-personas-1.png",
+                    "/images/projects/pet-food-delivery-service/user-personas-2.png",
+                ],
+                styles: {
+                    container: {
+                        maxWidth: null, // percentage with step of 10% | pixel value 100-1000px with step of 100px | null for default (e.g. "700px" or "60%" or null for default). Warning: cannot be use together with 'container:fullScreen'.
+                        position: null, // "start" | "center" | "end" | null (e.g. "center" or null for default). Warning: cannot be use together with 'container:fullScreen'.
+                        fullScreen: false, // true | false - if true, the content will be rendered across the full width of the screen. Warning: cannot be use together with 'container:maxWidth' or 'container:position'.
+                    }
+                }
+            },
+            {
+                type: CONTENT_TYPE.SUBTITLE,
+                content: "- User Journey Map -",
+                styles: {
+                    color: null, // set to null for default or refer to the comment above for details
+                    alignment: "center", // "left" | "center" | "right" | "justify" | null (e.g. "center" or null for default)
+                    fontWeight: "extrabold", // "normal" | "medium" | "semibold" | "bold" | "extrabold" | null (e.g. "bold" or null for default)
+                    container: {
+                        maxWidth: null, // percentage with step of 10% | pixel value 100-1000px with step of 100px | null for default (e.g. "700px" or "60%" or null for default). Warning: cannot be use together with 'container:fullScreen'.
+                        position: null, // "start" | "center" | "end" | null (e.g. "center" or null for default). Warning: cannot be use together with 'container:fullScreen'.
+                        fullScreen: false, // true | false - if true, the content will be rendered across the full width of the screen. Warning: cannot be use together with 'container:maxWidth' or 'container:position'.
+                    }
+                },
+            },
+            {
+                type: CONTENT_TYPE.IMAGE,
+                content: [
+                    // max 6 images per row
+                    "/images/projects/pet-food-delivery-service/user-journey-map.png",
+                ],
+                styles: {
+                    container: {
+                        maxWidth: null, // percentage with step of 10% | pixel value 100-1000px with step of 100px | null for default (e.g. "700px" or "60%" or null for default). Warning: cannot be use together with 'container:fullScreen'.
+                        position: null, // "start" | "center" | "end" | null (e.g. "center" or null for default). Warning: cannot be use together with 'container:fullScreen'.
+                        fullScreen: true, // true | false - if true, the content will be rendered across the full width of the screen. Warning: cannot be use together with 'container:maxWidth' or 'container:position'.
+                    }
+                }
+            },
+            {
+                type: CONTENT_TYPE.SUBTITLE,
+                content: "- Paper Wireframes -",
+                styles: {
+                    color: null, // set to null for default or refer to the comment above for details
+                    alignment: "center", // "left" | "center" | "right" | "justify" | null (e.g. "center" or null for default)
+                    fontWeight: "extrabold", // "normal" | "medium" | "semibold" | "bold" | "extrabold" | null (e.g. "bold" or null for default)
+                    container: {
+                        maxWidth: null, // percentage with step of 10% | pixel value 100-1000px with step of 100px | null for default (e.g. "700px" or "60%" or null for default). Warning: cannot be use together with 'container:fullScreen'.
+                        position: null, // "start" | "center" | "end" | null (e.g. "center" or null for default). Warning: cannot be use together with 'container:fullScreen'.
+                        fullScreen: false, // true | false - if true, the content will be rendered across the full width of the screen. Warning: cannot be use together with 'container:maxWidth' or 'container:position'.
+                    }
+                },
+            },
+            {
+                type: CONTENT_TYPE.PARAGRAPH,
+                content: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.",
+                styles: {
+                    color: null, // set to null for default or refer to the comment above for details
+                    alignment: "center", // "left" | "center" | "right" | "justify" | null (e.g. "center" or null for default)
+                    fontWeight: null, // "normal" | "medium" | "semibold" | "bold" | "extrabold" | null (e.g. "bold" or null for default) 
+                    container: {
+                        maxWidth: "800px", // percentage with step of 10% | pixel value 100-1000px with step of 100px | null for default (e.g. "700px" or "60%" or null for default). Warning: cannot be use together with 'container:fullScreen'.
+                        position: "center", // "start" | "center" | "end" | null (e.g. "center" or null for default). Warning: cannot be use together with 'container:fullScreen'.
+                        fullScreen: false, // true | false - if true, the content will be rendered across the full width of the screen. Warning: cannot be use together with 'container:maxWidth' or 'container:position'.
+                    },
+                }
+            },
+            {
+                type: CONTENT_TYPE.IMAGE,
+                content: [
+                    // max 6 images per row
+                    "/images/projects/pet-food-delivery-service/paper-wireframes.png",
+                ],
+                styles: {
+                    container: {
+                        maxWidth: null, // percentage with step of 10% | pixel value 100-1000px with step of 100px | null for default (e.g. "700px" or "60%" or null for default). Warning: cannot be use together with 'container:fullScreen'.
+                        position: null, // "start" | "center" | "end" | null (e.g. "center" or null for default). Warning: cannot be use together with 'container:fullScreen'.
+                        fullScreen: true, // true | false - if true, the content will be rendered across the full width of the screen. Warning: cannot be use together with 'container:maxWidth' or 'container:position'.
+                    }
+                }
+            },
+            {
+                type: CONTENT_TYPE.SUBTITLE,
+                content: "- Low-Fidelity Prototype -",
+                styles: {
+                    color: null, // set to null for default or refer to the comment above for details
+                    alignment: "center", // "left" | "center" | "right" | "justify" | null (e.g. "center" or null for default)
+                    fontWeight: "extrabold", // "normal" | "medium" | "semibold" | "bold" | "extrabold" | null (e.g. "bold" or null for default)
+                    container: {
+                        maxWidth: null, // percentage with step of 10% | pixel value 100-1000px with step of 100px | null for default (e.g. "700px" or "60%" or null for default). Warning: cannot be use together with 'container:fullScreen'.
+                        position: null, // "start" | "center" | "end" | null (e.g. "center" or null for default). Warning: cannot be use together with 'container:fullScreen'.
+                        fullScreen: false, // true | false - if true, the content will be rendered across the full width of the screen. Warning: cannot be use together with 'container:maxWidth' or 'container:position'.
+                    }
+                },
+            },
+            {
+                type: CONTENT_TYPE.PARAGRAPH,
+                content: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.",
+                styles: {
+                    color: null, // set to null for default or refer to the comment above for details
+                    alignment: "center", // "left" | "center" | "right" | "justify" | null (e.g. "center" or null for default)
+                    fontWeight: null, // "normal" | "medium" | "semibold" | "bold" | "extrabold" | null (e.g. "bold" or null for default) 
+                    container: {
+                        maxWidth: "800px", // percentage with step of 10% | pixel value 100-1000px with step of 100px | null for default (e.g. "700px" or "60%" or null for default). Warning: cannot be use together with 'container:fullScreen'.
+                        position: "center", // "start" | "center" | "end" | null (e.g. "center" or null for default). Warning: cannot be use together with 'container:fullScreen'.
+                        fullScreen: false, // true | false - if true, the content will be rendered across the full width of the screen. Warning: cannot be use together with 'container:maxWidth' or 'container:position'.
+                    },
+                }
+            },
+            {
+                type: CONTENT_TYPE.IMAGE,
+                content: [
+                    // max 6 images per row
+                    "/images/projects/pet-food-delivery-service/low-fidelity-prototype.png",
+                ],
+                styles: {
+                    container: {
+                        maxWidth: null, // percentage with step of 10% | pixel value 100-1000px with step of 100px | null for default (e.g. "700px" or "60%" or null for default). Warning: cannot be use together with 'container:fullScreen'.
+                        position: null, // "start" | "center" | "end" | null (e.g. "center" or null for default). Warning: cannot be use together with 'container:fullScreen'.
+                        fullScreen: true, // true | false - if true, the content will be rendered across the full width of the screen. Warning: cannot be use together with 'container:maxWidth' or 'container:position'.
+                    }
+                }
+            },
+            {
+                type: CONTENT_TYPE.SUBTITLE,
+                content: "- Visual Design -",
+                styles: {
+                    color: null, // set to null for default or refer to the comment above for details
+                    alignment: "center", // "left" | "center" | "right" | "justify" | null (e.g. "center" or null for default)
+                    fontWeight: "extrabold", // "normal" | "medium" | "semibold" | "bold" | "extrabold" | null (e.g. "bold" or null for default)
+                    container: {
+                        maxWidth: null, // percentage with step of 10% | pixel value 100-1000px with step of 100px | null for default (e.g. "700px" or "60%" or null for default). Warning: cannot be use together with 'container:fullScreen'.
+                        position: null, // "start" | "center" | "end" | null (e.g. "center" or null for default). Warning: cannot be use together with 'container:fullScreen'.
+                        fullScreen: false, // true | false - if true, the content will be rendered across the full width of the screen. Warning: cannot be use together with 'container:maxWidth' or 'container:position'.
+                    }
+                },
+            },
+            {
+                type: CONTENT_TYPE.IMAGE,
+                content: [
+                    // max 6 images per row
+                    "/images/projects/pet-food-delivery-service/color-blocks.png",
+                ],
+                styles: {
+                    container: {
+                        maxWidth: null, // percentage with step of 10% | pixel value 100-1000px with step of 100px | null for default (e.g. "700px" or "60%" or null for default). Warning: cannot be use together with 'container:fullScreen'.
+                        position: null, // "start" | "center" | "end" | null (e.g. "center" or null for default). Warning: cannot be use together with 'container:fullScreen'.
+                        fullScreen: true, // true | false - if true, the content will be rendered across the full width of the screen. Warning: cannot be use together with 'container:maxWidth' or 'container:position'.
+                    }
+                }
+            },
+            {
+                type: CONTENT_TYPE.IMAGE,
+                content: [
+                    // max 6 images per row
+                    "/images/projects/pet-food-delivery-service/phone-screen.png",
+                    "/images/projects/pet-food-delivery-service/phone-screen.png",
+                    "/images/projects/pet-food-delivery-service/phone-screen.png",
+                    "/images/projects/pet-food-delivery-service/phone-screen.png",
+                ],
+                styles: {
+                    container: {
+                        maxWidth: null, // percentage with step of 10% | pixel value 100-1000px with step of 100px | null for default (e.g. "700px" or "60%" or null for default). Warning: cannot be use together with 'container:fullScreen'.
+                        position: null, // "start" | "center" | "end" | null (e.g. "center" or null for default). Warning: cannot be use together with 'container:fullScreen'.
+                        fullScreen: false, // true | false - if true, the content will be rendered across the full width of the screen. Warning: cannot be use together with 'container:maxWidth' or 'container:position'.
+                    }
+                }
+            },
+            {
+                type: CONTENT_TYPE.IMAGE,
+                content: [
+                    // max 6 images per row
+                    "/images/projects/pet-food-delivery-service/phone-screen.png",
+                    "/images/projects/pet-food-delivery-service/phone-screen.png",
+                    "/images/projects/pet-food-delivery-service/phone-screen.png",
+                    "/images/projects/pet-food-delivery-service/phone-screen.png",
+                ],
+                styles: {
+                    container: {
+                        maxWidth: null, // percentage with step of 10% | pixel value 100-1000px with step of 100px | null for default (e.g. "700px" or "60%" or null for default). Warning: cannot be use together with 'container:fullScreen'.
+                        position: null, // "start" | "center" | "end" | null (e.g. "center" or null for default). Warning: cannot be use together with 'container:fullScreen'.
+                        fullScreen: false, // true | false - if true, the content will be rendered across the full width of the screen. Warning: cannot be use together with 'container:maxWidth' or 'container:position'.
+                    }
+                }
+            },
+            {
+                type: CONTENT_TYPE.SUBTITLE,
+                content: "- Thank You For Attention! -",
+                styles: {
+                    color: null, // set to null for default or refer to the comment above for details
+                    alignment: "center", // "left" | "center" | "right" | "justify" | null (e.g. "center" or null for default)
+                    fontWeight: "extrabold", // "normal" | "medium" | "semibold" | "bold" | "extrabold" | null (e.g. "bold" or null for default) 
+                    container: {
+                        maxWidth: "800px", // percentage with step of 10% | pixel value 100-1000px with step of 100px | null for default (e.g. "700px" or "60%" or null for default). Warning: cannot be use together with 'container:fullScreen'.
+                        position: "center", // "start" | "center" | "end" | null (e.g. "center" or null for default). Warning: cannot be use together with 'container:fullScreen'.
+                        fullScreen: false, // true | false - if true, the content will be rendered across the full width of the screen. Warning: cannot be use together with 'container:maxWidth' or 'container:position'.
+                    },
+                }
+            }
         ],
     },
     {
         id: 3,
         isShown: true,
-        type: "Type of Project 3",
-        title: "Project 3",
+        type: "Empty Template",
+        title: "Project Sample 3",
         shortDescription: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.",
-        image: "/images/projects/project-3.jpg",
+        image: "/images/projects/project-sample-3/hero-image.jpg",
 
         detailsPage: [
-            {
-                type: CONTENT_TYPE.banner,
-                content: "/images/projects/project-3.jpg",
-                altText: "Project 3 banner"
-            },
-            {
-                type: CONTENT_TYPE.paragraph,
-                content: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem.",
-            },
-            {
-                type: CONTENT_TYPE.subTitle,
-                content: "Colorful Subtitle",
-                styles: {
-                    color: "primary", // set to null or refer to the comment above for details
-                    alignment: null // ("left", "center", "right") or null for default
-                }
-            },
-            {
-                type: CONTENT_TYPE.paragraph,
-                content: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim.",
-                styles: {
-                    color: "indigo", // set to null or refer to the comment above for details
-                    alignment: null // ("left", "center", "right", "justify") or null for default
-                }
-            },
-            {
-                type: CONTENT_TYPE.image,
-                content: [
-                    // max 4 images per column
-                    "/images/projects/image-placeholder.jpg",
-                    "/images/projects/image-placeholder.jpg",
-                ],
-            },
-            {
-                type: CONTENT_TYPE.paragraph,
-                content: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus.",
-                styles: null
-            },
-            {
-                type: CONTENT_TYPE.subTitle,
-                content: "Centered Subtitle with justified text",
-                styles: {
-                    color: null, // set to "null" or refer to the comment above for details
-                    alignment: "center" // (left, center, right) or null for default
-                }
-            },
-            {
-                type: CONTENT_TYPE.paragraph,
-                content: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus.",
-                styles: {
-                    color: null, // set to "null" or refer to the comment above for details
-                    alignment: "justify" // (left, center, right, justify) or null for default
-                }
-            },
-            {
-                type: CONTENT_TYPE.image,
-                content: [
-                    // max 4 images per column
-                    "/images/projects/image-placeholder.jpg",
-                    "/images/projects/image-placeholder.jpg",
-                ],
-            },
+            // start with adding a new section
         ],
     },
 ];
+
+export function getProjects() {
+    return projectsData
+        .filter((project) => project.isShown)
+        .sort((a, b) => a.id - b.id);
+}
+
+export function getProject(id) {
+    return projectsData.find((project) => project.isShown && project.id === Number(id));
+}
+
+export function getProjectIds() {
+    return projectsData
+        .filter((project) => project.isShown)
+        .sort((a, b) => a.id - b.id)
+        .map((project) => project.id);
+}

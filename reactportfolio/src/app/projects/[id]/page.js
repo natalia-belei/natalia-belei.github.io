@@ -1,10 +1,11 @@
 import Layout from '@/app/_shared-components/Layout';
-import { projectsData } from '../../../../data-config/projects';
+import { getProject, getProjectIds } from '../../../../data-config/projects';
 import { contactsConfig } from '../../../../data-config/contacts';
 import AnimatedText from '@/app/_shared-components/AnimatedText';
 import ContentRendererFactory from '../_components/ContentRendererFactory';
 import config from '../../../../config';
 import TransitionEffect from '@/app/_shared-components/TransitionEffect';
+import ProjectsNavBar from '../_components/ProjectsNavBar';
 
 export async function generateMetadata({ params }) {
     const project = getProject(params.id);
@@ -16,27 +17,33 @@ export async function generateMetadata({ params }) {
 }
 
 export default function ProjectPage({ params }) {
+
     const project = getProject(params.id);
+    const { prevId, nextId } = getPrevNextIds(params.id);
 
     if (project) {
+
         const factory = new ContentRendererFactory();
         const ContentRenderer = factory.createRenderer(config.contentRenderingStyle);
 
         return (
             <>
                 <TransitionEffect />
-                <main className='w-full flex items-start justify-center'>
+                <main className='w-full flex items-start'>
                     <Layout className="pt-16 sm:pt-8">
                         <div className='container mx-auto
-                             max-w-5xl 2xl:max-w-3xl md:max-w-full md:mx-0'>
-                            <article className='w-full flex flex-col items-center justify-center mb-24 
-                            lg:mb-16 md:mb-8 sm:mb-6 md:items-start'>
+                             md:mx-0'>
+                            <article className='w-full min-h-[45vh] flex flex-col items-center justify-start
+                                mb-16 xl:mb-12 lg:mb-10 md:mb-8 sm:mb-6'>
                                 <AnimatedText text={project.title} className='mb-8 md:mb-4 sm:mb-3' />
+                                {ContentRenderer && <ContentRenderer data={project.detailsPage} />
 
-                                {ContentRenderer && project.detailsPage.map((item, index) => (
-                                    <ContentRenderer key={index} data={item} />
-                                ))}
+                                }
                             </article>
+                            <ProjectsNavBar
+                                prevId={prevId}
+                                nextId={nextId}
+                            />
                         </div>
                     </Layout>
                 </main>
@@ -58,11 +65,16 @@ export default function ProjectPage({ params }) {
     );
 }
 
-const getProject = (id) => {
-    return projectsData.find((p) => p.isShown && p.id === Number(id));
+const getPrevNextIds = (currentId) => {
+    const ids = getProjectIds();
+    const currentIndex = ids.indexOf(parseInt(currentId));
+    return {
+        prevId: ids[currentIndex - 1],
+        nextId: ids[currentIndex + 1],
+    }
 }
 
 // TODO: Resolve the problem to return a 404 error for dynamic routes
 export async function generateStaticParams() {
-    return projectsData.map((project) => ({ id: project.id.toString() }));
+    return getProjectIds().map((id) => ({ id: id.toString() }));
 }

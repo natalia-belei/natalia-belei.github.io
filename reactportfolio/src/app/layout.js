@@ -21,7 +21,7 @@ const montserrat = Montserrat({
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body>
+      <body className="overflow-x-hidden">
         {config.isUnderConstruction && <UnderConstruction />}
         <main className={`${montserrat.variable} font-mont bg-white w-full min-h-screen relative`}>
           <NavBar />

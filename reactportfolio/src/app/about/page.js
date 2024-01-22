@@ -20,7 +20,7 @@ export default function AboutPage() {
         <>
             <TransitionEffect />
             <main className='flex w-full flex-col items-start justify-center'>
-                <Layout className='pt-16 sm:pt-8'>
+                <Layout>
                     <AnimatedText text={aboutPageConfig.mainTitle} className='mb-16 md:mb-8 sm:mb-6' />
 
                     <div className='grid w-full grid-cols-8 gap-16 sm:gap-8'>

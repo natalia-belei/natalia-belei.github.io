@@ -16,7 +16,7 @@ export default function ProjectsPage() {
         <>
             <TransitionEffect />
             <main className='w-full flex flex-col items-start justify-center'>
-                <Layout className="pt-16">
+                <Layout>
                     <AnimatedText text={projectsPageConfig.mainTitle} className='mb-16 md:mb-8 sm:mb-6' />
 
                     <div className='grid grid-cols-12 gap-24 mb-8

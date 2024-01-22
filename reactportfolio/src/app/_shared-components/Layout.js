@@ -12,7 +12,9 @@ const Layout = ({ children, className }) => {
             <ScrollToTopOnMount />
 
             <div className={`w-full h-full inline-block z-0 bg-white 
-            p-32 xl:p-24 lg:p-16 md:p-12 sm:p-8  ${className}`}>
+            px-32 xl:px-24 lg:px-16 md:px-12 sm:px-8
+            py-16 xl:py-12 lg:py-8 md:py-6 sm:py-4 
+            ${className}`}>
                 {children}
             </div>
         </>

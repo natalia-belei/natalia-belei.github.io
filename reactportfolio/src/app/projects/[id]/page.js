@@ -30,7 +30,7 @@ export default function ProjectPage({ params }) {
             <>
                 <TransitionEffect />
                 <main className='w-full flex items-start'>
-                    <Layout className="pt-16 sm:pt-8">
+                    <Layout>
                         <div className='container mx-auto
                              md:mx-0'>
                             <article className='w-full min-h-[45vh] flex flex-col items-center justify-start

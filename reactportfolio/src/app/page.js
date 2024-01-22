@@ -19,7 +19,7 @@ export default function HomePage() {
     <>
       <TransitionEffect />
       <main className='flex items-start text-dark w-full min-h-screen'>
-        <Layout className='pt-0 md:pt-16 sm:pt-8'>
+        <Layout className='!pt-0 md:!pt-16 sm:!pt-8'>
           <div className='flex items-center justify-between w-full md:flex-col'>
             <div className='w-1/2 md:w-full'>
               <Image src={profilePic} alt={homePageConfig.meta.profilePicAlt}

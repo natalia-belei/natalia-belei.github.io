@@ -175,6 +175,34 @@ const projectsData = [
             },
             {
                 type: CONTENT_TYPE.SUBTITLE,
+                content: "- Goal",
+                styles: {
+                    color: null, // set to null for default or refer to the comment above for details
+                    alignment: "left", // "left" | "center" | "right" | "justify" | null (e.g. "center" or null for default)
+                    fontWeight: "extrabold", // "normal" | "medium" | "semibold" | "bold" | "extrabold" | null (e.g. "bold" or null for default)
+                    container: {
+                        maxWidth: null, // percentage with step of 10% | pixel value 100-1000px with step of 100px | null for default (e.g. "700px" or "60%" or null for default). Warning: cannot be use together with 'container:fullScreen'.
+                        position: null, // "start" | "center" | "end" | null (e.g. "center" or null for default). Warning: cannot be use together with 'container:fullScreen'.
+                        fullScreen: false, // true | false - if true, the content will be rendered across the full width of the screen. Warning: cannot be use together with 'container:maxWidth' or 'container:position'.
+                    }
+                },
+            },
+            {
+                type: CONTENT_TYPE.PARAGRAPH,
+                content: "The app aims to address the challenges and limitations faced by pet owners when purchasing pet food from physical stores, such as limited availability, inconvenience, and time constraints. By providing a user-friendly platform for online ordering and delivery, the app seeks to streamline the process and offer a convenient solution for pet owners to access a wide range of quality pet food options.",
+                styles: {
+                    color: null, // set to null for default or refer to the comment above for details
+                    alignment: "left", // "left" | "center" | "right" | "justify" | null (e.g. "center" or null for default)
+                    fontWeight: null, // "normal" | "medium" | "semibold" | "bold" | "extrabold" | null (e.g. "bold" or null for default)
+                    container: {
+                        maxWidth: "50%", // percentage with step of 10% | pixel value 100-1000px with step of 100px | null for default (e.g. "700px" or "60%" or null for default). Warning: cannot be use together with 'container:fullScreen'.
+                        position: "start", // "start" | "center" | "end" | null (e.g. "center" or null for default). Warning: cannot be use together with 'container:fullScreen'.
+                        fullScreen: false, // true | false - if true, the content will be rendered across the full width of the screen. Warning: cannot be use together with 'container:maxWidth' or 'container:position'.
+                    },
+                }
+            },
+            {
+                type: CONTENT_TYPE.SUBTITLE,
                 content: "- Understanding the challenge -",
                 styles: {
                     color: null, // set to null for default or refer to the comment above for details

@@ -17,7 +17,6 @@ export async function generateMetadata({ params }) {
 }
 
 export default function ProjectPage({ params }) {
-
     const project = getProject(params.id);
     const { prevId, nextId } = getPrevNextIds(params.id);
 
@@ -31,20 +30,16 @@ export default function ProjectPage({ params }) {
                 <TransitionEffect />
                 <main className='w-full flex items-start'>
                     <Layout>
-                        <div className='container mx-auto
-                             md:mx-0'>
-                            <article className='w-full min-h-[45vh] flex flex-col items-center justify-start
-                                mb-16 xl:mb-12 lg:mb-10 md:mb-8 sm:mb-6'>
-                                <AnimatedText text={project.title} className='mb-8 md:mb-4 sm:mb-3' />
-                                {ContentRenderer && <ContentRenderer data={project.detailsPage} />
+                        <article className='w-full min-h-[45vh] flex flex-col items-center justify-start
+                            mb-16 xl:mb-12 lg:mb-10 md:mb-8 sm:mb-6'>
 
-                                }
-                            </article>
-                            <ProjectsNavBar
-                                prevId={prevId}
-                                nextId={nextId}
-                            />
-                        </div>
+                            <AnimatedText text={project.title} className='mb-8 md:mb-4 sm:mb-3' />
+                            {ContentRenderer && <ContentRenderer data={project.detailsPage} />}
+                        </article>
+                        <ProjectsNavBar
+                            prevId={prevId}
+                            nextId={nextId}
+                        />
                     </Layout>
                 </main>
             </>

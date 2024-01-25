@@ -24,6 +24,8 @@ const BaseContentRenderer = ({ data, renderContent,
         return renderContent(renderBanner, content, getBannerClasses());
       case CONTENT_TYPE.HIGHLIGHTS:
         return renderContent(renderHighlights, content, getHighlightsClasses());
+      case CONTENT_TYPE.SPACER:
+        return renderSpacer();
       default:
         return null;
     }
@@ -215,5 +217,9 @@ BaseContentRenderer.propTypes = {
   renderBanner: PropTypes.func.isRequired,
   renderHighlights: PropTypes.func.isRequired,
 };
+
+function renderSpacer() {
+  return <div className="w-full h-20 3xl:h-16 2xl:h-14 xl:h-12 lg:h-10 md:h-8 sm:h-6" />;
+}
 
 export default BaseContentRenderer;

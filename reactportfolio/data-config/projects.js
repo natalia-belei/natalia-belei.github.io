@@ -6,6 +6,7 @@ export const CONTENT_TYPE = Object.freeze({
     IMAGE: 2,
     BANNER: 3,
     HIGHLIGHTS: 4,
+    SPACER: 5,
 });
 
 export const projectsPageConfig = {
@@ -79,6 +80,13 @@ const projectsData = [
                     },
                 },
                 {
+                    type: CONTENT_TYPE.SPACER,
+                    content: null,
+                    styles: {
+                        backgroundId: null,
+                    },
+                },
+                {
                     type: CONTENT_TYPE.SUBTITLE,
                     content: "Paragraph With A Custom Colored Background",
                     styles: {
@@ -107,6 +115,13 @@ const projectsData = [
                         },
                         backgroundId: 3,
                     }
+                },
+                {
+                    type: CONTENT_TYPE.SPACER,
+                    content: null,
+                    styles: {
+                        backgroundId: null,
+                    },
                 },
                 {
                     type: CONTENT_TYPE.SUBTITLE,
@@ -169,6 +184,13 @@ const projectsData = [
                     }
                 },
                 {
+                    type: CONTENT_TYPE.SPACER,
+                    content: null,
+                    styles: {
+                        backgroundId: null,
+                    },
+                },
+                {
                     type: CONTENT_TYPE.SUBTITLE,
                     content: "Images With Repeatable Pattern Background",
                     styles: {
@@ -198,6 +220,13 @@ const projectsData = [
                         },
                         backgroundId: 2,
                     }
+                },
+                {
+                    type: CONTENT_TYPE.SPACER,
+                    content: null,
+                    styles: {
+                        backgroundId: null,
+                    },
                 },
                 {
                     type: CONTENT_TYPE.SUBTITLE,
@@ -378,6 +407,13 @@ const projectsData = [
                     }
                 },
                 {
+                    type: CONTENT_TYPE.SPACER,
+                    content: null,
+                    styles: {
+                        backgroundId: null,
+                    },
+                },
+                {
                     type: CONTENT_TYPE.SUBTITLE,
                     content: "- The main advantages of the app -",
                     styles: {
@@ -471,6 +507,13 @@ const projectsData = [
                     }
                 },
                 {
+                    type: CONTENT_TYPE.SPACER,
+                    content: null,
+                    styles: {
+                        backgroundId: null,
+                    },
+                },
+                {
                     type: CONTENT_TYPE.SUBTITLE,
                     content: "- Understanding the challenge -",
                     styles: {
@@ -546,6 +589,13 @@ const projectsData = [
                     }
                 },
                 {
+                    type: CONTENT_TYPE.SPACER,
+                    content: null,
+                    styles: {
+                        backgroundId: null,
+                    },
+                },
+                {
                     type: CONTENT_TYPE.SUBTITLE,
                     content: "- User Personas -",
                     styles: {
@@ -592,6 +642,13 @@ const projectsData = [
                     }
                 },
                 {
+                    type: CONTENT_TYPE.SPACER,
+                    content: null,
+                    styles: {
+                        backgroundId: null,
+                    },
+                },
+                {
                     type: CONTENT_TYPE.SUBTITLE,
                     content: "- User Journey Map -",
                     styles: {
@@ -620,6 +677,13 @@ const projectsData = [
                         },
                         backgroundId: null,
                     }
+                },
+                {
+                    type: CONTENT_TYPE.SPACER,
+                    content: null,
+                    styles: {
+                        backgroundId: null,
+                    },
                 },
                 {
                     type: CONTENT_TYPE.SUBTITLE,
@@ -712,6 +776,13 @@ const projectsData = [
                     }
                 },
                 {
+                    type: CONTENT_TYPE.SPACER,
+                    content: null,
+                    styles: {
+                        backgroundId: null,
+                    },
+                },
+                {
                     type: CONTENT_TYPE.SUBTITLE,
                     content: "- Visual Design -",
                     styles: {
@@ -776,6 +847,13 @@ const projectsData = [
                         },
                         backgroundId: null,
                     }
+                },
+                {
+                    type: CONTENT_TYPE.SPACER,
+                    content: null,
+                    styles: {
+                        backgroundId: null,
+                    },
                 },
                 {
                     type: CONTENT_TYPE.SUBTITLE,

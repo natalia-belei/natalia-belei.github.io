@@ -84,10 +84,10 @@ function groupConsecutiveSectionsWithSameBackground(sections, backgrounds) {
   const blocks = [];
   let currentBlock = null;
 
-  sections?.forEach((section) => {
+  sections.forEach((section) => {
     const { styles: { backgroundId } } = section;
 
-    if (currentBlock && currentBlock.background?.id === backgroundId) {
+    if (currentBlock && currentBlock.background?.id == backgroundId) {
       currentBlock.sections.push(section);
     } else {
       const background = backgrounds?.find(bg => bg.id === backgroundId);

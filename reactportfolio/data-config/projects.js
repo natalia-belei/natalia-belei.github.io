@@ -663,6 +663,21 @@ const projectsData = [
                         backgroundId: null,
                     },
                 },
+                 {
+                    type: CONTENT_TYPE.PARAGRAPH,
+                    content: "A journey map helps to visualize the steps a user takes to accomplish their goal with the help of digital product.",
+                    styles: {
+                        color: null, // set to null for default or refer to the comment above for details
+                        alignment: "center", // "left" | "center" | "right" | "justify" | null (e.g. "center" or null for default)
+                        fontWeight: null, // "normal" | "medium" | "semibold" | "bold" | "extrabold" | null (e.g. "bold" or null for default)
+                        container: {
+                            maxWidth: "800px", // percentage with step of 10% | pixel value 100-1000px with step of 100px | null for default (e.g. "700px" or "60%" or null for default). Warning: cannot be use together with 'container:fullScreen'.
+                            position: "center", // "start" | "center" | "end" | null (e.g. "center" or null for default). Warning: cannot be use together with 'container:fullScreen'.
+                            fullScreen: false, // true | false - if true, the content will be rendered across the full width of the screen. Warning: cannot be use together with 'container:maxWidth' or 'container:position'.
+                        },
+                        backgroundId: null,
+                    }
+                },
                 {
                     type: CONTENT_TYPE.IMAGE,
                     content: [

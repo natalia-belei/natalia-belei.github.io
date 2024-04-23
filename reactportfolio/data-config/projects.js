@@ -717,7 +717,7 @@ const projectsData = [
                 },
                 {
                     type: CONTENT_TYPE.PARAGRAPH,
-                    content: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.",
+                    content: "The goal of creating wireframes is to establish the basic structure of a page and to highlight the intended function of each element.",
                     styles: {
                         color: null, // set to null for default or refer to the comment above for details
                         alignment: "center", // "left" | "center" | "right" | "justify" | null (e.g. "center" or null for default)

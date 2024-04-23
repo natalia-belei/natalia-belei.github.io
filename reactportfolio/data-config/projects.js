@@ -842,6 +842,7 @@ const projectsData = [
                         backgroundId: null,
                     }
                 },
+                {
                     type: CONTENT_TYPE.IMAGE,
                     content: [
                         // max 6 images per row

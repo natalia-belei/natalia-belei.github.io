@@ -560,7 +560,7 @@ const projectsData = [
                 },
                 {
                     type: CONTENT_TYPE.PARAGRAPH,
-                    content: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.",
+                    content: "In conducting user research for the pet food delivery service app, we employed a combination of methods including interviews, surveys, and usability testing.  Through user research, we gained valuable insights into the specific needs, pain points, and expectations of pet owners, which helped shape the app's features, user interface, and overall user experience. This research enabled us to design an app that aligns with the actual preferences and requirements of the target users, rather than relying solely on assumptions.",
                     styles: {
                         color: null, // set to null for default or refer to the comment above for details
                         alignment: "center", // "left" | "center" | "right" | "justify" | null (e.g. "center" or null for default)

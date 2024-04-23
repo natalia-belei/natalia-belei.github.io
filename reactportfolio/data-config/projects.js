@@ -433,9 +433,9 @@ const projectsData = [
                     content: [
                         // max 6 images per row
                         "/images/projects/pet-food-delivery-service/phone-screen-with-number.png",
-                        "/images/projects/pet-food-delivery-service/phone-screen-with-number2.png",
-                        "/images/projects/pet-food-delivery-service/phone-screen-with-number3.png",
-                        "/images/projects/pet-food-delivery-service/phone-screen-with-number4.png",
+                        "/images/projects/pet-food-delivery-service/phone-screen-with-number.png",
+                        "/images/projects/pet-food-delivery-service/phone-screen-with-number.png",
+                        "/images/projects/pet-food-delivery-service/phone-screen-with-number.png",
                     ],
                     styles: {
                         container: {

@@ -433,9 +433,9 @@ const projectsData = [
                     content: [
                         // max 6 images per row
                         "/images/projects/pet-food-delivery-service/phone-screen-with-number.png",
-                        "/images/projects/pet-food-delivery-service/phone-screen-with-number.png",
-                        "/images/projects/pet-food-delivery-service/phone-screen-with-number.png",
-                        "/images/projects/pet-food-delivery-service/phone-screen-with-number.png",
+                        "/images/projects/pet-food-delivery-service/phone-screen-with-number2.png",
+                        "/images/projects/pet-food-delivery-service/phone-screen-with-number3.png",
+                        "/images/projects/pet-food-delivery-service/phone-screen-with-number4.png",
                     ],
                     styles: {
                         container: {
@@ -493,7 +493,7 @@ const projectsData = [
                 },
                 {
                     type: CONTENT_TYPE.PARAGRAPH,
-                    content: "The app aims to address the challenges and limitations faced by pet owners when purchasing pet food from physical stores, such as limited availability, inconvenience, and time constraints. By providing a user-friendly platform for online ordering and delivery, the app seeks to streamline the process and offer a convenient solution for pet owners to access a wide range of quality pet food options.",
+                    content: "The goal of the project is to design an interactive app that not only simplifies the pet food ordering and delivery process but also enhances the overall user experience, meeting the specific needs and preferences of pet owners while instilling trust and reliability in the service.",
                     styles: {
                         color: null, // set to null for default or refer to the comment above for details
                         alignment: "left", // "left" | "center" | "right" | "justify" | null (e.g. "center" or null for default)

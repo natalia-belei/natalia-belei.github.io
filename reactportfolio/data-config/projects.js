@@ -125,7 +125,7 @@ const projectsData = [
                 },
                 {
                     type: CONTENT_TYPE.SUBTITLE,
-                    content: "- Design Scope:",
+                    content: "- Social Media",
                     styles: {
                         color: null, // set to null for default or refer to the comment above for details
                         alignment: "left", // "left" | "center" | "right" | "justify" | null (e.g. "center" or null for default)
@@ -140,7 +140,7 @@ const projectsData = [
                 },
                 {
                     type: CONTENT_TYPE.PARAGRAPH,
-                    content: "Social Media: Engaging social media posts showcasing outfit inspirations, style tips, and client testimonials. Eye-catching graphics and visuals highlighting seasonal trends and exclusive offers.Interactive polls and quizzes to encourage audience engagement and gather feedback.",
+                    content: "Engaging social media posts showcasing outfit inspirations, style tips, and client testimonials. Eye-catching graphics and visuals highlighting seasonal trends and exclusive offers.Interactive polls and quizzes to encourage audience engagement and gather feedback.",
                     styles: {
                         color: null, // set to null for default or refer to the comment above for details
                         alignment: "left", // "left" | "center" | "right" | "justify" | null (e.g. "center" or null for default)
@@ -155,7 +155,7 @@ const projectsData = [
                 },
                 {
                     type: CONTENT_TYPE.SUBTITLE,
-                    content: "- Second Fixed-Width Paragraph",
+                    content: "- Email Marketing",
                     styles: {
                         color: null, // set to null for default or refer to the comment above for details
                         alignment: "left", // "left" | "center" | "right" | "justify" | null (e.g. "center" or null for default)
@@ -170,7 +170,37 @@ const projectsData = [
                 },
                 {
                     type: CONTENT_TYPE.PARAGRAPH,
-                    content: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient. Lorem ipsum dolor sit amet, consectetuer adipiscing elit.",
+                    content: "Tailored email campaigns delivering curated style recommendations based on client preferences. Promotional emails featuring limited-time offers, discounts, and new arrivals. Informative newsletters sharing fashion insights, styling tips, and behind-the-scenes glimpses into the world of fashion.",
+                    styles: {
+                        color: null, // set to null for default or refer to the comment above for details
+                        alignment: "left", // "left" | "center" | "right" | "justify" | null (e.g. "center" or null for default)
+                        fontWeight: null, // "normal" | "medium" | "semibold" | "bold" | "extrabold" | null (e.g. "bold" or null for default)
+                        container: {
+                            maxWidth: "60%", // percentage with step of 10% | pixel value 100-1000px with step of 100px | null for default (e.g. "700px" or "60%" or null for default). Warning: cannot be use together with 'container:fullScreen'.
+                            position: "start", // "start" | "center" | "end" | null (e.g. "center" or null for default). Warning: cannot be use together with 'container:fullScreen'.
+                            fullScreen: false, // true | false - if true, the content will be rendered across the full width of the screen. Warning: cannot be use together with 'container:maxWidth' or 'container:position'.
+                        },
+                        backgroundId: 1,
+                    }
+                },
+                      {
+                    type: CONTENT_TYPE.SUBTITLE,
+                    content: "- Landing Page",
+                    styles: {
+                        color: null, // set to null for default or refer to the comment above for details
+                        alignment: "left", // "left" | "center" | "right" | "justify" | null (e.g. "center" or null for default)
+                        fontWeight: "extrabold", // "normal" | "medium" | "semibold" | "bold" | "extrabold" | null (e.g. "bold" or null for default)
+                        container: {
+                            maxWidth: null, // percentage with step of 10% | pixel value 100-1000px with step of 100px | null for default (e.g. "700px" or "60%" or null for default). Warning: cannot be use together with 'container:fullScreen'.
+                            position: null, // "start" | "center" | "end" | null (e.g. "center" or null for default). Warning: cannot be use together with 'container:fullScreen'.
+                            fullScreen: false, // true | false - if true, the content will be rendered across the full width of the screen. Warning: cannot be use together with 'container:maxWidth' or 'container:position'.
+                        },
+                        backgroundId: 1,
+                    },
+                },
+                {
+                    type: CONTENT_TYPE.PARAGRAPH,
+                    content: "Visually appealing landing page with a user-friendly interface and intuitive navigation. Clear call-to-action buttons prompting visitors to download the ChicSelect app, book a styling session, or subscribe to our newsletter. Compelling content highlighting the benefits of our styling services and showcasing client success stories.",
                     styles: {
                         color: null, // set to null for default or refer to the comment above for details
                         alignment: "left", // "left" | "center" | "right" | "justify" | null (e.g. "center" or null for default)

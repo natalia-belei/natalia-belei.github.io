@@ -88,7 +88,7 @@ const projectsData = [
                 },
                 {
                     type: CONTENT_TYPE.SUBTITLE,
-                    content: "Paragraph With A Custom Colored Background",
+                    content: "Project Description",
                     styles: {
                         color: null, // set to null for default or refer to the comment above for details
                         alignment: "center", // "left" | "center" | "right" | "justify" | null (e.g. "center" or null for default)
@@ -103,7 +103,7 @@ const projectsData = [
                 },
                 {
                     type: CONTENT_TYPE.PARAGRAPH,
-                    content: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient.",
+                    content: "BEST CHOICE is a revolutionary styling app designed to empower women in making confident fashion choices with the guidance of professional stylists. Our platform offers personalized consultations and expert advice to help clients discover their unique style preferences and curate their wardrobes effortlessly.",
                     styles: {
                         color: null, // set to null for default or refer to the comment above for details
                         alignment: "center", // "left" | "center" | "right" | "justify" | null (e.g. "center" or null for default)
@@ -113,7 +113,7 @@ const projectsData = [
                             position: "center", // "start" | "center" | "end" | null (e.g. "center" or null for default). Warning: cannot be use together with 'container:fullScreen'.
                             fullScreen: false, // true | false - if true, the content will be rendered across the full width of the screen. Warning: cannot be use together with 'container:maxWidth' or 'container:position'.
                         },
-                        backgroundId: 3,
+                        backgroundId: null,
                     }
                 },
                 {

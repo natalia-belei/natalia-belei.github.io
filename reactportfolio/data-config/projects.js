@@ -278,7 +278,7 @@ const projectsData = [
                             position: null, // "start" | "center" | "end" | null (e.g. "center" or null for default). Warning: cannot be use together with 'container:fullScreen'.
                             fullScreen: false, // true | false - if true, the content will be rendered across the full width of the screen. Warning: cannot be use together with 'container:maxWidth' or 'container:position'.
                         },
-                        backgroundId: 2,
+                        backgroundId: null,
                     }
                 },
                 {
@@ -315,7 +315,7 @@ const projectsData = [
                             position: null, // "start" | "center" | "end" | null (e.g. "center" or null for default). Warning: cannot be use together with 'container:fullScreen'.
                             fullScreen: true, // true | false - if true, the content will be rendered across the full width of the screen. Warning: cannot be use together with 'container:maxWidth' or 'container:position'.
                         },
-                        backgroundId: null,
+                        backgroundId: 2,
                     }
                 },
                 {

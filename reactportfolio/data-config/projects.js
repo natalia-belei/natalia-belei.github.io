@@ -33,7 +33,7 @@ export const projectsPageConfig = {
         ...
       colors: {
         ...
-        indigo: "#4B0082",
+        indigo: "#F2F0EE",
       },
     },
 */

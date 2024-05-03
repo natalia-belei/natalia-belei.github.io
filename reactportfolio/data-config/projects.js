@@ -252,7 +252,7 @@ const projectsData = [
                 },
                 {
                     type: CONTENT_TYPE.SUBTITLE,
-                    content: "Images With Repeatable Pattern Background",
+                    content: "Email Marketing Design",
                     styles: {
                         color: null, // set to null for default or refer to the comment above for details
                         alignment: "center", // "left" | "center" | "right" | "justify" | null (e.g. "center" or null for default)
@@ -269,8 +269,8 @@ const projectsData = [
                     type: CONTENT_TYPE.IMAGE,
                     content: [
                         // max 6 images per row
-                        "/images/projects/project-sample-2/image-placeholder.jpg",
-                        "/images/projects/project-sample-2/image-placeholder.jpg",
+                        "/images/projects/project-sample-2/image-email1.jpg",
+                        "/images/projects/project-sample-2/image-email2.jpg",
                     ],
                     styles: {
                         container: {

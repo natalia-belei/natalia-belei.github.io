@@ -42,9 +42,9 @@ const projectsData = [
     {
         id: 2,
         isShown: true,
-        type: "Sample Template",
-        title: "Project Sample 2",
-        shortDescription: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.",
+        type: "Landing page",
+        title: "ONLINE STYLIST",
+        shortDescription: "Service providing services from professional stylists, helping women choose the right clothes.",
         image: "/images/projects/project-sample-2/hero-image.jpg",
 
         detailsPage:

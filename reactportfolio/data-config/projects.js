@@ -66,9 +66,9 @@ const projectsData = [
                 {
                     type: CONTENT_TYPE.HIGHLIGHTS,
                     content: [
-                        "Role: Frontend Developer",
-                        "Tools: React, Next.js, TailwindCSS",
-                        "Duration: 2 months",
+                        "Role: UI/UX Designer",
+                        "Tools: Figma, Photoshop, Illustrator",
+                        "Duration: 3 months",
                     ],
                     styles: {
                         container: {

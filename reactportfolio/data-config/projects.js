@@ -222,7 +222,7 @@ const projectsData = [
                 },
                    {
                     type: CONTENT_TYPE.SUBTITLE,
-                    content: "Full-Width Image",
+                    content: "Social Media",
                     styles: {
                         color: null, // set to null for default or refer to the comment above for details
                         alignment: "center", // "left" | "center" | "right" | "justify" | null (e.g. "center" or null for default)

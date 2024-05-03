@@ -140,18 +140,17 @@ const projectsData = [
                 },
                 {
                     type: CONTENT_TYPE.PARAGRAPH,
-                    content: "1. Social Media:
-- Engaging social media posts showcasing outfit inspirations, style tips, and client testimonials.
-- Eye-catching graphics and visuals highlighting seasonal trends and exclusive offers.
-- Interactive polls and quizzes to encourage audience engagement and gather feedback.
-2. Email Marketing:
-- Tailored email campaigns delivering curated style recommendations based on client preferences.
-- Promotional emails featuring limited-time offers, discounts, and new arrivals.
-- Informative newsletters sharing fashion insights, styling tips, and behind-the-scenes glimpses into the world of fashion.
-3. Landing Page:
-- Visually appealing landing page with a user-friendly interface and intuitive navigation.
-- Clear call-to-action buttons prompting visitors to download the ChicSelect app, book a styling session, or subscribe to our newsletter.
-- Compelling content highlighting the benefits of our styling services and showcasing client success stories.",
+                    content: "1. Social Media: - Engaging social media posts showcasing outfit inspirations, style tips, and client testimonials. 
+                                               - Eye-catching graphics and visuals highlighting seasonal trends and exclusive offers.
+                                               - Interactive polls and quizzes to encourage audience engagement and gather feedback.
+                              2. Email Marketing:
+                                               - Tailored email campaigns delivering curated style recommendations based on client preferences.
+                                               - Promotional emails featuring limited-time offers, discounts, and new arrivals.
+                                               - Informative newsletters sharing fashion insights, styling tips, and behind-the-scenes glimpses into the world of fashion.
+                              3. Landing Page:
+                                               - Visually appealing landing page with a user-friendly interface and intuitive navigation.
+                                               - Clear call-to-action buttons prompting visitors to download the ChicSelect app, book a styling session, or subscribe to our newsletter.
+                                               - Compelling content highlighting the benefits of our styling services and showcasing client success stories.",
                     styles: {
                         color: null, // set to null for default or refer to the comment above for details
                         alignment: "left", // "left" | "center" | "right" | "justify" | null (e.g. "center" or null for default)

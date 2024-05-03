@@ -220,6 +220,36 @@ const projectsData = [
                         backgroundId: null,
                     },
                 },
+                   {
+                    type: CONTENT_TYPE.SUBTITLE,
+                    content: "Full-Width Image",
+                    styles: {
+                        color: null, // set to null for default or refer to the comment above for details
+                        alignment: "center", // "left" | "center" | "right" | "justify" | null (e.g. "center" or null for default)
+                        fontWeight: "extrabold", // "normal" | "medium" | "semibold" | "bold" | "extrabold" | null (e.g. "bold" or null for default)
+                        container: {
+                            maxWidth: null, // percentage with step of 10% | pixel value 100-1000px with step of 100px | null for default (e.g. "700px" or "60%" or null for default). Warning: cannot be use together with 'container:fullScreen'.
+                            position: null, // "start" | "center" | "end" | null (e.g. "center" or null for default). Warning: cannot be use together with 'container:fullScreen'.
+                            fullScreen: false, // true | false - if true, the content will be rendered across the full width of the screen. Warning: cannot be use together with 'container:maxWidth' or 'container:position'.
+                        },
+                        backgroundId: null,
+                    },
+                },
+                {
+                    type: CONTENT_TYPE.IMAGE,
+                    content: [
+                        // max 6 images per row
+                        "/images/projects/project-sample-2/image-socialmedia-wide.jpg",
+                    ],
+                    styles: {
+                        container: {
+                            maxWidth: null, // percentage with step of 10% | pixel value 100-1000px with step of 100px | null for default (e.g. "700px" or "60%" or null for default). Warning: cannot be use together with 'container:fullScreen'.
+                            position: null, // "start" | "center" | "end" | null (e.g. "center" or null for default). Warning: cannot be use together with 'container:fullScreen'.
+                            fullScreen: true, // true | false - if true, the content will be rendered across the full width of the screen. Warning: cannot be use together with 'container:maxWidth' or 'container:position'.
+                        },
+                        backgroundId: null,
+                    }
+                },
                 {
                     type: CONTENT_TYPE.SUBTITLE,
                     content: "Images With Repeatable Pattern Background",

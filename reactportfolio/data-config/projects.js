@@ -322,7 +322,7 @@ const projectsData = [
                     type: CONTENT_TYPE.IMAGE,
                     content: [
                         // max 6 images per row
-                        "/images/projects/project-sample-2/Mockup wide.png.jpg",
+                        "/images/projects/project-sample-2/Mockup wide.png",
                     ],
                     styles: {
                         container: {

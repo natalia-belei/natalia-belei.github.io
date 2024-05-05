@@ -305,7 +305,7 @@ const projectsData = [
                 },
                 {
                     type: CONTENT_TYPE.SUBTITLE,
-                    content: "Full-Width Image",
+                    content: "landing page",
                     styles: {
                         color: null, // set to null for default or refer to the comment above for details
                         alignment: "center", // "left" | "center" | "right" | "justify" | null (e.g. "center" or null for default)
@@ -322,7 +322,7 @@ const projectsData = [
                     type: CONTENT_TYPE.IMAGE,
                     content: [
                         // max 6 images per row
-                        "/images/projects/project-sample-2/image-placeholder-wide.jpg",
+                        "/images/projects/project-sample-2/Mockup wide.png.jpg",
                     ],
                     styles: {
                         container: {

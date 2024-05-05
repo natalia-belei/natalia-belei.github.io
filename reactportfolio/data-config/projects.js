@@ -792,7 +792,8 @@ const projectsData = [
                 },
                 {
                     type: CONTENT_TYPE.PARAGRAPH,
-                    content: "The goal of creating wireframes is to establish the basic structure of a page and to highlight the intended function of each element.",
+                    content: "
+A low-fidelity prototype for a pet food delivery service might consist of hand-drawn sketches or simple digital wireframes depicting the user interface and basic functionalities of the app or website.",
                     styles: {
                         color: null, // set to null for default or refer to the comment above for details
                         alignment: "center", // "left" | "center" | "right" | "justify" | null (e.g. "center" or null for default)

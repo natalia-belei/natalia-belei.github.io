@@ -963,8 +963,8 @@ const projectsData = [
         id: 3,
         isShown: true,
         type: "Empty Template",
-        title: "Project Sample 3",
-        shortDescription: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.",
+        title: "Bike Rental Website",
+        shortDescription: "The "Bike Rentals" project aims to develop a user-friendly and efficient bike rental website to cater to the growing demand for sustainable transportation options.",
         image: "/images/projects/project-sample-3/hero-image.jpg",
 
         detailsPage: {

@@ -7,8 +7,8 @@ export const homePageConfig = {
         profilePicAlt: contactsConfig.ownerFullName,
     },
 
-    mainTitle: "Where creativity meets technology",
-    summary: "In a world driven by user-centric design, I specialize in transforming visions into seamless digital realities. Explore a portfolio where every pixel tells a story, and every interaction invites engagement.",
+    mainTitle: "Hello! I’m a Product Designer. ",
+    summary: "Passionate about creating designs that inspire and drive results, my journey has taken me through diverse creative fields, from crafting eye-catching marketing campaigns to building user-centered digital experiences.",
     hireMeButton: {
         title: "Let's work together!",
     }

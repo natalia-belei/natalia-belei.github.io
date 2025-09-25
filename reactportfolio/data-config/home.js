@@ -9,3 +9,4 @@ export const homePageConfig = {
     summary: "Passionate about creating designs that inspire and drive results, my journey has taken me through diverse creative fields, from crafting eye-catching marketing campaigns to building user-centered digital experiences.",
     hireMeButton: {
         title: "Let's work together!",
+<button class="klaviyo_form_trigger">Click here</button>
